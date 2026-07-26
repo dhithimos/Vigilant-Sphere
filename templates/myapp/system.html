@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="panel">
+    <h1>System Scanner</h1>
+    <p>Runs asset discovery, hardware profiling, endpoint fingerprinting, compliance review, file scan, startup audit, and the local port scanner.</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Start System Scan</button>
+    </form>
+</section>
+<section class="grid" style="margin-top:16px;">
+    <div class="card"><h3 class="text-strong">Asset Discovery</h3><p>Hostname, IP, OS version, hardware, RAM, disk, and endpoint fingerprint.</p></div>
+    <div class="card"><h3 class="text-strong">Endpoint Health</h3><p>Firewall, antivirus, secure boot, BitLocker, UAC, startup entries, and compliance-style checks.</p></div>
+    <div class="card"><h3 class="text-strong">Local File Review</h3><p>Downloads, Desktop, and Documents are scanned for risky extensions, suspicious names, and credential exposure.</p></div>
+    <div class="card"><h3 class="text-strong">SOC Report</h3><p>Findings include reason, resolution, SHA256 where available, risk score, MITRE hints, and AI Recommendation.</p></div>
+</section>
+<section class="panel" style="margin-top:16px;">
+    <h2>Vigilant Sphere System Security Assessment</h2>
+    <div class="terminal">
+        Security Score ........... {% if latest_scan %}{{ latest_scan.display_score }}/100{% else %}84/100 sample{% endif %}<br>
+        Risk Level ............... {% if latest_scan %}{{ latest_scan.display_risk_level }}{% else %}HIGH sample{% endif %}<br>
+        Critical Findings ........ scan-dependent<br>
+        High Findings ............ scan-dependent<br>
+        Medium Findings .......... scan-dependent<br>
+        Missing Patches .......... review required<br>
+        Suspicious Processes ..... scan-dependent<br>
+        Persistence Indicators ... scan-dependent<br>
+        Compliance Score ......... local baseline review<br>
+        Recommended Action ....... Patch & Harden Endpoint
+    </div>
+</section>
+<section class="grid" style="margin-top:16px;">
+    <div class="card"><h3 class="text-strong">1. Endpoint Security Posture</h3><p>Checks secure boot, TPM, BitLocker, Defender, antivirus, firewall, and UAC. Example finding: disk encryption disabled may expose sensitive data if stolen. Severity: HIGH.</p></div>
+    <div class="card"><h3 class="text-strong">2. Process Behavioral Analysis</h3><p>Checks process tree, parent-child relationships, command lines, unsigned executables, and injection indicators. Detects encoded PowerShell, suspicious cmd children, rundll32/regsvr32 abuse. MITRE: T1059.001.</p></div>
+    <div class="card"><h3 class="text-strong">3. Persistence Mechanisms</h3><p>Reviews Registry Run keys, Startup folder, Scheduled Tasks, services, WMI persistence, and browser extensions. Example: update_checker.exe in HKCU Run. Risk: HIGH.</p></div>
+    <div class="card"><h3 class="text-strong">4. Memory Threat Analysis</h3><p>Looks for injected DLLs, process hollowing, reflective loading, memory-only malware, and unusual memory consumption. Example: svchost.exe code injection. Severity: CRITICAL.</p></div>
+    <div class="card"><h3 class="text-strong">5. Vulnerability Assessment</h3><p>Reviews missing security updates, known CVEs, end-of-life software, and weak configurations. Example: outdated OpenSSL with CVEs. Severity: HIGH.</p></div>
+    <div class="card"><h3 class="text-strong">6. User & Identity Security</h3><p>Checks inactive accounts, admin accounts, password policy, MFA status, and failed logins. Recommendation: reduce privileged accounts. Severity: MEDIUM.</p></div>
+    <div class="card"><h3 class="text-strong">7. File Integrity Monitoring</h3><p>Monitors System32, Windows directory, critical executables, and configuration files. Example: modified svchost.exe. Severity: CRITICAL.</p></div>
+    <div class="card"><h3 class="text-strong">8. Malware & IOC Detection</h3><p>Checks malicious hashes, malware signatures, YARA-style rules, and threat intelligence matches. Example: payload.exe classified as Trojan with 98% confidence.</p></div>
+    <div class="card"><h3 class="text-strong">9. Registry Security Audit</h3><p>Reviews autorun keys, security policies, LSA protection, and Remote Registry. Example: Remote Registry enabled. Risk: MEDIUM.</p></div>
+    <div class="card"><h3 class="text-strong">10. USB & Removable Media Monitoring</h3><p>Checks connected USB devices, USB history, and executable files from USB. Example: unknown storage device containing setup.exe. Severity: HIGH.</p></div>
+    <div class="card"><h3 class="text-strong">11. Service Security Analysis</h3><p>Reviews running services, disabled security services, suspicious services, and auto-start services. Example: Remote Registry running. Severity: MEDIUM.</p></div>
+    <div class="card"><h3 class="text-strong">12. Application Whitelisting</h3><p>Checks unauthorized software, pirated tools, and unknown executables. Example: crack_tool.exe unauthorized. Severity: HIGH.</p></div>
+    <div class="card"><h3 class="text-strong">13. Security Log Analysis</h3><p>Checks failed logins, account lockouts, privilege escalation, and audit policy changes. Example: brute force activity after 342 failed logins. Severity: HIGH.</p></div>
+    <div class="card"><h3 class="text-strong">14. Threat Hunting Indicators</h3><p>Checks encoded PowerShell, Base64 commands, LOLBins, and living-off-the-land activity. Example: certutil.exe LOLBin abuse. MITRE: T1105.</p></div>
+    <div class="card"><h3 class="text-strong">15. Compliance Validation</h3><p>Checks CIS Controls, NIST Controls, ISO 27001 requirements, password policies, and patch levels. Example: CIS 87%, 4 failed controls.</p></div>
+    <div class="card"><h3 class="text-strong">16. Asset Criticality Assessment</h3><p>Checks business importance, server role, data sensitivity, and exposure level. Example: Database Server criticality CRITICAL.</p></div>
+    <div class="card"><h3 class="text-strong">17. Security Score Engine</h3><p>Formula: Endpoint Security + Vulnerabilities + Threat Detections + Compliance + Patch Status. Output includes Security Score and Risk Level.</p></div>
+    <div class="card"><h3 class="text-strong">18. MITRE ATT&CK Mapping</h3><p>Maps detections to T1059 Command Execution, T1547 Persistence, T1055 Process Injection, T1021 Remote Services, and T1071 Command & Control.</p></div>
+    <div class="card"><h3 class="text-strong">19. Automated Remediation Suggestions</h3><p>Enable Firewall, apply updates, remove unauthorized software, disable Remote Registry, rotate administrator passwords, and quarantine suspicious files.</p></div>
+    <div class="card"><h3 class="text-strong">20. Executive Summary</h3><p>SOC-style summary of score, risk, critical/high/medium findings, patch gaps, suspicious processes, persistence, malware detections, compliance, and recommended action.</p></div>
+</section>
+{% if latest_scan %}
+<div class="actions">
+    <a href="{% url 'scan_result' latest_scan.id %}" class="btn">Open Latest Result</a>
+    <a href="{% url 'scan_pdf' latest_scan.id %}" class="btn">Download Report</a>
+</div>
+{% endif %}
+{% endblock %}

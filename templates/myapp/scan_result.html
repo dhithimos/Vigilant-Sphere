@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Scan Result #{{ result.id }}</h1>
+<p class="muted">{{ result.created_at }} | {{ result.scan_type }}</p>
+{% if modules.scan_scope %}
+<section class="panel">
+    <h2>{{ modules.scan_scope.type|title }} Scope</h2>
+    <p class="text-strong">{{ modules.scan_scope.note }}</p>
+</section>
+{% endif %}
+
+<div class="grid">
+    <div class="card"><h3 class="text-strong">Threat Score</h3><div class="stat">{{ result.display_score }}/100</div><p>0-20 LOW, 21-40 MEDIUM, 41-70 HIGH, 71-100 CRITICAL</p></div>
+    <div class="card"><h3 class="text-strong">Risk</h3><div class="stat risk-{{ result.display_risk_level }}">{{ result.display_risk_level }}</div></div>
+    <div class="card"><h3 class="text-strong">Open Ports</h3><div class="stat">{{ ports|length }}</div></div>
+    <div class="card"><h3 class="text-strong">Detected Files</h3><div class="stat">{{ files|length }}</div></div>
+</div>
+
+<div class="actions no-print">
+    <a class="btn btn-primary" href="{% url 'scan_pdf' result.id %}">Download Report</a>
+    <a class="btn" href="mailto:?subject=Vigilant Sphere scan report&body=Vigilant Sphere report: threat score {{ result.display_score }}/100, risk {{ result.display_risk_level }}. Download the PDF report from the app.">Gmail</a>
+    <a class="btn" target="_blank" rel="noopener" href="https://wa.me/?text=Vigilant%20Sphere%20report:%20threat%20score%20{{ result.display_score }}%2F100%2C%20risk%20{{ result.display_risk_level }}.%20Download%20the%20PDF%20report%20from%20the%20app.">WhatsApp</a>
+    <button type="button" onclick="navigator.clipboard.writeText('Vigilant Sphere report: threat score {{ result.display_score }}/100, risk {{ result.display_risk_level }}.').then(() => alert('Report summary copied. Paste it into Discord.'))">Discord</button>
+    <button type="button" onclick="window.print()">Print</button>
+</div>
+
+<section class="panel">
+    <h2>Active Protocols and Ports</h2>
+    <table>
+        <tr><th>Protocol</th><th>Port</th><th>Service</th><th>Why Open</th><th>Risk</th><th>Resolution</th></tr>
+        {% for port in ports %}
+            <tr>
+                <td>{{ port.protocol }}</td>
+                <td>{{ port.port }}</td>
+                <td>{{ port.service }}</td>
+                <td>{{ port.why_open }}</td>
+                <td class="risk-{{ port.risk|upper }}">{{ port.risk }}</td>
+                <td>{{ port.resolution }}</td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="6">No common risky localhost ports were open.</td></tr>
+        {% endfor %}
+    </table>
+</section>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>Detected Files</h2>
+    <table>
+        <tr><th>Name</th><th>Path</th><th>Risk</th><th>Malicious</th><th>Reason</th><th>Resolution</th></tr>
+        {% for file in files %}
+            <tr>
+                <td>{{ file.name }}</td>
+                <td>
+                    {% if file.file_url %}
+                        <a href="{{ file.file_url }}" target="_blank" rel="noopener">{{ file.path }}</a>
+                    {% else %}
+                        {{ file.path }}
+                    {% endif %}
+                    <details style="margin-top:8px;">
+                        <summary>More SOC file details</summary>
+                        <div class="card" style="margin-top:8px;">
+                            <p><strong>File Reputation Check:</strong> {{ file.reputation }}</p>
+                            <p><strong>SHA256:</strong> {{ file.sha256 }}</p>
+                            <p><strong>File Extension Mismatch:</strong> {% if file.extension_mismatch %}Detected{% else %}Not detected from filename{% endif %}</p>
+                            <p><strong>Real Type:</strong> {{ file.real_type }}</p>
+                            <p><strong>Entropy Analysis:</strong> {{ file.entropy }}</p>
+                            <p><strong>Digital Signature:</strong> {{ file.signature }}</p>
+                            <p><strong>Suspicious Location:</strong> {{ file.location_analysis }}</p>
+                            <p><strong>YARA Rule Detection:</strong> {{ file.yara }}</p>
+                            <p><strong>PE Analysis:</strong> {{ file.pe_analysis }}</p>
+                            <p><strong>Persistence Detection:</strong> {{ file.persistence }}</p>
+                            <p><strong>Threat Scoring:</strong> Known hash + unsigned status + entropy + suspicious location + persistence indicators determine the final score.</p>
+                            <p><strong>Behavioral Indicators:</strong> {{ file.behavior }}</p>
+                            <p><strong>MITRE ATT&CK Mapping:</strong> {{ file.mitre|join:", " }}</p>
+                        </div>
+                    </details>
+                </td>
+                <td>{{ file.risk }}</td>
+                <td>{{ file.malicious }}</td>
+                <td>{{ file.reason }}</td>
+                <td>{{ file.resolution }}</td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="6">No suspicious files found in the scanned folders.</td></tr>
+        {% endfor %}
+    </table>
+</section>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>AI Recommendation</h2>
+    <ul>
+        {% for rec in recommendations %}
+            <li>{{ rec }}</li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>Modules Covered</h2>
+    <div class="grid">
+        <div class="card"><h3>Asset Discovery</h3><p>{{ modules.asset_discovery.hostname }} | {{ modules.asset_discovery.ip_address }} | {{ modules.asset_discovery.os_name }}</p></div>
+        <div class="card"><h3>Endpoint Fingerprint</h3><p>{{ modules.endpoint_fingerprinting.fingerprint }}</p></div>
+        <div class="card"><h3>EDR</h3><p>{{ modules.edr.detection }} | {{ modules.edr.mitre }} | Confidence {{ modules.edr.confidence }}</p></div>
+        <div class="card"><h3>NDR</h3><p>Threat score {{ modules.ndr.threat_score }}/100 | {{ modules.ndr.severity }}</p></div>
+        <div class="card"><h3>File Threat Analysis</h3><p>{{ modules.file_threat_analysis.detected }} detected | Confidence {{ modules.file_threat_analysis.malicious_confidence }}</p></div>
+        <div class="card"><h3>User Behavior Analytics</h3><p>{{ modules.uba.detection }} | {{ modules.uba.severity }}</p></div>
+        <div class="card"><h3>Threat Intel</h3><p>{{ modules.threat_intelligence.note }}</p></div>
+        <div class="card"><h3>MITRE ATT&CK</h3><p>T1547, T1046, T1204, T1003, T1059, T1071 mapped when matching conditions appear.</p></div>
+        <div class="card"><h3>Risk Engine</h3><p>{{ modules.risk_engine.formula }} | {{ modules.risk_engine.mapping }}</p></div>
+        <div class="card"><h3>SOAR</h3><p>{{ modules.soar.status }} Actions: {{ modules.soar.actions|join:", " }}</p></div>
+        <div class="card"><h3>Executive Metrics</h3><p>Posture {{ modules.executive_metrics.security_posture }}% | Compliance {{ modules.executive_metrics.compliance }} | Coverage {{ modules.executive_metrics.asset_coverage }}</p></div>
+    </div>
+</section>
+
+<section class="panel no-print" id="feedbackPanel" style="margin-top:16px;">
+    <h2>Rate This Scan</h2>
+    {% if existing_feedback %}
+        <p class="muted">You already rated this scan {{ existing_feedback.rating }}/5. You can update it below.</p>
+    {% endif %}
+    <form method="post" action="{% url 'scan_feedback' result.id %}" class="wide-form">
+        {% csrf_token %}
+        <label>Rating
+            <select name="rating">
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Good</option>
+                <option value="3">3 - Okay</option>
+                <option value="2">2 - Needs work</option>
+                <option value="1">1 - Poor</option>
+            </select>
+        </label>
+        <label>Comment<textarea name="comment" rows="4" placeholder="Share suggestions or scan feedback for the admin dashboard.">{{ existing_feedback.comment }}</textarea></label>
+        <button type="submit">Send Rating</button>
+    </form>
+</section>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>Useful Blogs</h2>
+    {% for blog in blogs %}
+        <article class="card" style="margin-bottom:10px;">
+            <h3>{{ blog.title }}</h3>
+            <p class="muted">{{ blog.category }}</p>
+            <p>{{ blog.body }}</p>
+        </article>
+    {% endfor %}
+</section>
+{% if not existing_feedback %}
+<script>
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            if (confirm("Scan completed. Would you like to add a rating and comment for the admin?")) {
+                document.getElementById("feedbackPanel").scrollIntoView({ behavior: "smooth" });
+            }
+        }, 500);
+    });
+</script>
+{% endif %}
+{% endblock %}

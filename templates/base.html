@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Vigilant Sphere{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg: #09111f;
+            --panel: #111b2d;
+            --panel-soft: #17243a;
+            --text: #edf4fb;
+            --muted: #a8b5c4;
+            --accent: #20c997;
+            --accent-2: #6ec6ff;
+            --border: rgba(255, 255, 255, 0.14);
+            --danger: #ff6b6b;
+            --warning: #ffd166;
+        }
+
+        body.light {
+            --bg: #f5f7fb;
+            --panel: #ffffff;
+            --panel-soft: #eef3f8;
+            --text: #162032;
+            --muted: #566579;
+            --accent: #087f5b;
+            --accent-2: #0b72b9;
+            --border: rgba(22, 32, 50, 0.16);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(32, 201, 151, 0.16), transparent 24rem),
+                radial-gradient(circle at 80% 10%, rgba(110, 198, 255, 0.12), transparent 22rem),
+                var(--bg);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        a { color: inherit; }
+
+        .app-shell { min-height: 100vh; display: flex; flex-direction: column; }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            gap: 16px;
+            min-height: auto;
+            padding: 18px;
+            border-bottom: 1px solid var(--border);
+            background: color-mix(in srgb, var(--bg) 88%, transparent);
+            backdrop-filter: blur(10px);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .brand-mark {
+            width: 30px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            border-radius: 7px;
+            background: var(--accent);
+            color: #03110d;
+            font-weight: 900;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-direction: row;
+            gap: 8px;
+        }
+
+        .dropdown { position: relative; }
+        .dropdown-menu {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 8px);
+            display: none;
+            min-width: 210px;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--panel);
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.35);
+        }
+        .dropdown.open .dropdown-menu { display: grid; gap: 8px; }
+
+        .nav a,
+        .btn,
+        button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 38px;
+            padding: 8px 13px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            background: var(--panel-soft);
+            color: var(--text);
+            text-decoration: none;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 0 0 rgba(32, 201, 151, 0);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+        }
+
+        .nav a:hover,
+        .btn:hover,
+        button:hover {
+            border-color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: 0 0 22px rgba(32, 201, 151, 0.26);
+        }
+
+        .btn-primary,
+        button {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #03110d;
+        }
+
+        main {
+            width: min(1180px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 32px 0 56px;
+            flex: 1;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .card,
+        form,
+        .panel {
+            padding: 18px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--panel);
+            box-shadow: 0 0 0 1px rgba(32, 201, 151, 0.04), 0 16px 44px rgba(0, 0, 0, 0.22);
+        }
+
+        .card:hover,
+        .panel:hover {
+            border-color: rgba(32, 201, 151, 0.46);
+            box-shadow: 0 0 28px rgba(32, 201, 151, 0.16);
+        }
+
+        .stat {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .text-strong { color: var(--text); }
+        .soc-kpi { color: var(--accent-2); }
+
+        .muted,
+        p,
+        label {
+            color: var(--muted);
+        }
+
+        h1, h2, h3 { margin-top: 0; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: var(--text);
+            overflow-wrap: anywhere;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            color: var(--accent);
+            background: var(--panel-soft);
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            min-height: 38px;
+            padding: 8px 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--panel-soft);
+            color: var(--text);
+            font: inherit;
+        }
+
+        form {
+            width: min(520px, 100%);
+            display: grid;
+            gap: 12px;
+        }
+
+        .wide-form {
+            width: 100%;
+        }
+
+        .messages {
+            display: grid;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .message {
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            background: var(--panel-soft);
+        }
+
+        .risk-LOW { color: var(--accent); }
+        .risk-MEDIUM { color: var(--warning); }
+        .risk-HIGH, .risk-CRITICAL { color: var(--danger); }
+
+        .particle {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.5;
+            pointer-events: none;
+            animation: drift 9s linear infinite;
+        }
+
+        .attack-line {
+            position: fixed;
+            top: 10%;
+            left: 0;
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--danger), transparent);
+            pointer-events: none;
+            animation: attackSweep 4s linear infinite;
+        }
+
+        .terminal {
+            font-family: Consolas, Monaco, monospace;
+            background: #020812;
+            color: #77ffcc;
+            border: 1px solid rgba(32, 201, 151, 0.42);
+            border-radius: 8px;
+            padding: 14px;
+            min-height: 110px;
+            overflow: hidden;
+        }
+
+        .pulse-alert {
+            animation: pulseAlert 1.5s ease-in-out infinite;
+        }
+
+        @keyframes drift {
+            from { transform: translateY(105vh) translateX(0); }
+            to { transform: translateY(-10vh) translateX(80px); }
+        }
+
+        @keyframes attackSweep {
+            from { transform: translateX(-160px); opacity: 0; }
+            20% { opacity: 1; }
+            to { transform: translateX(110vw); opacity: 0; }
+        }
+
+        @keyframes pulseAlert {
+            0%, 100% { box-shadow: 0 0 0 rgba(255, 107, 107, 0.1); }
+            50% { box-shadow: 0 0 24px rgba(255, 107, 107, 0.42); }
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0;
+        }
+
+        .site-footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            width: min(1180px, calc(100% - 32px));
+            padding: 20px 0 28px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+        }
+
+        .site-footer a { margin-left: 12px; color: var(--accent-2); }
+
+        .auth-warning {
+            position: fixed;
+            right: 18px;
+            top: 86px;
+            z-index: 99;
+            width: min(420px, calc(100vw - 36px));
+            padding: 16px;
+            border: 1px solid var(--accent);
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--panel), var(--panel-soft));
+            color: var(--text);
+            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.38), 0 0 26px rgba(32, 201, 151, 0.22);
+        }
+
+        .auth-warning h3 { margin: 0 0 6px; color: var(--accent); }
+        .auth-warning p { margin: 0 0 12px; color: var(--text); }
+        .auth-warning.hidden { display: none; }
+
+        @media print {
+            .topbar, .no-print { display: none; }
+            body { background: #fff; color: #000; }
+            .card, .panel { border-color: #aaa; }
+        }
+
+        @media (max-width: 760px) {
+            .app-shell {
+                display: flex;
+            }
+            .topbar {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+            .nav { justify-content: flex-start; flex-wrap: wrap; }
+            .dropdown-menu { left: 0; right: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="attack-line"></div>
+    <div id="particles"></div>
+    <div class="app-shell">
+        <header class="topbar no-print">
+            <a class="brand" href="{% url 'home' %}">
+                <span class="brand-mark">VS</span>
+                <span>Vigilant Sphere</span>
+            </a>
+            <nav class="nav" aria-label="Main navigation">
+                {% if user.is_authenticated %}
+                    <span class="muted">Signed in: {{ user.username }}</span>
+                    <a href="{% url 'network_scan' %}">Network Scan</a>
+                    <a href="{% url 'system_scan' %}">System Scan</a>
+                    <a href="{% url 'mobile_security' %}">Mobile Scan</a>
+                    <a href="{% url 'threat_detection' %}">Threat Detection</a>
+                    <a href="{% url 'dashboard' %}">Dashboard</a>
+                    {% if user.is_superuser %}
+                        <a href="{% url 'admin_dashboard' %}">Admin</a>
+                    {% endif %}
+                {% endif %}
+                <div class="dropdown" id="mainMenu">
+                    <button type="button" id="menuToggle">☰ Menu</button>
+                    <div class="dropdown-menu">
+                        <a href="{% url 'register' %}">Register</a>
+                        <a href="{% url 'login' %}">Login</a>
+                        <a href="{% url 'about' %}">About</a>
+                        <a href="{% url 'contact' %}">Contact</a>
+                        <a href="{% url 'privacy' %}">Privacy</a>
+                        <a href="{% url 'blogs' %}">Blog</a>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'launcher' %}">Launcher</a>
+                            <a href="{% url 'mobile_security' %}">Mobile Security</a>
+                            <a href="{% url 'profile' %}">Profile</a>
+                            <a href="{% url 'logout' %}">Logout</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <button type="button" id="themeToggle" aria-label="Toggle day or night mode">🌙</button>
+            </nav>
+        </header>
+
+        <main>
+            {% if not user.is_authenticated %}
+                <aside class="auth-warning no-print" id="authWarning">
+                    <h3>Access Notice</h3>
+                    <p>Register or login to visit protected Vigilant Sphere scan modules.</p>
+                    <div class="actions" style="margin:0;">
+                        <a class="btn btn-primary" href="{% url 'register' %}">Register</a>
+                        <a class="btn" href="{% url 'login' %}">Login</a>
+                        <button type="button" id="dismissAuthWarning">Close</button>
+                    </div>
+                </aside>
+            {% endif %}
+            {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <div class="message {{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% block content %}{% endblock %}
+        </main>
+        <footer class="site-footer">
+            <span>© {% now "Y" %} Vigilant Sphere. All rights reserved.</span>
+            <span><a href="{% url 'about' %}">About</a><a href="{% url 'contact' %}">Contact</a></span>
+        </footer>
+    </div>
+    <script>
+        const savedTheme = localStorage.getItem("vigilant-theme");
+        if (savedTheme === "light") document.body.classList.add("light");
+        const themeToggle = document.getElementById("themeToggle");
+        const syncThemeIcon = () => { themeToggle.textContent = document.body.classList.contains("light") ? "☀️" : "🌙"; };
+        syncThemeIcon();
+        themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("light");
+            localStorage.setItem("vigilant-theme", document.body.classList.contains("light") ? "light" : "dark");
+            syncThemeIcon();
+        });
+        const mainMenu = document.getElementById("mainMenu");
+        document.getElementById("menuToggle").addEventListener("click", () => mainMenu.classList.toggle("open"));
+        {% if not user.is_authenticated %}
+        window.addEventListener("load", () => {
+            const authWarning = document.getElementById("authWarning");
+            const dismissButton = document.getElementById("dismissAuthWarning");
+            if (dismissButton) dismissButton.addEventListener("click", () => authWarning.classList.add("hidden"));
+            setTimeout(() => authWarning && authWarning.classList.remove("hidden"), 250);
+        });
+        {% endif %}
+        const particles = document.getElementById("particles");
+        for (let i = 0; i < 38; i += 1) {
+            const dot = document.createElement("span");
+            dot.className = "particle";
+            dot.style.left = `${Math.random() * 100}vw`;
+            dot.style.animationDelay = `${Math.random() * 9}s`;
+            dot.style.animationDuration = `${7 + Math.random() * 8}s`;
+            particles.appendChild(dot);
+        }
+        document.querySelectorAll("[data-toggle-password]").forEach((button) => {
+            button.addEventListener("click", () => {
+                const input = document.querySelector(button.dataset.togglePassword);
+                if (!input) return;
+                input.type = input.type === "password" ? "text" : "password";
+                button.textContent = input.type === "password" ? "Show" : "Hide";
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="panel">
+    <h1>Mobile Security Scan</h1>
+    <p class="muted">Browser-safe checks for phones and tablets. This page does not break Android/iPhone sandbox rules; deeper device/app scanning needs a native mobile app.</p>
+</section>
+
+<section class="grid" style="margin-top:16px;">
+    <div class="card"><h3>Network Info</h3><p><strong>Public IP hint:</strong> {{ network_info.public_ip_hint }}</p><p><strong>Local IP:</strong> {{ network_info.local_ip_hint }}</p><p><strong>Device:</strong> {{ network_info.device_type }}</p><p><strong>User-Agent:</strong> {{ network_info.user_agent }}</p></div>
+    <div class="card"><h3>Web Security Checks</h3><p><strong>HTTPS:</strong> {{ web_checks.https }}</p><p><strong>Cookies:</strong> {{ web_checks.cookies }}</p><p><strong>Headers:</strong> {{ web_checks.headers }}</p><p><strong>Mixed Content:</strong> {{ web_checks.mixed_content }}</p><p><strong>CSP:</strong> {{ web_checks.csp }}</p></div>
+</section>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>Run Browser-Safe Mobile Checks</h2>
+    <form method="post" enctype="multipart/form-data" class="wide-form">
+        {% csrf_token %}
+        <label>Phishing URL Scanner
+            <input type="text" name="url_to_scan" placeholder="https://example.com/login">
+        </label>
+        <label>QR / Link Scanner
+            <input type="text" name="qr_link" placeholder="Paste QR decoded link or suspicious URL">
+        </label>
+        <label>Password Strength Checker
+            <input type="password" name="password_to_check" placeholder="Local-only strength analysis">
+        </label>
+        <label>File Upload Scan
+            <input type="file" name="mobile_file" accept=".apk,.pdf,.doc,.docx,.zip,.rar,.txt,.js,.vbs,.ps1,.exe,.scr">
+        </label>
+        <button type="submit">Run Mobile Checks</button>
+    </form>
+</section>
+
+{% if url_result or qr_result or password_result or file_result %}
+<section class="grid" style="margin-top:16px;">
+    {% if url_result %}
+        <div class="card">
+            <h3>Phishing URL Result</h3>
+            <p><strong>URL:</strong> {{ url_result.url }}</p>
+            <p><strong>Host:</strong> {{ url_result.host }}</p>
+            <p><strong>Risk:</strong> <span class="risk-{{ url_result.risk_level }}">{{ url_result.risk_level }}</span> / {{ url_result.risk_score }}/100</p>
+            <ul>{% for reason in url_result.reasons %}<li>{{ reason }}</li>{% endfor %}</ul>
+        </div>
+    {% endif %}
+    {% if qr_result %}
+        <div class="card">
+            <h3>QR / Link Result</h3>
+            <p><strong>URL:</strong> {{ qr_result.url }}</p>
+            <p><strong>Risk:</strong> <span class="risk-{{ qr_result.risk_level }}">{{ qr_result.risk_level }}</span> / {{ qr_result.risk_score }}/100</p>
+            <ul>{% for reason in qr_result.reasons %}<li>{{ reason }}</li>{% endfor %}</ul>
+        </div>
+    {% endif %}
+    {% if password_result %}
+        <div class="card">
+            <h3>Password Strength</h3>
+            <p><strong>Score:</strong> {{ password_result.score }}/100</p>
+            <p><strong>Strength:</strong> {{ password_result.label }}</p>
+            <ul>{% for check in password_result.checks %}<li>{{ check }}</li>{% endfor %}</ul>
+        </div>
+    {% endif %}
+    {% if file_result %}
+        <div class="card">
+            <h3>Uploaded File Scan</h3>
+            <p><strong>Name:</strong> {{ file_result.name }}</p>
+            <p><strong>Size:</strong> {{ file_result.size }} bytes</p>
+            <p><strong>Extension:</strong> {{ file_result.extension }}</p>
+            <p><strong>Entropy:</strong> {{ file_result.entropy }}</p>
+            <p><strong>Risk:</strong> <span class="risk-{{ file_result.risk_level }}">{{ file_result.risk_level }}</span> / {{ file_result.risk_score }}/100</p>
+            <p><strong>MD5:</strong> {{ file_result.hashes.md5 }}</p>
+            <p><strong>SHA1:</strong> {{ file_result.hashes.sha1 }}</p>
+            <p><strong>SHA256:</strong> {{ file_result.hashes.sha256 }}</p>
+            <p><strong>YARA:</strong> {{ file_result.yara }}</p>
+            <ul>{% for finding in file_result.findings %}<li>{{ finding }}</li>{% endfor %}</ul>
+        </div>
+    {% endif %}
+</section>
+{% endif %}
+
+<section class="grid" style="margin-top:16px;">
+    <div class="card"><h3>Wi‑Fi Safety Checklist</h3><ul>{% for item in wifi_checklist %}<li>{{ item }}</li>{% endfor %}</ul></div>
+    <div class="card"><h3>Android-Only Native App Modules</h3><ul>{% for item in android_modules %}<li>{{ item }}</li>{% endfor %}</ul></div>
+    <div class="card"><h3>iPhone Limits</h3><ul>{% for item in iphone_limits %}<li>{{ item }}</li>{% endfor %}</ul></div>
+</section>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>What This Mobile Page Can And Cannot Scan</h2>
+    <p><strong>Can scan in browser:</strong> network hints, user-agent/device details, web security posture, URL/QR phishing patterns, password strength, uploaded files, and Wi‑Fi safety guidance.</p>
+    <p><strong>Cannot scan in browser:</strong> installed apps, Android root/debugging settings, iOS apps/system files, SMS/call permissions, storage encryption, or patch level. Those require native mobile apps and OS permissions.</p>
+</section>
+{% endblock %}

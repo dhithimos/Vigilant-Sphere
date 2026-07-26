@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-strong">Profile</h1>
+<section class="grid">
+    <div class="card">
+        {% if user_obj.profile_image %}
+            <img src="{{ user_obj.profile_image.url }}" alt="Profile image" style="width:120px;height:120px;object-fit:cover;border-radius:50%;border:2px solid var(--accent);">
+        {% else %}
+            <div class="brand-mark" style="width:86px;height:86px;border-radius:50%;font-size:28px;">{{ user_obj.username|first|upper }}</div>
+        {% endif %}
+    </div>
+    <div class="card"><h3 class="text-strong">Full Name</h3><p class="text-strong">{{ user_obj.get_full_name|default:"Not added" }}</p></div>
+    <div class="card"><h3 class="text-strong">Username</h3><p class="text-strong">{{ user_obj.username }}</p></div>
+    <div class="card"><h3 class="text-strong">Gmail / Email</h3><p class="text-strong">{{ user_obj.email }}</p></div>
+    <div class="card"><h3 class="text-strong">Age</h3><p class="text-strong">{{ user_obj.age|default:"Not added" }}</p></div>
+    <div class="card"><h3 class="text-strong">Phone</h3><p class="text-strong">{{ user_obj.phone|default:"Not added" }}</p></div>
+    <div class="card"><h3 class="text-strong">Gender</h3><p class="text-strong">{{ user_obj.gender|default:"Not added" }}</p></div>
+    <div class="card"><h3 class="text-strong">Address</h3><p class="text-strong">{{ user_obj.address|default:"Not added" }}</p></div>
+</section>
+
+<div class="actions">
+    <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+    <a href="{% url 'forgot_password' %}" class="btn">Forgot Password</a>
+    <a href="{% url 'logout' %}" class="btn">Logout</a>
+    <a href="{% url 'launcher' %}" class="btn">Back to Launcher</a>
+</div>
+{% endblock %}

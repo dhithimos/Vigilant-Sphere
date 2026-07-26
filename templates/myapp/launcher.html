@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="panel">
+    <h1>Vigilant Sphere Launcher</h1>
+    <p class="muted">Choose a module. Each card opens the correct page for scans, profile actions, password recovery, or logout.</p>
+</section>
+
+<section class="grid" style="margin-top:16px;">
+    {% for module in modules %}
+        <a class="card" href="{{ module.url }}">
+            <h2 class="text-strong">{{ module.name }}</h2>
+            <p>{{ module.detail }}</p>
+        </a>
+    {% endfor %}
+</section>
+{% endblock %}

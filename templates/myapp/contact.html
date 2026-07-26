@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="panel" style="max-width:720px;margin:0 auto;">
+    <h1>Contact Vigilant Sphere</h1>
+    <p class="muted">Send suggestions, complaints, questions, or SOC feature requests to the admin dashboard.</p>
+    <form method="post" style="margin:0 auto;">
+        {% csrf_token %}
+        <label>Name</label>
+        <input type="text" name="name" value="{{ user.username }}">
+        <label>Gmail / Email</label>
+        <input type="email" name="email" value="{{ user.email }}" required>
+        <label>Type</label>
+        <select name="message_type">
+            <option value="suggestion">Suggestion</option>
+            <option value="complaint">Complaint</option>
+            <option value="question">Question</option>
+        </select>
+        <label>Message</label>
+        <textarea name="message" rows="6" required></textarea>
+        <button type="submit">Send To Admin</button>
+    </form>
+</section>
+{% endblock %}

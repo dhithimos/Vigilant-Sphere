@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Edit Profile</h1>
+<form method="post" enctype="multipart/form-data" class="wide-form">
+    {% csrf_token %}
+    <div class="grid">
+        <label>First Name<input type="text" name="first_name" value="{{ user_obj.first_name }}"></label>
+        <label>Last Name<input type="text" name="last_name" value="{{ user_obj.last_name }}"></label>
+        <label>Username<input type="text" value="{{ user_obj.username }}" disabled></label>
+        <label>Email<input type="email" name="email" value="{{ user_obj.email }}"></label>
+        <label>Age<input type="number" min="1" max="120" name="age" value="{{ user_obj.age|default:'' }}"></label>
+        <label>Phone<input type="text" name="phone" value="{{ user_obj.phone|default:'' }}"></label>
+        <label>Gender
+            <select name="gender">
+                <option value="">Prefer not to say</option>
+                <option value="Female" {% if user_obj.gender == "Female" %}selected{% endif %}>Female</option>
+                <option value="Male" {% if user_obj.gender == "Male" %}selected{% endif %}>Male</option>
+                <option value="Other" {% if user_obj.gender == "Other" %}selected{% endif %}>Other</option>
+            </select>
+        </label>
+        <label>Profile Image<input type="file" name="profile_image" accept="image/*"></label>
+    </div>
+    <label>Address<textarea name="address" rows="4">{{ user_obj.address }}</textarea></label>
+    <div class="actions">
+        <button type="submit">Save Profile</button>
+        <a href="{% url 'profile' %}" class="btn">Cancel</a>
+    </div>
+</form>
+{% endblock %}

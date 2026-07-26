@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Vigilant Sphere Security Operations Center</h1>
+<p class="muted">Live SOC-style endpoint, network, incident, and executive metrics for {{ user.username }}.</p>
+
+<div class="grid">
+    <div class="card">
+        <h3 class="text-strong">Risk Score Meter</h3>
+        <div class="stat" id="riskScore">{{ risk_score }}</div>
+        <progress id="riskMeter" max="100" value="{{ risk_score }}" style="width:100%; accent-color: var(--accent);"></progress>
+        <p class="risk-{{ risk_level }}" id="riskLevel">{{ risk_level }}</p>
+    </div>
+    <div class="card"><h3 class="text-strong">Total Findings</h3><div class="stat" id="totalFindings">{{ total_findings }}</div></div>
+    <div class="card"><h3 class="text-strong">Critical</h3><div class="stat risk-CRITICAL" id="criticalFindings">{{ critical_findings }}</div></div>
+    <div class="card"><h3 class="text-strong">Open Incidents</h3><div class="stat" id="openIncidents">{{ open_incidents }}</div></div>
+    <div class="card"><h3 class="text-strong">SOC Posture</h3><div class="stat soc-kpi" id="socPosture">{% if risk_score <= 20 %}PASS{% elif risk_score <= 70 %}WATCH{% else %}ACTION{% endif %}</div></div>
+</div>
+
+<div class="actions">
+    <a href="{% url 'combined_scan' %}" class="btn btn-primary">Start Combined Scan</a>
+    {% if latest_scan %}
+        <a href="{% url 'scan_result' latest_scan.id %}" class="btn">Latest Result</a>
+        <a href="{% url 'scan_pdf' latest_scan.id %}" class="btn">Download Report</a>
+    {% endif %}
+    <a href="?severity=LOW" class="btn">Low</a>
+    <a href="?severity=MEDIUM" class="btn">Medium</a>
+    <a href="?severity=HIGH" class="btn">High</a>
+    <a href="?severity=CRITICAL" class="btn">Critical</a>
+    <a href="{% url 'dashboard' %}" class="btn">All</a>
+</div>
+
+<section class="grid">
+    <div class="panel">
+        <h2>Threat Trend</h2>
+        <canvas id="trendChart" height="160"></canvas>
+        <div id="trendFallback" class="muted"></div>
+    </div>
+    <div class="panel">
+        <h2>Traffic Visualization</h2>
+        <canvas id="trafficChart" height="160"></canvas>
+        <div id="trafficFallback" class="muted"></div>
+    </div>
+    <div class="panel">
+        <h2>Live CPU</h2>
+        <canvas id="cpuChart" height="160"></canvas>
+        <div id="cpuFallback" class="muted"></div>
+    </div>
+</section>
+
+<section class="grid" style="margin-top:16px;">
+    <div class="panel pulse-alert">
+        <h2 class="text-strong">Live Alerts</h2>
+        <div id="alerts" class="text-strong">Waiting for live alerts...</div>
+    </div>
+    <div class="panel">
+        <h2>Vigilant Sphere</h2>
+        <div class="terminal" id="terminalFeed">
+            🛡️ Vigilant Sphere Security Operations Center<br><br>
+            [ SYSTEM STATUS ]<br>
+            CPU Usage ............ collecting<br>
+            Memory Usage ......... collecting<br>
+            Active Connections ... collecting<br>
+            Security Alerts ...... collecting<br><br>
+            [ THREAT ASSESSMENT ]<br>
+            Risk Score ........... {{ risk_score }}/100<br>
+            Threat Level ......... {{ risk_level }}<br><br>
+            [ MONITORING ]<br>
+            Auto Refresh ......... ACTIVE<br>
+            Last Scan ............ {% if latest_scan %}SUCCESSFUL{% else %}WAITING{% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>Live Network Logs</h2>
+    <table>
+        <thead><tr><th>Protocol</th><th>Local</th><th>Remote</th><th>Port</th><th>Status</th><th>Risk</th></tr></thead>
+        <tbody id="networkLogs"><tr><td colspan="6">Loading...</td></tr></tbody>
+    </table>
+</section>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>Recent Scans {% if severity_filter %}({{ severity_filter }}){% endif %}</h2>
+    <table>
+        <tr><th>Date</th><th>Type</th><th>Score</th><th>Risk</th><th>Result</th></tr>
+        {% for scan in scans %}
+            <tr>
+                <td>{{ scan.created_at }}</td>
+                <td>{{ scan.scan_type }}</td>
+                <td>{{ scan.display_score }}</td>
+                <td class="risk-{{ scan.display_risk_level }}">{{ scan.display_risk_level }}</td>
+                <td><a href="{% url 'scan_result' scan.id %}">View</a></td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="5">No scans yet.</td></tr>
+        {% endfor %}
+    </table>
+</section>
+
+<script>
+let trendChart;
+let trafficChart;
+let cpuChart;
+const cpuPoints = [];
+const cpuLabels = [];
+
+function buildCharts(data) {
+    if (typeof Chart === "undefined") {
+        document.getElementById("trendFallback").innerHTML = data.trend.length
+            ? data.trend.map(row => `<div><strong>${row.label}</strong>: ${row.score}/100 (${row.risk})</div>`).join("")
+            : "No scan trend data yet. Run a scan to build the trend.";
+        document.getElementById("trafficFallback").innerHTML = data.traffic.length
+            ? data.traffic.map(row => `<div><strong>${row.label}:${row.port}</strong> — ${row.risk}. ${row.explanation || ""}</div>`).join("")
+            : "No active ports are currently reported by the operating system.";
+        document.getElementById("cpuFallback").textContent = `CPU ${data.cpu}%`;
+        return false;
+    }
+    if (!trendChart) {
+        trendChart = new Chart(document.getElementById("trendChart"), {
+            type: "line",
+            data: { labels: [], datasets: [{ label: "Risk Score", data: [], borderColor: "#20c997", tension: 0.35 }] },
+            options: { responsive: true, plugins: { legend: { labels: { color: "#edf4fb" } } }, scales: { x: { ticks: { color: "#a8b5c4" } }, y: { ticks: { color: "#a8b5c4" }, min: 0, max: 100 } } }
+        });
+        trafficChart = new Chart(document.getElementById("trafficChart"), {
+            type: "bar",
+            data: { labels: [], datasets: [{ label: "Open / active ports", data: [], backgroundColor: "#6ec6ff" }] },
+            options: { responsive: true, plugins: { legend: { labels: { color: "#edf4fb" } } }, scales: { x: { ticks: { color: "#a8b5c4" } }, y: { ticks: { color: "#a8b5c4" } } } }
+        });
+        cpuChart = new Chart(document.getElementById("cpuChart"), {
+            type: "line",
+            data: { labels: cpuLabels, datasets: [{ label: "CPU %", data: cpuPoints, borderColor: "#ff6b6b", tension: 0.25 }] },
+            options: { responsive: true, plugins: { legend: { labels: { color: "#edf4fb" } } }, scales: { x: { ticks: { color: "#a8b5c4" } }, y: { ticks: { color: "#a8b5c4" }, min: 0, max: 100 } } }
+        });
+    }
+    return true;
+}
+
+async function refreshDashboard() {
+    const res = await fetch("{% url 'api_dashboard_metrics' %}");
+    const data = await res.json();
+    const chartsReady = buildCharts(data);
+    document.getElementById("riskScore").textContent = data.risk_score;
+    document.getElementById("riskMeter").value = data.risk_score;
+    document.getElementById("riskLevel").textContent = data.risk_level;
+    document.getElementById("riskLevel").className = `risk-${data.risk_level}`;
+    document.getElementById("totalFindings").textContent = data.total_findings;
+    document.getElementById("criticalFindings").textContent = data.critical_findings;
+    document.getElementById("openIncidents").textContent = data.open_incidents;
+    document.getElementById("socPosture").textContent = data.soc_posture;
+
+    if (chartsReady) {
+        trendChart.data.labels = data.trend.map(row => row.label || "Scan");
+        trendChart.data.datasets[0].data = data.trend.map(row => Number(row.score || 0));
+        trendChart.update();
+
+        trafficChart.data.labels = data.traffic.map(row => `${row.label || "Unknown service"}:${row.port || "Unknown port"}`);
+        trafficChart.data.datasets[0].data = data.traffic.map(() => 1);
+        trafficChart.update();
+
+        document.getElementById("trafficFallback").innerHTML = data.traffic.length
+            ? data.traffic.map(row => `<div><strong>${row.label || "Unknown service"}:${row.port || "Unknown port"}</strong> — ${row.risk || "unknown"}. ${row.explanation || ""}</div>`).join("")
+            : "No active ports are currently reported by the operating system.";
+
+        cpuLabels.push(new Date().toLocaleTimeString());
+        cpuPoints.push(data.cpu);
+        if (cpuLabels.length > 12) { cpuLabels.shift(); cpuPoints.shift(); }
+        cpuChart.update();
+    }
+
+    document.getElementById("alerts").innerHTML = data.alerts.length
+        ? data.alerts.map(alert => `<div class="card text-strong"><strong class="risk-${alert.severity}">${alert.severity}</strong><br><span class="text-strong">${alert.message}</span></div>`).join("")
+        : "<p class='text-strong'>No active high-risk alerts.</p>";
+
+    document.getElementById("networkLogs").innerHTML = data.network_logs.length
+        ? data.network_logs.map(row => `<tr><td>${row.protocol || "-"}</td><td>${row.local_address || "-"}</td><td>${row.remote_address || "-"}</td><td>${row.port || "Unknown"}</td><td>${row.status || "-"}</td><td>${row.risk || "unknown"}</td></tr>`).join("")
+        : "<tr><td colspan='6'>No active network logs.</td></tr>";
+
+    document.getElementById("terminalFeed").innerHTML =
+        `🛡️ Vigilant Sphere Security Operations Center<br><br>` +
+        `[ SYSTEM STATUS ]<br>` +
+        `CPU Usage ............ ${data.cpu}%<br>` +
+        `Memory Usage ......... ${data.memory}%<br>` +
+        `Active Connections ... ${data.network_logs.length}<br>` +
+        `Security Alerts ...... ${data.alerts.length}<br><br>` +
+        `[ THREAT ASSESSMENT ]<br>` +
+        `Risk Score ........... ${data.risk_score}/100<br>` +
+        `Threat Level ......... ${data.risk_level}<br><br>` +
+        `[ MONITORING ]<br>` +
+        `Auto Refresh ......... ACTIVE<br>` +
+        `Last Scan ............ SUCCESSFUL`;
+}
+
+refreshDashboard();
+setInterval(refreshDashboard, 5000);
+</script>
+{% endblock %}

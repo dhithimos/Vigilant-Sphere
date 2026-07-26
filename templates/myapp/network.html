@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="panel">
+    <h1>Network Scanner</h1>
+    <p>Checks active TCP/UDP connections, common open ports, protocol usage, service purpose, harmful exposure, and remediation guidance.</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Start Network Scan</button>
+    </form>
+</section>
+<section class="grid" style="margin-top:16px;">
+    <div class="card"><h3>Network Asset Discovery</h3><p>Identifies local interfaces, active sockets, IP addresses, protocols, and services visible to the endpoint.</p></div>
+    <div class="card"><h3>Attack Surface Analysis</h3><p>Reviews exposed ports, risky services, remote administration paths, and public-facing development services.</p></div>
+    <div class="card"><h3>VLAN Enumeration</h3><p>Documents segmented network assumptions and flags when VLAN visibility needs switch or router confirmation.</p></div>
+    <div class="card"><h3>ARP Spoofing Detection</h3><p>Checks for suspicious gateway/MAC behavior indicators and recommends validating ARP table changes.</p></div>
+    <div class="card"><h3>DHCP Rogue Server Detection</h3><p>Flags unexpected DHCP behavior for analyst review and recommends trusted DHCP source validation.</p></div>
+    <div class="card"><h3>DNS Tunneling Detection</h3><p>Looks for DNS abuse indicators such as high-volume or unusual query patterns when telemetry is available.</p></div>
+    <div class="card"><h3>Port Scan Detection</h3><p>Maps active/open ports and highlights reconnaissance-friendly services.</p></div>
+    <div class="card"><h3>Brute Force Detection</h3><p>Highlights exposed SSH, RDP, SMB, database, and admin services that attract password attacks.</p></div>
+    <div class="card"><h3>SMB Enumeration</h3><p>Reviews SMB/NetBIOS exposure and recommends blocking public access to file-sharing ports.</p></div>
+    <div class="card"><h3>RDP Exposure Analysis</h3><p>Flags RDP exposure as critical when visible and recommends VPN/MFA/firewall restrictions.</p></div>
+    <div class="card"><h3>Threat Intelligence Correlation</h3><p>Correlates services and indicators with local IOC rules; external feeds can be connected with API keys.</p></div>
+    <div class="card"><h3>MITRE ATT&CK Mapping</h3><p>Maps remote services and command-and-control style activity to ATT&CK such as T1021 and T1071.</p></div>
+    <div class="card"><h3>Network Risk Scoring</h3><p>Scores exposure using service severity, reputation, behavior, and asset criticality.</p></div>
+</section>
+{% if latest_scan %}
+<div class="actions">
+    <a href="{% url 'scan_result' latest_scan.id %}" class="btn">Open Latest Result</a>
+    <a href="{% url 'scan_pdf' latest_scan.id %}" class="btn">Download Report</a>
+</div>
+{% endif %}
+{% endblock %}

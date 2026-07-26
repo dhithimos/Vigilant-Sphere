@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Admin Dashboard</h1>
+<p class="muted">Only staff/superusers can access this page.</p>
+
+<div class="grid">
+    <div class="card"><h3>Total Registered Users</h3><div class="stat">{{ registered_users }}</div></div>
+    <div class="card"><h3>Total Scans</h3><div class="stat">{{ scan_count }}</div></div>
+    <div class="card"><h3>Logged In Users</h3><div class="stat">{{ active_users|length }}</div></div>
+    <div class="card"><h3>Active Users</h3><div class="stat">{{ active_users|length }}</div></div>
+</div>
+
+<div class="actions">
+    <a class="btn btn-primary" href="{% url 'download_all_users' %}">Download All User Details</a>
+</div>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>Currently Logged In</h2>
+    <table>
+        <tr><th>Name</th><th>Gmail / Email</th><th>Superuser</th><th>Download</th></tr>
+        {% for active in active_users %}
+            <tr><td>{{ active.username }}</td><td>{{ active.email }}</td><td>{{ active.is_superuser }}</td><td><a href="{% url 'download_user_details' active.id %}">CSV</a></td></tr>
+        {% empty %}
+            <tr><td colspan="3">No active logged-in users found.</td></tr>
+        {% endfor %}
+    </table>
+</section>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>User Activity, Device, IP, Place, And Time</h2>
+    <table>
+        <tr><th>User</th><th>Email</th><th>Option / Scan Used</th><th>Detail</th><th>IP</th><th>Place</th><th>Device</th><th>Time</th></tr>
+        {% for activity in activities %}
+            <tr>
+                <td>{{ activity.user.username }}</td>
+                <td>{{ activity.user.email }}</td>
+                <td>{{ activity.option_used }}</td>
+                <td>{{ activity.detail }}</td>
+                <td>{{ activity.ip_address|default:"Unknown" }}</td>
+                <td>{{ activity.place }}</td>
+                <td>{{ activity.device|truncatechars:70 }}</td>
+                <td>{{ activity.created_at }}</td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="8">No activity yet.</td></tr>
+        {% endfor %}
+    </table>
+</section>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>Usage By User And Option</h2>
+    <table>
+        <tr><th>User</th><th>Gmail / Email</th><th>Option Used</th><th>Times Used</th></tr>
+        {% for row in activity_summary %}
+            <tr>
+                <td>{{ row.user__username }}</td>
+                <td>{{ row.user__email }}</td>
+                <td>{{ row.option_used }}</td>
+                <td>{{ row.total }}</td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="4">No activity yet.</td></tr>
+        {% endfor %}
+    </table>
+</section>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>Scan Ratings And Comments</h2>
+    <table>
+        <tr><th>User</th><th>Email</th><th>Scan</th><th>Rating</th><th>Comment</th><th>IP</th><th>Device</th><th>Time</th></tr>
+        {% for item in feedback %}
+            <tr>
+                <td>{{ item.user.username }}</td>
+                <td>{{ item.user.email }}</td>
+                <td>#{{ item.scan.id }} {{ item.scan.scan_type }}</td>
+                <td>{{ item.rating }}/5</td>
+                <td>{{ item.comment }}</td>
+                <td>{{ item.ip_address|default:"Unknown" }}</td>
+                <td>{{ item.device|truncatechars:70 }}</td>
+                <td>{{ item.created_at }}</td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="8">No scan ratings yet.</td></tr>
+        {% endfor %}
+    </table>
+</section>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>Latest Scans</h2>
+    <table>
+        <tr><th>User</th><th>Email</th><th>Type</th><th>Score</th><th>Risk</th><th>When</th><th>Open</th></tr>
+        {% for scan in latest_scans %}
+            <tr>
+                <td>{{ scan.user.username }}</td>
+                <td>{{ scan.user.email }}</td>
+                <td>{{ scan.scan_type }}</td>
+                <td>{{ scan.score }}</td>
+                <td>{{ scan.risk_level }}</td>
+                <td>{{ scan.created_at }}</td>
+                <td><a href="{% url 'scan_result' scan.id %}">View</a></td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="7">No scans yet.</td></tr>
+        {% endfor %}
+    </table>
+</section>
+
+<section class="panel" style="margin-top:16px;">
+    <h2>Suggestions And Complaints</h2>
+    <table>
+        <tr><th>Name</th><th>Email</th><th>Type</th><th>Message</th><th>Date</th></tr>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.message_type }}</td>
+                <td>{{ contact.message }}</td>
+                <td>{{ contact.created_at }}</td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="5">No contact messages yet.</td></tr>
+        {% endfor %}
+    </table>
+</section>
+{% endblock %}

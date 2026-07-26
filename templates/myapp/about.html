@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="panel">
+    <h1>About Vigilant Sphere</h1>
+    <p>Vigilant Sphere Threat Intelligence & Detection Engine is a local cybersecurity scanner for learning, auditing, and reporting. It combines system, process, startup, network, file, threat-intelligence style, MITRE, response, and reporting modules into a single SOC workflow.</p>
+    <p>Its goal is to help users understand why an endpoint or file appears risky, what evidence supports the detection, and which remediation steps a SOC analyst would consider next.</p>
+    <div class="grid">
+        <div class="card"><h3>Detection</h3><p>EDR, NDR, file threat analysis, user behavior analytics, and local IOC-style checks.</p></div>
+        <div class="card"><h3>Mapping</h3><p>MITRE ATT&CK hints connect findings to analyst-friendly tactics and techniques.</p></div>
+        <div class="card"><h3>Response</h3><p>Reports include quarantine, block, isolate, rotate, and escalation recommendations.</p></div>
+    </div>
+</section>
+{% endblock %}
