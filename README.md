@@ -1,8 +1,3 @@
-
-
-
-
-
 # Vigilant Sphere
 
 **Vigilant Sphere Threat Intelligence & Detection Engine** is a Django-based cybersecurity scanner and SOC-style dashboard. It includes system scanning, network scanning, threat detection, mobile browser-safe checks, scan reports, user profiles, admin monitoring, and security recommendations.
@@ -274,7 +269,7 @@ This is normal for local testing. For production, deploy with a production WSGI/
 
 Vigilant Sphere is intended for educational, local auditing, and defensive security use. Do not scan systems, networks, files, or accounts without permission. Some detections are heuristic and should be validated by a security analyst before taking destructive actions.
 
+## License
 
-
-
+Add your preferred license before public release.
 
