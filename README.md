@@ -274,7 +274,7 @@ This is normal for local testing. For production, deploy with a production WSGI/
 
 Vigilant Sphere is intended for educational, local auditing, and defensive security use. Do not scan systems, networks, files, or accounts without permission. Some detections are heuristic and should be validated by a security analyst before taking destructive actions.
 
-## License
+
 
 
 
