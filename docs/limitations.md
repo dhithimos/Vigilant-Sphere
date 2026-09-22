@@ -1,0 +1,15 @@
+# Known limitations and remaining scope
+
+- This delivery does not claim every advanced feature in the master specification is complete or independently security-certified.
+- File analysis is static and bounded. PE/ELF are header-level; PDF uses raw marker inspection rather than a complete object parser; OOXML is container metadata. Legacy OLE Office, encrypted content, macro decompilation and embedded-object extraction are unsupported. Source filesystem paths/timestamps are unavailable from browser uploads. Strings/IOCs are bounded candidates, and redaction cannot guarantee removal of all sensitive data.
+- URL heuristics do not establish phishing. Public Suffix List-aware registrable-domain comparison, brand impersonation intelligence, full JavaScript AST analysis, fetched external-script analysis and browser execution are absent. DNS system resolution before HTTP may be subject to OS resolver delays. Each socket/read/redirect is bounded, but a full synchronous investigation includes several network operations.
+- TLS verifies one negotiated connection; it is not an exhaustive cipher/protocol vulnerability assessment. No certificate-expiry finding is inferred from a failed connection.
+- DNS/HTTP/TLS and provider checks need network; offline status is honest. Public providers and SMTP were not exercised live. External optional tools were not installed for integration tests; availability/error behavior is implemented.
+- Windows Wi-Fi support is saved-profile metadata, available to signed-in users, English output. No live AP/radio/WPS/channel measurements; other OS collectors unavailable. Empty or localized OS output may prevent conclusions.
+- MITRE uses the complete bundled active catalog, but only two conservative local evidence mapping rules. Mapped does not mean confirmed attacker behavior. Legacy MitreMapping tables remain for compatibility; normalized findings retain technique identifiers and evidence. No arbitrary user-entered string gets a technique mapping.
+- Chatbot is a deterministic local knowledge assistant; no LLM. Conversation history is memory-only and does not survive reload. Answers cover available topics and cannot replace investigation.
+- CMS categories/tags remain text fields, not separate taxonomies. No page-view counter or rich-text editor. Scheduled publication is query-based and needs no background worker.
+- Jobs are synchronous. Only queued jobs can be cancelled; running cancellation, Celery/Redis workers and resumable scans are absent.
+- Throttling uses local process cache. Multi-worker public deployment requires a shared limiter, HTTPS/static/media setup, monitoring and a separate production review. DEBUG defaults to local development; a private secret is required for non-debug mode.
+- Legacy host services are preserved but remain heuristic snapshots, not EDR/NDR/UBA or maliciousness proof. No automated quarantine/remediation is implemented.
+- Regression tests and selected browser workflows passed; not every operating system, browser, malicious file format or live network environment was tested. Dependency advisory results are time-specific.

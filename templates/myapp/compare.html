@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Compare stored investigations</h1><form><select name="left">{% for scan in scans %}<option value="{{ scan.scan_id }}">{{ scan.target }} {{ scan.created_at }}</option>{% endfor %}</select><select name="right">{% for scan in scans %}<option value="{{ scan.scan_id }}">{{ scan.target }} {{ scan.created_at }}</option>{% endfor %}</select><button>Compare</button></form>{% if delta %}<pre>{{ delta }}</pre>{% endif %}
+{% endblock %}

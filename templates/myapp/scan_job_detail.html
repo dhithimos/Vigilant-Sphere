@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h1>Scan Job {{ job.scan_id }}</h1>
+
+<div class="grid">
+  <div class="card vs-card">
+    <h3>Status</h3>
+    <p>{{ job.status }} · {{ job.progress }}%</p>
+  </div>
+  <div class="card vs-card">
+    <h3>Risk</h3>
+    <p>{{ job.risk_score }}/100</p>
+  </div>
+  <div class="card vs-card">
+    <h3>Scanner result</h3>
+    <p>{{ job.completed_scanner_count }} completed · {{ job.failed_scanner_count }} failed</p>
+  </div>
+</div>
+
+{% if job.error %}
+<section class="panel vs-card">
+  <h2>Partial-failure detail</h2>
+  <pre>{{ job.error }}</pre>
+</section>
+{% endif %}
+
+<h2>Normalized findings</h2>
+<div class="table-wrap vs-table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Severity</th>
+        <th>Finding</th>
+        <th>Scanner</th>
+        <th>Confidence</th>
+        <th>Risk</th>
+        <th>MITRE</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for finding in findings %}
+      <tr>
+        <td>{{ finding.severity }}</td>
+        <td>
+          <a href="{% url 'finding_detail' finding.pk %}"><strong>{{ finding.title }}</strong></a><br>
+          <small>{{ finding.recommendation }}</small>
+        </td>
+        <td>{{ finding.scanner }}</td>
+        <td>{{ finding.confidence|floatformat:2 }}</td>
+        <td>{{ finding.risk_score }}</td>
+        <td>{{ finding.mitre_technique|default:"—" }}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="6">No actionable findings were generated.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% if job.status == 'QUEUED' %}<form method="post" action="{% url 'cancel_job' job.id %}">{% csrf_token %}<button>Cancel queued job</button></form>{% endif %}{% if job.investigation %}<p>Target: {{ job.investigation.target }}</p><a href="{% url 'target_scan_detail' job.investigation.scan_id %}">Complete investigation evidence</a>{% endif %}{% if job.status == "QUEUED" or job.status == "RUNNING" %}<script>setTimeout(()=>window.location.reload(),5000);</script><p role="status">Updating job status every five seconds.</p>{% endif %}{% endblock %}

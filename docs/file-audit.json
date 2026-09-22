@@ -1,0 +1,4100 @@
+[
+  {
+    "path": ".env.example",
+    "type": ".example",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "README.md"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": ".gitignore",
+    "type": "",
+    "feature": "Application / configuration",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "AUDIT_AND_IMPLEMENTATION.md",
+    "type": ".md",
+    "feature": "Documentation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "README.md",
+    "type": ".md",
+    "feature": "Documentation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "constraints.txt",
+    "type": ".txt",
+    "feature": "Application / configuration",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "data/MITRE-LICENSE.txt",
+    "type": ".txt",
+    "feature": "Application / configuration",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "data/attack.json",
+    "type": ".json",
+    "feature": "Application / configuration",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "data/local_iocs.json",
+    "type": ".json",
+    "feature": "Application / configuration",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "db.sqlite3",
+    "type": ".sqlite3",
+    "feature": "Application / configuration",
+    "action": "EXCLUDE",
+    "reason": "Local runtime/test data excluded from final ZIP; retained locally if present.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      ".env.example",
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "scanner/settings.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "docs/architecture.md",
+    "type": ".md",
+    "feature": "Documentation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "docs/dependency-audit.json",
+    "type": ".json",
+    "feature": "Documentation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "docs/initial-duplicates.json",
+    "type": ".json",
+    "feature": "Documentation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "docs/initial-inventory.json",
+    "type": ".json",
+    "feature": "Documentation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "docs/limitations.md",
+    "type": ".md",
+    "feature": "Documentation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "docs/requirements-traceability.md",
+    "type": ".md",
+    "feature": "Documentation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "docs/scanner-reference.md",
+    "type": ".md",
+    "feature": "Documentation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "docs/requirements-traceability.md",
+      "README.md"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "docs/testing.md",
+    "type": ".md",
+    "feature": "Documentation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "README.md"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "logs/aegis.log",
+    "type": ".log",
+    "feature": "Application / configuration",
+    "action": "EXCLUDE",
+    "reason": "Local runtime/test data excluded from final ZIP; retained locally if present.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "scanner/settings.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "logs/django-server.err.log",
+    "type": ".log",
+    "feature": "Application / configuration",
+    "action": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "logs/django-server.out.log",
+    "type": ".log",
+    "feature": "Application / configuration",
+    "action": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "manage.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "import os",
+      "import sys",
+      "from django.core.management import execute_from_command_line"
+    ],
+    "references_before": [
+      ".env.example",
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/testing.md",
+      "myapp/chatbot/intents.py",
+      "myapp/migrations/0001_initial.py",
+      "myapp/models.py",
+      "myapp/scanners/target.py",
+      "myapp/views.py",
+      "README.md",
+      "scanner/settings.py",
+      "setup.ps1",
+      "templates/base.html",
+      "templates/myapp/home.html"
+    ],
+    "symbols_after": [
+      {
+        "name": "main",
+        "line": 8,
+        "end_line": 19
+      }
+    ]
+  },
+  {
+    "path": "media/cms_media/images_1.jpg",
+    "type": ".jpg",
+    "feature": "Application / configuration",
+    "action": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "media/cms_media/images_1_MvQgr43.jpg",
+    "type": ".jpg",
+    "feature": "Application / configuration",
+    "action": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "media/cms_media/images_1_WuNJiz5.jpg",
+    "type": ".jpg",
+    "feature": "Application / configuration",
+    "action": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "media/cms_media/images_1_yrh04Aq.jpg",
+    "type": ".jpg",
+    "feature": "Application / configuration",
+    "action": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "media/developer/dhithimos-es.jpg",
+    "type": ".jpg",
+    "feature": "Application / configuration",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/migrations/0007_developerimage.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "myapp/__init__.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "myapp/admin.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.contrib import admin",
+      "from django.contrib.auth.admin import UserAdmin",
+      "from django import forms",
+      "from .models import AssetInventory, AuditLog, ApplicationRelease, CMSAnnouncement, CMSBlogPost, CMSBlock, CMSDeveloperProfile, DeveloperImage, CMSMedia, CMSNavigationItem, CMSPage, CMSPageRevision, CMSSiteSettings, ComplianceCheck, ContactMessage, CustomUser, EndpointFingerprint, FeatureFlag, FalsePositiveReview, FileMonitorEvent, Incident, IOC, MitreMapping, MitreTechnique, QuarantineItem, RiskAssessment, ScanFeedback, ScanResult, ThreatFinding, ThreatIntel, ThreatTimeline, SecurityAuditEvent, SecurityPolicy, UserActivity, WiFiAudit, AlertEmailConfiguration, SecurityAlertDelivery"
+    ],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/scanner-reference.md",
+      "manage.py",
+      "myapp/migrations/0001_initial.py",
+      "myapp/scan_engine.py",
+      "myapp/scanner_backend.py",
+      "myapp/static/myapp/password-analyzer.js",
+      "myapp/tests.py",
+      "myapp/urls.py",
+      "myapp/views.py",
+      "README.md",
+      "scanner/settings.py",
+      "scanner/urls.py",
+      "templates/503.html",
+      "templates/myapp/applications.html",
+      "templates/myapp/contact.html",
+      "templates/myapp/developer.html",
+      "templates/myapp/network.html",
+      "templates/myapp/privacy.html",
+      "templates/myapp/scan_result.html",
+      "templates/myapp/system.html",
+      "templates/myapp/threat_detection.html"
+    ],
+    "symbols_after": [
+      {
+        "name": "CustomUserAdmin",
+        "line": 48,
+        "end_line": 63
+      },
+      {
+        "name": "ScanResultAdmin",
+        "line": 67,
+        "end_line": 70
+      },
+      {
+        "name": "UserActivityAdmin",
+        "line": 74,
+        "end_line": 77
+      },
+      {
+        "name": "ScanFeedbackAdmin",
+        "line": 81,
+        "end_line": 84
+      },
+      {
+        "name": "ContactMessageAdmin",
+        "line": 88,
+        "end_line": 91
+      },
+      {
+        "name": "DeveloperImageAdmin",
+        "line": 104,
+        "end_line": 120
+      }
+    ]
+  },
+  {
+    "path": "myapp/advanced_models.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.db import models",
+      "from django.contrib.auth.models import User",
+      "from django.utils import timezone"
+    ],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md"
+    ],
+    "symbols_after": [
+      {
+        "name": "MalwareSignature",
+        "line": 16,
+        "end_line": 55
+      },
+      {
+        "name": "FileReputation",
+        "line": 58,
+        "end_line": 86
+      },
+      {
+        "name": "ProcessAnalysis",
+        "line": 94,
+        "end_line": 133
+      },
+      {
+        "name": "BehavioralThreat",
+        "line": 136,
+        "end_line": 164
+      },
+      {
+        "name": "IPReputation",
+        "line": 172,
+        "end_line": 205
+      },
+      {
+        "name": "DomainReputation",
+        "line": 208,
+        "end_line": 231
+      },
+      {
+        "name": "FileIntegrityEvent",
+        "line": 239,
+        "end_line": 273
+      },
+      {
+        "name": "RealTimeAlert",
+        "line": 276,
+        "end_line": 311
+      },
+      {
+        "name": "ForensicSnapshot",
+        "line": 319,
+        "end_line": 340
+      },
+      {
+        "name": "RemediationAction",
+        "line": 343,
+        "end_line": 375
+      },
+      {
+        "name": "ThreatHuntingRule",
+        "line": 383,
+        "end_line": 411
+      },
+      {
+        "name": "IndicatorOfCompromise",
+        "line": 414,
+        "end_line": 444
+      },
+      {
+        "name": "ThreatIntelFeed",
+        "line": 452,
+        "end_line": 478
+      },
+      {
+        "name": "ThreatIntelMatch",
+        "line": 481,
+        "end_line": 498
+      },
+      {
+        "name": "AttackPatternDetection",
+        "line": 506,
+        "end_line": 523
+      },
+      {
+        "name": "ComplianceFramework",
+        "line": 531,
+        "end_line": 554
+      },
+      {
+        "name": "RiskMetric",
+        "line": 557,
+        "end_line": 578
+      }
+    ]
+  },
+  {
+    "path": "myapp/alerts.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from __future__ import annotations",
+      "import re",
+      "from html import escape",
+      "from django.conf import settings",
+      "from django.core.mail import EmailMultiAlternatives, get_connection",
+      "from django.utils import timezone",
+      "from .models import AlertEmailConfiguration, SecurityAlertDelivery",
+      "from .security_pipeline import redact"
+    ],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/architecture.md",
+      "myapp/advanced_models.py",
+      "myapp/migrations/0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more.py",
+      "myapp/security_pipeline.py",
+      "myapp/test_alerts.py",
+      "myapp/views.py",
+      "README.md",
+      "templates/myapp/dashboard.html",
+      "templates/myapp/dashboard_advanced.html",
+      "templates/myapp/email_configuration.html",
+      "templates/myapp/incidents.html",
+      "templates/myapp/threat_detection.html"
+    ],
+    "symbols_after": [
+      {
+        "name": "_config",
+        "line": 13,
+        "end_line": 43
+      },
+      {
+        "name": "_safe",
+        "line": 46,
+        "end_line": 47
+      },
+      {
+        "name": "send_critical_alert",
+        "line": 50,
+        "end_line": 105
+      }
+    ]
+  },
+  {
+    "path": "myapp/analysis/__init__.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "myapp/analysis/investigation.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from __future__ import annotations",
+      "import uuid",
+      "from datetime import timedelta",
+      "from django.conf import settings",
+      "from django.utils import timezone",
+      "from myapp.models import TargetScan",
+      "from myapp.scanners.file_analysis import analyze_uploaded",
+      "from myapp.scanners.target import classify_target, dns_scan, http_scan, module_result, rdap_scan, safe_host, tls_scan",
+      "from myapp.threat_intel import provider_results"
+    ],
+    "references_before": [
+      "myapp/chatbot/intents.py",
+      "myapp/models.py",
+      "myapp/scanners/__init__.py",
+      "myapp/urls.py",
+      "myapp/views.py",
+      "README.md",
+      "scanner/settings.py",
+      "templates/myapp/target_scan_detail.html",
+      "templates/myapp/threat_intelligence.html"
+    ],
+    "symbols_after": [
+      {
+        "name": "_level",
+        "line": 35,
+        "end_line": 47
+      },
+      {
+        "name": "_risk",
+        "line": 50,
+        "end_line": 94
+      },
+      {
+        "name": "_limit",
+        "line": 97,
+        "end_line": 104
+      },
+      {
+        "name": "_run_target_scan",
+        "line": 107,
+        "end_line": 233
+      },
+      {
+        "name": "run_target_scan",
+        "line": 236,
+        "end_line": 258
+      }
+    ]
+  },
+  {
+    "path": "myapp/analysis/persistence.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "persist_findings",
+        "line": 11,
+        "end_line": 79
+      }
+    ]
+  },
+  {
+    "path": "myapp/apps.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.apps import AppConfig"
+    ],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "MyappConfig",
+        "line": 4,
+        "end_line": 6
+      }
+    ]
+  },
+  {
+    "path": "myapp/captcha.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "import json",
+      "import urllib.parse",
+      "import urllib.request",
+      "from django.conf import settings"
+    ],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "myapp/views.py",
+      "README.md",
+      "scanner/settings.py",
+      "templates/myapp/login.html",
+      "templates/myapp/register.html"
+    ],
+    "symbols_after": [
+      {
+        "name": "captcha_provider",
+        "line": 37,
+        "end_line": 38
+      },
+      {
+        "name": "captcha_site_key",
+        "line": 41,
+        "end_line": 42
+      },
+      {
+        "name": "captcha_configured",
+        "line": 45,
+        "end_line": 49
+      },
+      {
+        "name": "captcha_field_name",
+        "line": 52,
+        "end_line": 53
+      },
+      {
+        "name": "verify_captcha",
+        "line": 56,
+        "end_line": 99
+      }
+    ]
+  },
+  {
+    "path": "myapp/chatbot/__init__.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from .engine import answer"
+    ],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "myapp/chatbot/engine.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from __future__ import annotations",
+      "import re",
+      "from django.db.models import Count",
+      "from .intents import ALIASES, CONCEPTS",
+      "from myapp.models import Finding, ScanJob, ScanResult, WiFiAudit"
+    ],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/requirements-traceability.md",
+      "myapp/chatbot/__init__.py",
+      "myapp/scan_engine.py",
+      "myapp/security_pipeline.py",
+      "myapp/test_chatbot_wifi.py",
+      "myapp/views.py",
+      "scanner/settings.py",
+      "templates/myapp/file_scan.html",
+      "templates/myapp/scan_result.html"
+    ],
+    "symbols_after": [
+      {
+        "name": "_normalize",
+        "line": 6,
+        "end_line": 7
+      },
+      {
+        "name": "_find",
+        "line": 10,
+        "end_line": 23
+      },
+      {
+        "name": "_record_answer",
+        "line": 26,
+        "end_line": 158
+      },
+      {
+        "name": "answer",
+        "line": 173,
+        "end_line": 247
+      }
+    ]
+  },
+  {
+    "path": "myapp/chatbot/intents.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [
+      "myapp/chatbot/engine.py",
+      "myapp/test_chatbot_wifi.py",
+      "README.md"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "myapp/context.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "site_context",
+        "line": 5,
+        "end_line": 19
+      },
+      {
+        "name": "can_inspect_host",
+        "line": 22,
+        "end_line": 24
+      }
+    ]
+  },
+  {
+    "path": "myapp/middleware.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "AuthenticationThrottle",
+        "line": 8,
+        "end_line": 29
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/0001_initial.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "import django.contrib.auth.models",
+      "import django.contrib.auth.validators",
+      "import django.db.models.deletion",
+      "import django.utils.timezone",
+      "from django.conf import settings",
+      "from django.db import migrations, models"
+    ],
+    "references_before": [
+      "myapp/migrations/0002_contactmessage_scanresult_useractivity.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 11,
+        "end_line": 211
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/0002_contactmessage_scanresult_useractivity.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "import django.db.models.deletion",
+      "from django.conf import settings",
+      "from django.db import migrations, models"
+    ],
+    "references_before": [
+      "myapp/migrations/0003_vigilant_profile_activity_feedback.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 8,
+        "end_line": 54
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/0003_vigilant_profile_activity_feedback.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.conf import settings",
+      "from django.db import migrations, models",
+      "import django.db.models.deletion"
+    ],
+    "references_before": [
+      "myapp/migrations/0004_attackpatterndetection_behavioralthreat_and_more.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 6,
+        "end_line": 62
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/0004_attackpatterndetection_behavioralthreat_and_more.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.db import migrations, models"
+    ],
+    "references_before": [
+      "myapp/migrations/0005_endpointagent_usbdevice_usbscanjob_usbscanfinding_and_more.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 6,
+        "end_line": 289
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/0005_endpointagent_usbdevice_usbscanjob_usbscanfinding_and_more.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.conf import settings",
+      "from django.db import migrations, models",
+      "import django.db.models.deletion"
+    ],
+    "references_before": [
+      "myapp/migrations/0006_applicationrelease_cmsannouncement_cmsblock_and_more.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 8,
+        "end_line": 130
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/0006_applicationrelease_cmsannouncement_cmsblock_and_more.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "import django.db.models.deletion",
+      "from django.conf import settings",
+      "from django.db import migrations, models"
+    ],
+    "references_before": [
+      "myapp/migrations/0007_developerimage.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 8,
+        "end_line": 263
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/0007_developerimage.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.db import migrations, models",
+      "import django.core.validators"
+    ],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "myapp/migrations/0008_unified_security_pipeline.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 6,
+        "end_line": 22
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/0008_unified_security_pipeline.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.conf import settings",
+      "from django.db import migrations, models",
+      "import django.db.models.deletion"
+    ],
+    "references_before": [
+      "myapp/migrations/0009_normalize_pipeline_index_names.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 6,
+        "end_line": 41
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/0009_normalize_pipeline_index_names.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.db import migrations"
+    ],
+    "references_before": [
+      "myapp/migrations/0010_targetscan.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 4,
+        "end_line": 11
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/0010_targetscan.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.conf import settings",
+      "from django.db import migrations, models"
+    ],
+    "references_before": [
+      "myapp/migrations/0011_wifi_email_alerts.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 6,
+        "end_line": 25
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/0011_wifi_email_alerts.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.conf import settings",
+      "from django.db import migrations, models"
+    ],
+    "references_before": [
+      "myapp/migrations/0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 5,
+        "end_line": 13
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.db import migrations, models"
+    ],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 6,
+        "end_line": 38
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/0013_finding_updated_at_incident_archived_and_more.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 8,
+        "end_line": 50
+      }
+    ]
+  },
+  {
+    "path": "myapp/migrations/__init__.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "myapp/mitre_data.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "dataset",
+        "line": 7,
+        "end_line": 10
+      }
+    ]
+  },
+  {
+    "path": "myapp/models.py",
+    "type": ".py",
+    "feature": "Schema / data compatibility",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.db import models",
+      "from django.contrib.auth.models import AbstractUser",
+      "from django.utils import timezone",
+      "from django.core.validators import FileExtensionValidator"
+    ],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/limitations.md",
+      "docs/requirements-traceability.md",
+      "myapp/admin.py",
+      "myapp/advanced_models.py",
+      "myapp/alerts.py",
+      "myapp/analysis/investigation.py",
+      "myapp/apps.py",
+      "myapp/chatbot/engine.py",
+      "myapp/migrations/0001_initial.py",
+      "myapp/migrations/0002_contactmessage_scanresult_useractivity.py",
+      "myapp/migrations/0003_vigilant_profile_activity_feedback.py",
+      "myapp/migrations/0004_attackpatterndetection_behavioralthreat_and_more.py",
+      "myapp/migrations/0005_endpointagent_usbdevice_usbscanjob_usbscanfinding_and_more.py",
+      "myapp/migrations/0006_applicationrelease_cmsannouncement_cmsblock_and_more.py",
+      "myapp/migrations/0007_developerimage.py",
+      "myapp/migrations/0008_unified_security_pipeline.py",
+      "myapp/migrations/0010_targetscan.py",
+      "myapp/migrations/0011_wifi_email_alerts.py",
+      "myapp/migrations/0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more.py",
+      "myapp/security_pipeline.py",
+      "myapp/test_alerts.py",
+      "myapp/test_chatbot_wifi.py",
+      "myapp/tests.py",
+      "myapp/views.py",
+      "README.md",
+      "scanner/settings.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "CustomUser",
+        "line": 11,
+        "end_line": 29
+      },
+      {
+        "name": "AssetInventory",
+        "line": 37,
+        "end_line": 55
+      },
+      {
+        "name": "EndpointFingerprint",
+        "line": 63,
+        "end_line": 79
+      },
+      {
+        "name": "ComplianceCheck",
+        "line": 87,
+        "end_line": 104
+      },
+      {
+        "name": "ThreatFinding",
+        "line": 112,
+        "end_line": 142
+      },
+      {
+        "name": "Incident",
+        "line": 150,
+        "end_line": 187
+      },
+      {
+        "name": "ThreatIntel",
+        "line": 195,
+        "end_line": 209
+      },
+      {
+        "name": "IOC",
+        "line": 217,
+        "end_line": 236
+      },
+      {
+        "name": "MitreTechnique",
+        "line": 244,
+        "end_line": 254
+      },
+      {
+        "name": "MitreMapping",
+        "line": 262,
+        "end_line": 269
+      },
+      {
+        "name": "ThreatTimeline",
+        "line": 277,
+        "end_line": 285
+      },
+      {
+        "name": "QuarantineItem",
+        "line": 293,
+        "end_line": 305
+      },
+      {
+        "name": "RiskAssessment",
+        "line": 313,
+        "end_line": 320
+      },
+      {
+        "name": "FileMonitorEvent",
+        "line": 328,
+        "end_line": 341
+      },
+      {
+        "name": "ScanResult",
+        "line": 349,
+        "end_line": 373
+      },
+      {
+        "name": "UserActivity",
+        "line": 381,
+        "end_line": 400
+      },
+      {
+        "name": "ScanFeedback",
+        "line": 408,
+        "end_line": 431
+      },
+      {
+        "name": "ContactMessage",
+        "line": 439,
+        "end_line": 465
+      },
+      {
+        "name": "AuditLog",
+        "line": 473,
+        "end_line": 485
+      },
+      {
+        "name": "FeatureFlag",
+        "line": 488,
+        "end_line": 500
+      },
+      {
+        "name": "SecurityAuditEvent",
+        "line": 503,
+        "end_line": 513
+      },
+      {
+        "name": "FalsePositiveReview",
+        "line": 516,
+        "end_line": 538
+      },
+      {
+        "name": "SecurityPolicy",
+        "line": 541,
+        "end_line": 553
+      },
+      {
+        "name": "ApplicationRelease",
+        "line": 556,
+        "end_line": 581
+      },
+      {
+        "name": "CMSPage",
+        "line": 584,
+        "end_line": 614
+      },
+      {
+        "name": "CMSPageRevision",
+        "line": 617,
+        "end_line": 631
+      },
+      {
+        "name": "CMSBlock",
+        "line": 634,
+        "end_line": 646
+      },
+      {
+        "name": "CMSMedia",
+        "line": 649,
+        "end_line": 661
+      },
+      {
+        "name": "CMSBlogPost",
+        "line": 664,
+        "end_line": 686
+      },
+      {
+        "name": "CMSNavigationItem",
+        "line": 689,
+        "end_line": 700
+      },
+      {
+        "name": "CMSSiteSettings",
+        "line": 703,
+        "end_line": 716
+      },
+      {
+        "name": "CMSAnnouncement",
+        "line": 719,
+        "end_line": 735
+      },
+      {
+        "name": "CMSDeveloperProfile",
+        "line": 738,
+        "end_line": 758
+      },
+      {
+        "name": "DeveloperImage",
+        "line": 761,
+        "end_line": 779
+      },
+      {
+        "name": "ScanJob",
+        "line": 787,
+        "end_line": 820
+      },
+      {
+        "name": "Finding",
+        "line": 823,
+        "end_line": 859
+      },
+      {
+        "name": "SecurityAlert",
+        "line": 862,
+        "end_line": 867
+      },
+      {
+        "name": "FindingEvidence",
+        "line": 870,
+        "end_line": 877
+      },
+      {
+        "name": "ResponseApproval",
+        "line": 880,
+        "end_line": 901
+      },
+      {
+        "name": "TargetScan",
+        "line": 904,
+        "end_line": 935
+      },
+      {
+        "name": "WiFiAudit",
+        "line": 938,
+        "end_line": 959
+      },
+      {
+        "name": "AlertEmailConfiguration",
+        "line": 962,
+        "end_line": 977
+      },
+      {
+        "name": "SecurityAlertDelivery",
+        "line": 980,
+        "end_line": 996
+      }
+    ]
+  },
+  {
+    "path": "myapp/scan_engine.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "import hashlib",
+      "import os",
+      "import platform",
+      "import re",
+      "import socket",
+      "import uuid",
+      "from pathlib import Path",
+      "import psutil",
+      "from math import log2",
+      "from django.conf import settings"
+    ],
+    "references_before": [
+      "docs/requirements-traceability.md",
+      "myapp/security_pipeline.py",
+      "myapp/views.py",
+      "scanner/settings.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "_risk_level",
+        "line": 131,
+        "end_line": 142
+      },
+      {
+        "name": "_file_reason",
+        "line": 145,
+        "end_line": 176
+      },
+      {
+        "name": "_file_resolution",
+        "line": 179,
+        "end_line": 190
+      },
+      {
+        "name": "_sha256",
+        "line": 193,
+        "end_line": 205
+      },
+      {
+        "name": "_file_entropy_hint",
+        "line": 208,
+        "end_line": 236
+      },
+      {
+        "name": "_file_soc_details",
+        "line": 239,
+        "end_line": 257
+      },
+      {
+        "name": "profile_system",
+        "line": 260,
+        "end_line": 284
+      },
+      {
+        "name": "_local_ip",
+        "line": 287,
+        "end_line": 296
+      },
+      {
+        "name": "compliance_check",
+        "line": 299,
+        "end_line": 337
+      },
+      {
+        "name": "process_audit",
+        "line": 340,
+        "end_line": 400
+      },
+      {
+        "name": "_contains_credential",
+        "line": 403,
+        "end_line": 407
+      },
+      {
+        "name": "startup_audit",
+        "line": 410,
+        "end_line": 450
+      },
+      {
+        "name": "active_network_connections",
+        "line": 453,
+        "end_line": 487
+      },
+      {
+        "name": "port_scan",
+        "line": 490,
+        "end_line": 518
+      },
+      {
+        "name": "_port_resolution",
+        "line": 521,
+        "end_line": 532
+      },
+      {
+        "name": "file_scan",
+        "line": 535,
+        "end_line": 622
+      },
+      {
+        "name": "credential_file_scan",
+        "line": 625,
+        "end_line": 639
+      },
+      {
+        "name": "exposure_assessment",
+        "line": 642,
+        "end_line": 657
+      },
+      {
+        "name": "identity_privilege_assessment",
+        "line": 660,
+        "end_line": 671
+      },
+      {
+        "name": "fim_snapshot",
+        "line": 674,
+        "end_line": 679
+      },
+      {
+        "name": "behavioral_analysis",
+        "line": 682,
+        "end_line": 713
+      },
+      {
+        "name": "threat_database_matches",
+        "line": 716,
+        "end_line": 735
+      },
+      {
+        "name": "threat_intel_lookup",
+        "line": 738,
+        "end_line": 783
+      },
+      {
+        "name": "ai_recommendations",
+        "line": 786,
+        "end_line": 829
+      },
+      {
+        "name": "_score_from_evidence",
+        "line": 832,
+        "end_line": 850
+      },
+      {
+        "name": "_scan_scope_payload",
+        "line": 853,
+        "end_line": 960
+      },
+      {
+        "name": "run_combined_scan",
+        "line": 963,
+        "end_line": 1108
+      }
+    ]
+  },
+  {
+    "path": "myapp/scanner_backend.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "import os",
+      "import sys",
+      "import ctypes",
+      "import platform",
+      "import subprocess",
+      "import time",
+      "import socket",
+      "import hashlib",
+      "import json",
+      "import re",
+      "from datetime import datetime, timedelta",
+      "import psutil",
+      "import psutil",
+      "import urllib.request"
+    ],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "is_admin",
+        "line": 15,
+        "end_line": 19
+      },
+      {
+        "name": "get_uptime",
+        "line": 22,
+        "end_line": 37
+      },
+      {
+        "name": "get_external_ip",
+        "line": 40,
+        "end_line": 50
+      },
+      {
+        "name": "profile_system_details",
+        "line": 53,
+        "end_line": 115
+      },
+      {
+        "name": "run_powershell_cmd",
+        "line": 118,
+        "end_line": 129
+      },
+      {
+        "name": "get_extended_hardware_specs",
+        "line": 133,
+        "end_line": 256
+      }
+    ]
+  },
+  {
+    "path": "myapp/scanners/__init__.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "myapp/scanners/file_analysis.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from __future__ import annotations",
+      "import hashlib",
+      "import math",
+      "import mimetypes",
+      "import os",
+      "import re",
+      "import zipfile",
+      "from collections import Counter",
+      "from io import BytesIO",
+      "from .target import module_result"
+    ],
+    "references_before": [
+      "myapp/analysis/investigation.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "_entropy",
+        "line": 26,
+        "end_line": 32
+      },
+      {
+        "name": "analyze_uploaded",
+        "line": 35,
+        "end_line": 227
+      }
+    ]
+  },
+  {
+    "path": "myapp/scanners/file_details.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "details",
+        "line": 10,
+        "end_line": 136
+      }
+    ]
+  },
+  {
+    "path": "myapp/scanners/optional_tools.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "analyze",
+        "line": 12,
+        "end_line": 120
+      }
+    ]
+  },
+  {
+    "path": "myapp/scanners/target.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from __future__ import annotations",
+      "import datetime as dt",
+      "import ipaddress",
+      "import json",
+      "import re",
+      "import socket",
+      "import ssl",
+      "import time",
+      "from html.parser import HTMLParser",
+      "from urllib.error import HTTPError, URLError",
+      "from urllib.parse import urljoin, urlsplit, urlunsplit",
+      "from urllib.request import HTTPRedirectHandler, Request, build_opener",
+      "from django.conf import settings"
+    ],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/scanner-reference.md",
+      "myapp/advanced_models.py",
+      "myapp/analysis/investigation.py",
+      "myapp/chatbot/intents.py",
+      "myapp/migrations/0004_attackpatterndetection_behavioralthreat_and_more.py",
+      "myapp/migrations/0005_endpointagent_usbdevice_usbscanjob_usbscanfinding_and_more.py",
+      "myapp/migrations/0010_targetscan.py",
+      "myapp/migrations/0011_wifi_email_alerts.py",
+      "myapp/migrations/0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more.py",
+      "myapp/models.py",
+      "myapp/scan_engine.py",
+      "myapp/scanners/__init__.py",
+      "myapp/scanners/file_analysis.py",
+      "myapp/security_pipeline.py",
+      "myapp/test_target_investigation.py",
+      "myapp/urls.py",
+      "myapp/views.py",
+      "README.md",
+      "templates/myapp/audit_logs.html",
+      "templates/myapp/combined_scan.html",
+      "templates/myapp/developer.html",
+      "templates/myapp/scan_result.html",
+      "templates/myapp/target_scan_detail.html"
+    ],
+    "symbols_after": [
+      {
+        "name": "module_result",
+        "line": 21,
+        "end_line": 41
+      },
+      {
+        "name": "classify_target",
+        "line": 44,
+        "end_line": 78
+      },
+      {
+        "name": "normalize_url",
+        "line": 81,
+        "end_line": 96
+      },
+      {
+        "name": "_public_ip",
+        "line": 99,
+        "end_line": 112
+      },
+      {
+        "name": "safe_host",
+        "line": 115,
+        "end_line": 144
+      },
+      {
+        "name": "url_details",
+        "line": 147,
+        "end_line": 173
+      },
+      {
+        "name": "http_scan",
+        "line": 176,
+        "end_line": 312
+      },
+      {
+        "name": "dns_scan",
+        "line": 315,
+        "end_line": 349
+      },
+      {
+        "name": "tls_scan",
+        "line": 352,
+        "end_line": 386
+      },
+      {
+        "name": "rdap_scan",
+        "line": 389,
+        "end_line": 451
+      }
+    ]
+  },
+  {
+    "path": "myapp/scanners/transport.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "fetch",
+        "line": 11,
+        "end_line": 79
+      }
+    ]
+  },
+  {
+    "path": "myapp/scanners/web_analysis.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "javascript",
+        "line": 21,
+        "end_line": 34
+      },
+      {
+        "name": "Document",
+        "line": 37,
+        "end_line": 86
+      },
+      {
+        "name": "analyze_html",
+        "line": 89,
+        "end_line": 107
+      }
+    ]
+  },
+  {
+    "path": "myapp/scanners/wifi.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from __future__ import annotations",
+      "import platform",
+      "import re",
+      "import subprocess"
+    ],
+    "references_before": [
+      "docs/scanner-reference.md",
+      "myapp/chatbot/engine.py",
+      "myapp/chatbot/intents.py",
+      "myapp/migrations/0011_wifi_email_alerts.py",
+      "myapp/migrations/0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more.py",
+      "myapp/models.py",
+      "myapp/security_pipeline.py",
+      "myapp/test_chatbot_wifi.py",
+      "myapp/urls.py",
+      "myapp/views.py",
+      "README.md",
+      "templates/base.html"
+    ],
+    "symbols_after": [
+      {
+        "name": "classify",
+        "line": 9,
+        "end_line": 81
+      },
+      {
+        "name": "_run",
+        "line": 84,
+        "end_line": 94
+      },
+      {
+        "name": "parse_profiles",
+        "line": 97,
+        "end_line": 106
+      },
+      {
+        "name": "parse_profile_security",
+        "line": 109,
+        "end_line": 120
+      },
+      {
+        "name": "collect",
+        "line": 123,
+        "end_line": 179
+      }
+    ]
+  },
+  {
+    "path": "myapp/security_pipeline.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from __future__ import annotations",
+      "import hashlib",
+      "import importlib.util",
+      "import socket",
+      "import uuid",
+      "from dataclasses import dataclass",
+      "from datetime import timedelta",
+      "from typing import Any",
+      "from django.db import transaction",
+      "from django.utils import timezone",
+      "from . import scan_engine",
+      "from .models import Finding, FindingEvidence, Incident, ScanJob, SecurityAlert",
+      "from .scanners.wifi import collect as collect_wifi",
+      "from .alerts import send_critical_alert"
+    ],
+    "references_before": [
+      "docs/requirements-traceability.md",
+      "myapp/alerts.py",
+      "myapp/migrations/0009_normalize_pipeline_index_names.py",
+      "myapp/tasks.py",
+      "myapp/tests.py",
+      "myapp/views.py"
+    ],
+    "symbols_after": [
+      {
+        "name": "redact",
+        "line": 47,
+        "end_line": 84
+      },
+      {
+        "name": "ScannerHealth",
+        "line": 88,
+        "end_line": 91
+      },
+      {
+        "name": "BaseScanner",
+        "line": 94,
+        "end_line": 124
+      },
+      {
+        "name": "SystemScanner",
+        "line": 127,
+        "end_line": 148
+      },
+      {
+        "name": "ProcessScanner",
+        "line": 151,
+        "end_line": 187
+      },
+      {
+        "name": "PersistenceScanner",
+        "line": 190,
+        "end_line": 214
+      },
+      {
+        "name": "FileScanner",
+        "line": 217,
+        "end_line": 248
+      },
+      {
+        "name": "NetworkConfigScanner",
+        "line": 251,
+        "end_line": 275
+      },
+      {
+        "name": "PortScanner",
+        "line": 278,
+        "end_line": 300
+      },
+      {
+        "name": "ConnectionScanner",
+        "line": 303,
+        "end_line": 324
+      },
+      {
+        "name": "WiFiSecurityScanner",
+        "line": 327,
+        "end_line": 356
+      },
+      {
+        "name": "CapabilityScanner",
+        "line": 359,
+        "end_line": 364
+      },
+      {
+        "name": "ScannerRegistry",
+        "line": 413,
+        "end_line": 462
+      },
+      {
+        "name": "normalize",
+        "line": 465,
+        "end_line": 501
+      },
+      {
+        "name": "execute_job",
+        "line": 504,
+        "end_line": 604
+      }
+    ]
+  },
+  {
+    "path": "myapp/static/myapp/password-analyzer.js",
+    "type": ".js",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "templates/myapp/mobile_security.html"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "myapp/static/myapp/profile_pics/user_1_cd216479.png",
+    "type": ".png",
+    "feature": "Application / configuration",
+    "action": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "myapp/tasks.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from .security_pipeline import execute_job"
+    ],
+    "references_before": [
+      "docs/architecture.md",
+      "docs/limitations.md",
+      "docs/requirements-traceability.md",
+      "manage.py",
+      "myapp/scan_engine.py",
+      "templates/myapp/threat_detection.html"
+    ],
+    "symbols_after": [
+      {
+        "name": "run_scan_job",
+        "line": 10,
+        "end_line": 11
+      }
+    ]
+  },
+  {
+    "path": "myapp/test_alerts.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.contrib.auth import get_user_model",
+      "from django.test import TestCase, override_settings",
+      "from .alerts import send_critical_alert",
+      "from .models import AlertEmailConfiguration, AssetInventory, Finding, ScanJob, SecurityAlert"
+    ],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "CriticalAlertTests",
+        "line": 13,
+        "end_line": 60
+      }
+    ]
+  },
+  {
+    "path": "myapp/test_chatbot_wifi.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.contrib.auth import get_user_model",
+      "from django.test import TestCase",
+      "from .chatbot.intents import CONCEPTS",
+      "from .chatbot.engine import answer",
+      "from .models import AssetInventory, Finding, ScanJob",
+      "from .scanners.wifi import classify, parse_profile_security, parse_profiles"
+    ],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "WiFiClassifierTests",
+        "line": 9,
+        "end_line": 27
+      },
+      {
+        "name": "ChatbotTests",
+        "line": 30,
+        "end_line": 74
+      }
+    ]
+  },
+  {
+    "path": "myapp/test_regressions.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "WorkflowTests",
+        "line": 22,
+        "end_line": 319
+      },
+      {
+        "name": "AnalysisSecurityTests",
+        "line": 322,
+        "end_line": 459
+      },
+      {
+        "name": "NetworkCapabilityTests",
+        "line": 462,
+        "end_line": 496
+      },
+      {
+        "name": "JobLifecycleTests",
+        "line": 499,
+        "end_line": 518
+      }
+    ]
+  },
+  {
+    "path": "myapp/test_target_investigation.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.test import SimpleTestCase",
+      "from .scanners.target import classify_target, normalize_url, safe_host"
+    ],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "TargetClassificationTests",
+        "line": 6,
+        "end_line": 23
+      }
+    ]
+  },
+  {
+    "path": "myapp/tests.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.contrib.auth import get_user_model",
+      "from django.test import TestCase",
+      "from django.urls import reverse",
+      "from .models import DeveloperImage",
+      "from .models import AssetInventory, Finding, ScanJob",
+      "from .security_pipeline import SCANNER_CATALOG, ScannerRegistry, normalize, redact"
+    ],
+    "references_before": [
+      "docs/requirements-traceability.md"
+    ],
+    "symbols_after": [
+      {
+        "name": "NavigationAndDeveloperTests",
+        "line": 10,
+        "end_line": 34
+      },
+      {
+        "name": "SecurityPipelineTests",
+        "line": 37,
+        "end_line": 78
+      }
+    ]
+  },
+  {
+    "path": "myapp/threat_intel/__init__.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from .providers import provider_results, provider_status, hibp_email_lookup"
+    ],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "myapp/threat_intel/providers.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from __future__ import annotations",
+      "import datetime as dt",
+      "import json",
+      "from urllib.error import HTTPError, URLError",
+      "from urllib.parse import quote",
+      "from urllib.request import Request, urlopen",
+      "from django.conf import settings"
+    ],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "myapp/analysis/investigation.py",
+      "myapp/scan_engine.py",
+      "myapp/threat_intel/__init__.py",
+      "README.md",
+      "templates/myapp/home.html"
+    ],
+    "symbols_after": [
+      {
+        "name": "NoRedirect",
+        "line": 12,
+        "end_line": 14
+      },
+      {
+        "name": "_result",
+        "line": 22,
+        "end_line": 32
+      },
+      {
+        "name": "_request",
+        "line": 35,
+        "end_line": 38
+      },
+      {
+        "name": "provider_status",
+        "line": 41,
+        "end_line": 52
+      },
+      {
+        "name": "_error",
+        "line": 55,
+        "end_line": 74
+      },
+      {
+        "name": "virustotal",
+        "line": 77,
+        "end_line": 119
+      },
+      {
+        "name": "abuseipdb",
+        "line": 122,
+        "end_line": 157
+      },
+      {
+        "name": "otx",
+        "line": 160,
+        "end_line": 191
+      },
+      {
+        "name": "hibp_email_lookup",
+        "line": 194,
+        "end_line": 257
+      },
+      {
+        "name": "provider_results",
+        "line": 260,
+        "end_line": 268
+      }
+    ]
+  },
+  {
+    "path": "myapp/uploads.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "clean_image",
+        "line": 9,
+        "end_line": 25
+      }
+    ]
+  },
+  {
+    "path": "myapp/urls.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.urls import path, include",
+      "from . import views"
+    ],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/scanner-reference.md",
+      "myapp/scanners/file_analysis.py",
+      "myapp/scanners/target.py",
+      "myapp/security_pipeline.py",
+      "myapp/tests.py",
+      "myapp/threat_intel/providers.py",
+      "scanner/settings.py",
+      "scanner/urls.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "myapp/views.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "import csv",
+      "import hashlib",
+      "import json",
+      "import math",
+      "import os",
+      "import re",
+      "from urllib.parse import urlparse",
+      "from django.contrib import messages",
+      "from django.contrib.admin.views.decorators import staff_member_required",
+      "from django.contrib.auth import authenticate, get_user_model, login, logout",
+      "from django.contrib.auth.decorators import login_required",
+      "from django.contrib.auth import update_session_auth_hash",
+      "from django.contrib.auth.forms import PasswordChangeForm",
+      "from django.contrib.auth.password_validation import validate_password",
+      "from django.core.exceptions import ValidationError",
+      "from django.contrib.sessions.models import Session",
+      "from django.db.models import Count",
+      "from django.http import HttpResponse, JsonResponse",
+      "from django.shortcuts import get_object_or_404, redirect, render",
+      "from django.conf import settings",
+      "from django.utils.html import strip_tags",
+      "from django.utils.text import slugify",
+      "from django.utils import timezone",
+      "from reportlab.lib.pagesizes import letter",
+      "from reportlab.pdfgen import canvas",
+      "import psutil",
+      "from PIL import Image, UnidentifiedImageError",
+      "from .models import AuditLog, ApplicationRelease, CMSAnnouncement, CMSBlogPost, CMSDeveloperProfile, DeveloperImage, CMSMedia, CMSNavigationItem, CMSPage, CMSPageRevision, CMSSiteSettings, ContactMessage, FeatureFlag, FalsePositiveReview, Incident, RiskAssessment, SecurityAuditEvent, SecurityPolicy, ScanFeedback, ScanResult, ThreatFinding, UserActivity, ScanJob, Finding, SecurityAlert, AssetInventory, WiFiAudit, AlertEmailConfiguration",
+      "from .scan_engine import active_network_connections, run_combined_scan",
+      "from .security_pipeline import SCANNER_CATALOG, ScannerRegistry, execute_job",
+      "from .captcha import captcha_configured, captcha_provider, captcha_site_key, verify_captcha",
+      "from .analysis.investigation import run_target_scan",
+      "from .models import TargetScan",
+      "from .threat_intel import provider_status",
+      "from .scanners.wifi import collect as collect_wifi",
+      "from .alerts import send_critical_alert",
+      "from .chatbot import answer as chatbot_answer",
+      "from uuid import uuid4",
+      "from .scan_engine import profile_system",
+      "from .models import SecurityAlert",
+      "from django.core.mail import send_mail",
+      "from django.conf import settings as django_settings",
+      "from uuid import uuid4",
+      "from .models import SecurityAlert"
+    ],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "myapp/migrations/0006_applicationrelease_cmsannouncement_cmsblock_and_more.py",
+      "myapp/models.py",
+      "myapp/urls.py",
+      "templates/myapp/network.html",
+      "templates/myapp/system.html",
+      "templates/myapp/threat_detection.html"
+    ],
+    "symbols_after": [
+      {
+        "name": "client_ip",
+        "line": 145,
+        "end_line": 152
+      },
+      {
+        "name": "client_device",
+        "line": 155,
+        "end_line": 157
+      },
+      {
+        "name": "score_to_level",
+        "line": 176,
+        "end_line": 187
+      },
+      {
+        "name": "scan_display_score",
+        "line": 190,
+        "end_line": 221
+      },
+      {
+        "name": "decorate_scan",
+        "line": 224,
+        "end_line": 231
+      },
+      {
+        "name": "traffic_label",
+        "line": 234,
+        "end_line": 251
+      },
+      {
+        "name": "scan_findings",
+        "line": 254,
+        "end_line": 279
+      },
+      {
+        "name": "scan_stat_summary",
+        "line": 282,
+        "end_line": 298
+      },
+      {
+        "name": "enrich_file_item",
+        "line": 301,
+        "end_line": 386
+      },
+      {
+        "name": "track_activity",
+        "line": 389,
+        "end_line": 401
+      },
+      {
+        "name": "home",
+        "line": 404,
+        "end_line": 412
+      },
+      {
+        "name": "register",
+        "line": 415,
+        "end_line": 486
+      },
+      {
+        "name": "user_login",
+        "line": 489,
+        "end_line": 541
+      },
+      {
+        "name": "user_logout",
+        "line": 545,
+        "end_line": 557
+      },
+      {
+        "name": "forgot_password",
+        "line": 560,
+        "end_line": 588
+      },
+      {
+        "name": "dashboard",
+        "line": 592,
+        "end_line": 613
+      },
+      {
+        "name": "launcher",
+        "line": 617,
+        "end_line": 706
+      },
+      {
+        "name": "feature_flags",
+        "line": 710,
+        "end_line": 748
+      },
+      {
+        "name": "ensure_default_feature_flags",
+        "line": 751,
+        "end_line": 783
+      },
+      {
+        "name": "feature_flag_map",
+        "line": 786,
+        "end_line": 788
+      },
+      {
+        "name": "feature_enabled",
+        "line": 791,
+        "end_line": 797
+      },
+      {
+        "name": "require_feature",
+        "line": 800,
+        "end_line": 807
+      },
+      {
+        "name": "audit_security_event",
+        "line": 810,
+        "end_line": 817
+      },
+      {
+        "name": "seed_initial_cms_content",
+        "line": 820,
+        "end_line": 904
+      },
+      {
+        "name": "phishing_scan",
+        "line": 908,
+        "end_line": 921
+      },
+      {
+        "name": "password_strength",
+        "line": 925,
+        "end_line": 944
+      },
+      {
+        "name": "file_scan",
+        "line": 948,
+        "end_line": 961
+      },
+      {
+        "name": "developer_profile",
+        "line": 964,
+        "end_line": 965
+      },
+      {
+        "name": "how_to_use",
+        "line": 968,
+        "end_line": 976
+      },
+      {
+        "name": "suggestions",
+        "line": 979,
+        "end_line": 992
+      },
+      {
+        "name": "applications",
+        "line": 996,
+        "end_line": 1007
+      },
+      {
+        "name": "download_application",
+        "line": 1011,
+        "end_line": 1036
+      },
+      {
+        "name": "cms_dashboard",
+        "line": 1040,
+        "end_line": 1055
+      },
+      {
+        "name": "cms_pages",
+        "line": 1059,
+        "end_line": 1065
+      },
+      {
+        "name": "cms_page_edit",
+        "line": 1069,
+        "end_line": 1132
+      },
+      {
+        "name": "cms_media",
+        "line": 1136,
+        "end_line": 1165
+      },
+      {
+        "name": "cms_developer_images",
+        "line": 1169,
+        "end_line": 1255
+      },
+      {
+        "name": "cms_settings",
+        "line": 1259,
+        "end_line": 1298
+      },
+      {
+        "name": "cms_navigation",
+        "line": 1302,
+        "end_line": 1330
+      },
+      {
+        "name": "security_policies",
+        "line": 1334,
+        "end_line": 1360
+      },
+      {
+        "name": "audit_logs",
+        "line": 1364,
+        "end_line": 1374
+      },
+      {
+        "name": "profile",
+        "line": 1378,
+        "end_line": 1382
+      },
+      {
+        "name": "edit_profile",
+        "line": 1386,
+        "end_line": 1422
+      },
+      {
+        "name": "change_password",
+        "line": 1426,
+        "end_line": 1444
+      },
+      {
+        "name": "_save_scan",
+        "line": 1447,
+        "end_line": 1469
+      },
+      {
+        "name": "combined_scan",
+        "line": 1473,
+        "end_line": 1548
+      },
+      {
+        "name": "target_scan_detail",
+        "line": 1552,
+        "end_line": 1583
+      },
+      {
+        "name": "target_scan_json",
+        "line": 1587,
+        "end_line": 1611
+      },
+      {
+        "name": "target_scan_pdf",
+        "line": 1615,
+        "end_line": 1701
+      },
+      {
+        "name": "scan_jobs",
+        "line": 1705,
+        "end_line": 1713
+      },
+      {
+        "name": "scan_job_detail",
+        "line": 1717,
+        "end_line": 1728
+      },
+      {
+        "name": "findings",
+        "line": 1732,
+        "end_line": 1756
+      },
+      {
+        "name": "scan_result",
+        "line": 1760,
+        "end_line": 1791
+      },
+      {
+        "name": "submit_scan_feedback",
+        "line": 1795,
+        "end_line": 1827
+      },
+      {
+        "name": "system_scan",
+        "line": 1831,
+        "end_line": 1849
+      },
+      {
+        "name": "network_scan",
+        "line": 1853,
+        "end_line": 1871
+      },
+      {
+        "name": "mobile_security_scan",
+        "line": 1875,
+        "end_line": 1887
+      },
+      {
+        "name": "wifi_security",
+        "line": 1891,
+        "end_line": 1948
+      },
+      {
+        "name": "chatbot",
+        "line": 1952,
+        "end_line": 1959
+      },
+      {
+        "name": "chatbot_api",
+        "line": 1963,
+        "end_line": 1995
+      },
+      {
+        "name": "email_configuration",
+        "line": 1999,
+        "end_line": 2099
+      },
+      {
+        "name": "threat_detection",
+        "line": 2103,
+        "end_line": 2121
+      },
+      {
+        "name": "threat_intelligence",
+        "line": 2125,
+        "end_line": 2133
+      },
+      {
+        "name": "ioc_correlation",
+        "line": 2137,
+        "end_line": 2139
+      },
+      {
+        "name": "real_time_monitoring",
+        "line": 2143,
+        "end_line": 2145
+      },
+      {
+        "name": "quarantine_view",
+        "line": 2149,
+        "end_line": 2151
+      },
+      {
+        "name": "risk_assessment",
+        "line": 2155,
+        "end_line": 2163
+      },
+      {
+        "name": "threat_timeline",
+        "line": 2167,
+        "end_line": 2169
+      },
+      {
+        "name": "download_scan_pdf",
+        "line": 2173,
+        "end_line": 2259
+      },
+      {
+        "name": "export_json_report",
+        "line": 2263,
+        "end_line": 2286
+      },
+      {
+        "name": "admin_dashboard",
+        "line": 2290,
+        "end_line": 2332
+      },
+      {
+        "name": "download_user_details",
+        "line": 2336,
+        "end_line": 2403
+      },
+      {
+        "name": "about",
+        "line": 2406,
+        "end_line": 2408
+      },
+      {
+        "name": "privacy_policy",
+        "line": 2411,
+        "end_line": 2413
+      },
+      {
+        "name": "contact",
+        "line": 2416,
+        "end_line": 2434
+      },
+      {
+        "name": "blogs",
+        "line": 2437,
+        "end_line": 2441
+      },
+      {
+        "name": "api_dashboard_metrics",
+        "line": 2445,
+        "end_line": 2481
+      }
+    ]
+  },
+  {
+    "path": "myapp/workspace_views.py",
+    "type": ".py",
+    "feature": "Application / configuration",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "IncidentForm",
+        "line": 17,
+        "end_line": 57
+      },
+      {
+        "name": "incident_list",
+        "line": 61,
+        "end_line": 70
+      },
+      {
+        "name": "incident_edit",
+        "line": 74,
+        "end_line": 115
+      },
+      {
+        "name": "incident_detail",
+        "line": 119,
+        "end_line": 144
+      },
+      {
+        "name": "finding_detail",
+        "line": 148,
+        "end_line": 160
+      },
+      {
+        "name": "history",
+        "line": 164,
+        "end_line": 179
+      },
+      {
+        "name": "compare",
+        "line": 183,
+        "end_line": 204
+      },
+      {
+        "name": "csv_report",
+        "line": 208,
+        "end_line": 266
+      },
+      {
+        "name": "PostForm",
+        "line": 269,
+        "end_line": 291
+      },
+      {
+        "name": "public_queryset",
+        "line": 294,
+        "end_line": 297
+      },
+      {
+        "name": "public_posts",
+        "line": 300,
+        "end_line": 310
+      },
+      {
+        "name": "post_detail",
+        "line": 313,
+        "end_line": 321
+      },
+      {
+        "name": "post_edit",
+        "line": 325,
+        "end_line": 342
+      },
+      {
+        "name": "post_list",
+        "line": 346,
+        "end_line": 355
+      },
+      {
+        "name": "static_analysis",
+        "line": 359,
+        "end_line": 393
+      },
+      {
+        "name": "mitre",
+        "line": 397,
+        "end_line": 452
+      },
+      {
+        "name": "cancel_job",
+        "line": 456,
+        "end_line": 470
+      }
+    ]
+  },
+  {
+    "path": "requirements.txt",
+    "type": ".txt",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/testing.md",
+      "README.md",
+      "setup.ps1"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "scanner/__init__.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "scanner/asgi.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "import os",
+      "from django.core.asgi import get_asgi_application"
+    ],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "scanner/settings.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from pathlib import Path",
+      "import hashlib",
+      "import os",
+      "from django.core.exceptions import ImproperlyConfigured",
+      "from dotenv import load_dotenv"
+    ],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/requirements-traceability.md",
+      "manage.py",
+      "myapp/alerts.py",
+      "myapp/analysis/investigation.py",
+      "myapp/captcha.py",
+      "myapp/migrations/0001_initial.py",
+      "myapp/migrations/0002_contactmessage_scanresult_useractivity.py",
+      "myapp/migrations/0003_vigilant_profile_activity_feedback.py",
+      "myapp/migrations/0005_endpointagent_usbdevice_usbscanjob_usbscanfinding_and_more.py",
+      "myapp/migrations/0006_applicationrelease_cmsannouncement_cmsblock_and_more.py",
+      "myapp/migrations/0008_unified_security_pipeline.py",
+      "myapp/migrations/0010_targetscan.py",
+      "myapp/migrations/0011_wifi_email_alerts.py",
+      "myapp/models.py",
+      "myapp/scan_engine.py",
+      "myapp/scanners/target.py",
+      "myapp/scanners/wifi.py",
+      "myapp/test_alerts.py",
+      "myapp/threat_intel/providers.py",
+      "myapp/urls.py",
+      "myapp/views.py",
+      "README.md",
+      "scanner/asgi.py",
+      "scanner/urls.py",
+      "scanner/wsgi.py",
+      "templates/myapp/cms_dashboard.html",
+      "templates/myapp/cms_settings.html",
+      "templates/myapp/home.html"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "scanner/urls.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "from django.contrib import admin",
+      "from django.urls import path, include",
+      "from django.conf import settings",
+      "from django.conf.urls.static import static"
+    ],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/scanner-reference.md",
+      "myapp/scanners/file_analysis.py",
+      "myapp/scanners/target.py",
+      "myapp/security_pipeline.py",
+      "myapp/tests.py",
+      "myapp/threat_intel/providers.py",
+      "myapp/urls.py",
+      "scanner/settings.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "scanner/wsgi.py",
+    "type": ".py",
+    "feature": "Scanner / evidence",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [
+      "import os",
+      "from django.core.wsgi import get_wsgi_application"
+    ],
+    "references_before": [
+      "scanner/settings.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "setup.ps1",
+    "type": ".ps1",
+    "feature": "Application / configuration",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "README.md"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "static/css/theme.css",
+    "type": ".css",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "templates/base.html",
+      "templates/myapp/dashboard_advanced.html"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "static/images/developer.jpg",
+    "type": ".jpg",
+    "feature": "UI / navigation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/400.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/401.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/403.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/404.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/429.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/500.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/503.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/base.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "templates/myapp/about.html",
+      "templates/myapp/admin_dashboard.html",
+      "templates/myapp/advanced_unavailable.html",
+      "templates/myapp/applications.html",
+      "templates/myapp/audit_logs.html",
+      "templates/myapp/blogs.html",
+      "templates/myapp/change_password.html",
+      "templates/myapp/chatbot.html",
+      "templates/myapp/cms_blog.html",
+      "templates/myapp/cms_dashboard.html",
+      "templates/myapp/cms_developer_images.html",
+      "templates/myapp/cms_media.html",
+      "templates/myapp/cms_navigation.html",
+      "templates/myapp/cms_page_edit.html",
+      "templates/myapp/cms_pages.html",
+      "templates/myapp/cms_settings.html",
+      "templates/myapp/combined_scan.html",
+      "templates/myapp/contact.html",
+      "templates/myapp/dashboard.html",
+      "templates/myapp/developer.html",
+      "templates/myapp/edit_profile.html",
+      "templates/myapp/email_configuration.html",
+      "templates/myapp/feature_flags.html",
+      "templates/myapp/file_scan.html",
+      "templates/myapp/findings.html",
+      "templates/myapp/forgot_password.html",
+      "templates/myapp/home.html",
+      "templates/myapp/how_to_use.html",
+      "templates/myapp/incidents.html",
+      "templates/myapp/launcher.html",
+      "templates/myapp/login.html",
+      "templates/myapp/mitre_mapping.html",
+      "templates/myapp/mobile_security.html",
+      "templates/myapp/network.html",
+      "templates/myapp/password_strength.html",
+      "templates/myapp/phishing.html",
+      "templates/myapp/privacy.html",
+      "templates/myapp/profile.html",
+      "templates/myapp/register.html",
+      "templates/myapp/reports.html",
+      "templates/myapp/scan_history.html",
+      "templates/myapp/scan_job_detail.html",
+      "templates/myapp/scan_jobs.html",
+      "templates/myapp/scan_result.html",
+      "templates/myapp/security_policies.html",
+      "templates/myapp/suggestions.html",
+      "templates/myapp/system.html",
+      "templates/myapp/target_scan_detail.html",
+      "templates/myapp/threat_detection.html",
+      "templates/myapp/threat_intelligence.html",
+      "templates/myapp/wifi_security.html"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/about.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/admin_dashboard.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/advanced_unavailable.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "REMOVE",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "AUDIT_AND_IMPLEMENTATION.md"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/applications.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/audit_logs.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/blogs.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "REMOVE",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/change_password.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/chatbot.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/cms_blog.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "REMOVE",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/cms_dashboard.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/cms_developer_images.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/cms_media.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/cms_navigation.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/cms_page_edit.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/cms_pages.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/cms_settings.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/combined_scan.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/compare.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/contact.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/dashboard.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/dashboard_advanced.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "REMOVE",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/developer.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/edit_profile.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/editor.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/email_configuration.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/feature_flags.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/file_scan.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/finding_detail.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/findings.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/forgot_password.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "REMOVE",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/home.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/how_to_use.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/incident_detail.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/incidents.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "REMOVE",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/launcher.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/login.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/mitre_catalog.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/mitre_mapping.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "REMOVE",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/mobile_security.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/network.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/password_strength.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/phishing.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/post_detail.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/privacy.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/profile.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/public_blog.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/recovery.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/register.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/reports.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "REMOVE",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/scan_history.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "REMOVE",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/scan_job_detail.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/scan_jobs.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/scan_result.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/security_policies.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/static_analysis.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/suggestions.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/system.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/target_scan_detail.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/threat_detection.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "MODIFY",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/threat_intelligence.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/wifi_security.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "KEEP",
+    "reason": "Retained schema or runtime reference; do not remove speculatively.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [
+      "myapp/views.py"
+    ],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/myapp/workspace_list.html",
+    "type": ".html",
+    "feature": "UI / navigation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "content",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "templates/registration/password_reset_email.txt",
+    "type": ".txt",
+    "feature": "UI / navigation",
+    "action": "CREATE",
+    "reason": "See implementation/security sections and concrete symbols below.",
+    "security_sensitivity": "high",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "myapp/chatbot/knowledge.py",
+    "type": ".py",
+    "feature": "Tasks 1\u201310 workflow update",
+    "action": "CREATE",
+    "reason": "See TASKS_1_10_CHANGELOG.md for implementation and exact locations.",
+    "security_sensitivity": "application",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": []
+  },
+  {
+    "path": "myapp/migrations/0014_incident_scan_jobs.py",
+    "type": ".py",
+    "feature": "Tasks 1\u201310 workflow update",
+    "action": "CREATE",
+    "reason": "See TASKS_1_10_CHANGELOG.md for implementation and exact locations.",
+    "security_sensitivity": "application",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "Migration",
+        "line": 6,
+        "end_line": 18
+      }
+    ]
+  },
+  {
+    "path": "myapp/presentation.py",
+    "type": ".py",
+    "feature": "Tasks 1\u201310 workflow update",
+    "action": "CREATE",
+    "reason": "See TASKS_1_10_CHANGELOG.md for implementation and exact locations.",
+    "security_sensitivity": "application",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "display_text",
+        "line": 31,
+        "end_line": 32
+      },
+      {
+        "name": "display",
+        "line": 35,
+        "end_line": 79
+      },
+      {
+        "name": "render",
+        "line": 82,
+        "end_line": 85
+      },
+      {
+        "name": "JsonResponse",
+        "line": 88,
+        "end_line": 90
+      },
+      {
+        "name": "CapabilityDisplayMiddleware",
+        "line": 93,
+        "end_line": 114
+      }
+    ]
+  },
+  {
+    "path": "myapp/scanners/phishing_indicators.py",
+    "type": ".py",
+    "feature": "Tasks 1\u201310 workflow update",
+    "action": "CREATE",
+    "reason": "See TASKS_1_10_CHANGELOG.md for implementation and exact locations.",
+    "security_sensitivity": "application",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "lexical",
+        "line": 9,
+        "end_line": 66
+      }
+    ]
+  },
+  {
+    "path": "myapp/test_requested_fixes.py",
+    "type": ".py",
+    "feature": "Tasks 1\u201310 workflow update",
+    "action": "CREATE",
+    "reason": "See TASKS_1_10_CHANGELOG.md for implementation and exact locations.",
+    "security_sensitivity": "application",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "RequestedWorkflowTests",
+        "line": 21,
+        "end_line": 296
+      },
+      {
+        "name": "RequestedAnalysisTests",
+        "line": 299,
+        "end_line": 333
+      }
+    ]
+  },
+  {
+    "path": "myapp/wifi_records.py",
+    "type": ".py",
+    "feature": "Tasks 1\u201310 workflow update",
+    "action": "CREATE",
+    "reason": "See TASKS_1_10_CHANGELOG.md for implementation and exact locations.",
+    "security_sensitivity": "application",
+    "imports_before": [],
+    "references_before": [],
+    "symbols_after": [
+      {
+        "name": "persist_audit",
+        "line": 13,
+        "end_line": 81
+      }
+    ]
+  }
+]

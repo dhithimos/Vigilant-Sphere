@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="panel vs-card">
+  <h1 class="text-strong">Security Policies</h1>
+  <p class="muted">Configure policy metadata. Enforcement remains backend-controlled.</p>
+</section>
+
+<section class="panel vs-card">
+  <form class="wide-form" method="post">
+    {% csrf_token %}
+    <label>
+      Name
+      <input name="name" required>
+    </label>
+    
+    <label>
+      Category
+      <input name="category" value="general">
+    </label>
+    
+    <label>
+      Description
+      <textarea name="description" rows="4"></textarea>
+    </label>
+    
+    <label class="checkbox-label">
+      <input type="checkbox" name="enabled" checked> Enabled
+    </label>
+    
+    <button type="submit">Save Policy</button>
+  </form>
+</section>
+
+<section class="panel vs-card">
+  <div class="table-wrap vs-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Enabled</th>
+          <th>Updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for policy in policies %}
+        <tr>
+          <td><strong>{{ policy.name }}</strong></td>
+          <td>{{ policy.category }}</td>
+          <td>{{ policy.enabled }}</td>
+          <td>{{ policy.updated_at }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="4">No policies yet.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

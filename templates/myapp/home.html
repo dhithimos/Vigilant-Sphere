@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="panel hero-panel vs-card">
+    <p class="badge-state vs-badge">Security · Intelligence · Response</p>
+    <h1 class="text-strong">Vigilant Sphere</h1>
+    <p>Security intelligence for your digital environment.</p>
+    <p class="muted">A professional SOC-style Django platform for defensive network analysis, endpoint posture review, phishing checks, file analysis, threat detection, reports, and CMS-managed content.</p>
+    <div class="actions vs-actions"><a class="btn btn-primary vs-button vs-button-primary" href="{% url 'launcher' %}">Start Security Scan</a><a class="btn vs-button" href="{% url 'dashboard' %}">Explore Platform</a></div>
+</section>
+
+<section class="grid">
+    <div class="card vs-card"><h3>Network Security</h3><p>Analyze visible ports, protocols, services, exposure, and recommendations from available local data.</p></div>
+    <div class="card vs-card"><h3>System Security</h3><p>Review server-side posture, suspicious files, processes, startup entries, identity risk, and compliance indicators.</p></div>
+    <div class="card vs-card"><h3>Phishing Protection</h3><p>Use the dedicated URL scanner for HTTPS, suspicious terms, excessive subdomains, IP-host URLs, and risky patterns.</p></div>
+    <div class="card vs-card"><h3>File Analysis</h3><p>Safely hash and inspect uploaded files without executing them on the Django server.</p></div>
+    <div class="card vs-card"><h3>Threat Intelligence</h3><p>Local IOC and reputation architecture is ready; external providers show unavailable unless API keys are configured.</p></div>
+    <div class="card vs-card"><h3>Knowledge and content</h3><p>Admin-managed pages, media, blog content, site settings, and local publishing workflows.</p></div>
+</section>
+
+<section class="panel vs-card">
+    <h2 class="text-strong">No Fabricated Telemetry</h2>
+    <p class="muted">Vigilant Sphere uses available scan evidence. If a provider, native capability, or external feed is not configured, the UI reports DATA UNAVAILABLE, THREAT INTELLIGENCE UNAVAILABLE, NATIVE APP REQUIRED, or UPLOAD REQUIRED.</p>
+</section>
+<section><h2>Latest published articles</h2>{% for post in published_posts %}<h3><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></h3><p>{{ post.excerpt }}</p>{% empty %}<p>No published articles yet.</p>{% endfor %}</section>{% endblock %}

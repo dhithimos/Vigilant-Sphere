@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="flags-wrapper">
+    <section class="panel vs-card">
+        <h1 class="text-strong">Feature Flags</h1>
+        <p class="muted">Admin switches for active security modules. The backend enforces disabled features and never relies only on hidden buttons.</p>
+    </section>
+
+    <section class="panel vs-card">
+        <form class="wide-form" method="post">
+            {% csrf_token %}
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Enabled</th>
+                            <th>Rollout %</th>
+                            <th>Scope</th>
+                            <th>Environment</th>
+                            <th>Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for flag in flags %}
+                        <tr>
+                            <td>{{ flag.key }}</td>
+                            <td><input type="checkbox" name="{{ flag.key }}" {% if flag.enabled %}checked{% endif %}></td>
+                            <td><input type="number" min="0" max="100" name="{{ flag.key }}_rollout" value="{{ flag.rollout_percentage }}"></td>
+                            <td>{{ flag.scope }}</td>
+                            <td>{{ flag.environment }}</td>
+                            <td>{{ flag.updated_at }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit">Save Feature Flags</button>
+        </form>
+    </section>
+</div>
+{% endblock %}

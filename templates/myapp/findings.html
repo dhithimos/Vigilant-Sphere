@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="findings-wrapper">
+    <h1 class="findings-header">Findings</h1>
+
+    <form method="get" class="filter-panel">
+        <label>Severity 
+            <select name="severity">
+                <option value="">All</option>
+                <option {% if selected_severity == "INFO" %}selected{% endif %}>INFO</option>
+                <option {% if selected_severity == "LOW" %}selected{% endif %}>LOW</option>
+                <option {% if selected_severity == "MEDIUM" %}selected{% endif %}>MEDIUM</option>
+                <option {% if selected_severity == "HIGH" %}selected{% endif %}>HIGH</option>
+                <option {% if selected_severity == "CRITICAL" %}selected{% endif %}>CRITICAL</option>
+            </select>
+        </label>
+        <label>Scanner<select name="scanner"><option value="">All</option>{% for key, value in catalog.items %}<option value="{{ key }}" {% if selected_scanner == key %}selected{% endif %}>{{ value.0 }}</option>{% endfor %}</select></label><button type="submit">Filter</button>
+    </form>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Severity</th>
+                    <th>Title</th>
+                    <th>Scanner</th>
+                    <th>Confidence</th>
+                    <th>Risk</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for finding in findings %}
+                <tr>
+                    <td>{{ finding.severity }}</td>
+                    <td><a href="{% url 'finding_detail' finding.pk %}">{{ finding.title }}</a></td>
+                    <td>{{ finding.scanner }}</td>
+                    <td>{{ finding.confidence|floatformat:2 }}</td>
+                    <td>{{ finding.risk_score }}</td>
+                    <td>{{ finding.status }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6">No normalized findings yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

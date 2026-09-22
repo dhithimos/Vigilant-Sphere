@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="panel vs-card"><h1 class="text-strong">CMS Pages</h1><p><a class="btn btn-primary vs-button vs-button-primary" href="{% url 'cms_page_new' %}">Create New Page</a></p></section>
+<section class="panel vs-card"><table><tr><th>Title</th><th>Slug</th><th>Status</th><th>SEO</th><th>Updated</th><th>Edit</th></tr>{% for page in pages %}<tr><td>{{ page.title }}</td><td>/{{ page.slug }}/</td><td>{{ page.status }}</td><td>{{ page.seo_title|default:"DATA UNAVAILABLE" }}</td><td>{{ page.updated_at }}</td><td><a href="{% url 'cms_page_edit' page.id %}">Edit</a></td></tr>{% endfor %}</table></section>
+{% endblock %}

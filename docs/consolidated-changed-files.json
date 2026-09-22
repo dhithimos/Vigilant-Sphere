@@ -1,0 +1,1618 @@
+[
+  {
+    "file": "myapp/admin.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "CustomUserAdmin",
+        "start": 48,
+        "end": 63
+      },
+      {
+        "symbol": "ScanResultAdmin",
+        "start": 67,
+        "end": 70
+      },
+      {
+        "symbol": "UserActivityAdmin",
+        "start": 74,
+        "end": 77
+      },
+      {
+        "symbol": "ScanFeedbackAdmin",
+        "start": 81,
+        "end": 84
+      },
+      {
+        "symbol": "ContactMessageAdmin",
+        "start": 88,
+        "end": 91
+      },
+      {
+        "symbol": "DeveloperImageAdmin",
+        "start": 104,
+        "end": 120
+      },
+      {
+        "symbol": "IndicatorForm",
+        "start": 158,
+        "end": 169
+      },
+      {
+        "symbol": "IndicatorOfCompromiseAdmin",
+        "start": 172,
+        "end": 178
+      }
+    ],
+    "lines": 180
+  },
+  {
+    "file": "myapp/alerts.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "_config",
+        "start": 16,
+        "end": 48
+      },
+      {
+        "symbol": "_safe",
+        "start": 51,
+        "end": 52
+      },
+      {
+        "symbol": "send_alert",
+        "start": 55,
+        "end": 114
+      },
+      {
+        "symbol": "send_critical_alert",
+        "start": 117,
+        "end": 119
+      },
+      {
+        "symbol": "get_or_create_deduped_alert",
+        "start": 123,
+        "end": 156
+      },
+      {
+        "symbol": "delivery_label",
+        "start": 159,
+        "end": 170
+      },
+      {
+        "symbol": "send_digest",
+        "start": 174,
+        "end": 239
+      }
+    ],
+    "lines": 239
+  },
+  {
+    "file": "myapp/analysis/investigation.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "_level",
+        "start": 35,
+        "end": 47
+      },
+      {
+        "symbol": "_risk",
+        "start": 50,
+        "end": 94
+      },
+      {
+        "symbol": "_limit",
+        "start": 97,
+        "end": 104
+      },
+      {
+        "symbol": "_run_target_scan",
+        "start": 107,
+        "end": 235
+      },
+      {
+        "symbol": "run_target_scan",
+        "start": 238,
+        "end": 260
+      }
+    ],
+    "lines": 260
+  },
+  {
+    "file": "myapp/analysis/ioc_correlation.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "symbol": "_load",
+        "start": 22,
+        "end": 31
+      },
+      {
+        "symbol": "load_local_iocs",
+        "start": 34,
+        "end": 41
+      },
+      {
+        "symbol": "normalize_indicator",
+        "start": 44,
+        "end": 85
+      },
+      {
+        "symbol": "local_entries",
+        "start": 88,
+        "end": 106
+      },
+      {
+        "symbol": "upsert_indicator",
+        "start": 110,
+        "end": 137
+      },
+      {
+        "symbol": "clean_indicators",
+        "start": 140,
+        "end": 148
+      },
+      {
+        "symbol": "correlate_indicators",
+        "start": 151,
+        "end": 197
+      },
+      {
+        "symbol": "extract_indicators",
+        "start": 200,
+        "end": 247
+      },
+      {
+        "symbol": "correlation_payload",
+        "start": 250,
+        "end": 289
+      },
+      {
+        "symbol": "persist_provider_results",
+        "start": 292,
+        "end": 355
+      }
+    ],
+    "lines": 360
+  },
+  {
+    "file": "myapp/analysis/persistence.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "persist_findings",
+        "start": 11,
+        "end": 81
+      }
+    ],
+    "lines": 81
+  },
+  {
+    "file": "myapp/chatbot/engine.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "_normalize",
+        "start": 32,
+        "end": 33
+      },
+      {
+        "symbol": "_find",
+        "start": 36,
+        "end": 49
+      },
+      {
+        "symbol": "_record_answer",
+        "start": 52,
+        "end": 221
+      },
+      {
+        "symbol": "answer",
+        "start": 236,
+        "end": 310
+      }
+    ],
+    "lines": 310
+  },
+  {
+    "file": "myapp/context.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "site_context",
+        "start": 5,
+        "end": 28
+      },
+      {
+        "symbol": "can_inspect_host",
+        "start": 31,
+        "end": 33
+      }
+    ],
+    "lines": 33
+  },
+  {
+    "file": "myapp/management/commands/expire_stale_iocs.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "symbol": "Command",
+        "start": 9,
+        "end": 34
+      }
+    ],
+    "lines": 34
+  },
+  {
+    "file": "myapp/management/commands/export_iocs.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "symbol": "Command",
+        "start": 6,
+        "end": 28
+      }
+    ],
+    "lines": 28
+  },
+  {
+    "file": "myapp/management/commands/import_iocs.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "symbol": "Command",
+        "start": 7,
+        "end": 80
+      }
+    ],
+    "lines": 80
+  },
+  {
+    "file": "myapp/management/commands/run_wifi_audit.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "symbol": "Command",
+        "start": 7,
+        "end": 28
+      }
+    ],
+    "lines": 28
+  },
+  {
+    "file": "myapp/management/commands/send_alert_digest.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "symbol": "Command",
+        "start": 5,
+        "end": 18
+      }
+    ],
+    "lines": 18
+  },
+  {
+    "file": "myapp/management/commands/sync_local_iocs.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "symbol": "Command",
+        "start": 5,
+        "end": 19
+      }
+    ],
+    "lines": 19
+  },
+  {
+    "file": "myapp/migrations/0015_alertemailconfiguration_alert_dedup_window_hours_and_more.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "symbol": "Migration",
+        "start": 8,
+        "end": 79
+      }
+    ],
+    "lines": 79
+  },
+  {
+    "file": "myapp/mitre_data.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "dataset",
+        "start": 7,
+        "end": 10
+      },
+      {
+        "symbol": "indexes",
+        "start": 14,
+        "end": 21
+      },
+      {
+        "symbol": "children_of",
+        "start": 24,
+        "end": 26
+      },
+      {
+        "symbol": "tactic_name_and_slug",
+        "start": 29,
+        "end": 31
+      }
+    ],
+    "lines": 31
+  },
+  {
+    "file": "myapp/models.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "CustomUser",
+        "start": 11,
+        "end": 29
+      },
+      {
+        "symbol": "AssetInventory",
+        "start": 37,
+        "end": 55
+      },
+      {
+        "symbol": "EndpointFingerprint",
+        "start": 63,
+        "end": 79
+      },
+      {
+        "symbol": "ComplianceCheck",
+        "start": 87,
+        "end": 104
+      },
+      {
+        "symbol": "ThreatFinding",
+        "start": 112,
+        "end": 142
+      },
+      {
+        "symbol": "Incident",
+        "start": 150,
+        "end": 187
+      },
+      {
+        "symbol": "ThreatIntel",
+        "start": 195,
+        "end": 209
+      },
+      {
+        "symbol": "IOC",
+        "start": 217,
+        "end": 236
+      },
+      {
+        "symbol": "MitreTechnique",
+        "start": 244,
+        "end": 254
+      },
+      {
+        "symbol": "MitreMapping",
+        "start": 262,
+        "end": 269
+      },
+      {
+        "symbol": "ThreatTimeline",
+        "start": 277,
+        "end": 285
+      },
+      {
+        "symbol": "QuarantineItem",
+        "start": 293,
+        "end": 305
+      },
+      {
+        "symbol": "RiskAssessment",
+        "start": 313,
+        "end": 320
+      },
+      {
+        "symbol": "FileMonitorEvent",
+        "start": 328,
+        "end": 341
+      },
+      {
+        "symbol": "ScanResult",
+        "start": 349,
+        "end": 373
+      },
+      {
+        "symbol": "UserActivity",
+        "start": 381,
+        "end": 400
+      },
+      {
+        "symbol": "ScanFeedback",
+        "start": 408,
+        "end": 431
+      },
+      {
+        "symbol": "ContactMessage",
+        "start": 439,
+        "end": 465
+      },
+      {
+        "symbol": "AuditLog",
+        "start": 473,
+        "end": 485
+      },
+      {
+        "symbol": "FeatureFlag",
+        "start": 488,
+        "end": 500
+      },
+      {
+        "symbol": "SecurityAuditEvent",
+        "start": 503,
+        "end": 513
+      },
+      {
+        "symbol": "FalsePositiveReview",
+        "start": 516,
+        "end": 538
+      },
+      {
+        "symbol": "SecurityPolicy",
+        "start": 541,
+        "end": 553
+      },
+      {
+        "symbol": "ApplicationRelease",
+        "start": 556,
+        "end": 581
+      },
+      {
+        "symbol": "CMSPage",
+        "start": 584,
+        "end": 614
+      },
+      {
+        "symbol": "CMSPageRevision",
+        "start": 617,
+        "end": 631
+      },
+      {
+        "symbol": "CMSBlock",
+        "start": 634,
+        "end": 646
+      },
+      {
+        "symbol": "CMSMedia",
+        "start": 649,
+        "end": 661
+      },
+      {
+        "symbol": "CMSBlogPost",
+        "start": 664,
+        "end": 686
+      },
+      {
+        "symbol": "CMSNavigationItem",
+        "start": 689,
+        "end": 700
+      },
+      {
+        "symbol": "CMSSiteSettings",
+        "start": 703,
+        "end": 716
+      },
+      {
+        "symbol": "CMSAnnouncement",
+        "start": 719,
+        "end": 735
+      },
+      {
+        "symbol": "CMSDeveloperProfile",
+        "start": 738,
+        "end": 758
+      },
+      {
+        "symbol": "DeveloperImage",
+        "start": 761,
+        "end": 779
+      },
+      {
+        "symbol": "ScanJob",
+        "start": 787,
+        "end": 820
+      },
+      {
+        "symbol": "Finding",
+        "start": 823,
+        "end": 859
+      },
+      {
+        "symbol": "SecurityAlert",
+        "start": 862,
+        "end": 869
+      },
+      {
+        "symbol": "FindingEvidence",
+        "start": 872,
+        "end": 879
+      },
+      {
+        "symbol": "ResponseApproval",
+        "start": 882,
+        "end": 903
+      },
+      {
+        "symbol": "TargetScan",
+        "start": 906,
+        "end": 937
+      },
+      {
+        "symbol": "WiFiAudit",
+        "start": 940,
+        "end": 964
+      },
+      {
+        "symbol": "TrustedWifiProfile",
+        "start": 967,
+        "end": 975
+      },
+      {
+        "symbol": "AlertEmailConfiguration",
+        "start": 978,
+        "end": 999
+      },
+      {
+        "symbol": "SecurityAlertDelivery",
+        "start": 1002,
+        "end": 1018
+      }
+    ],
+    "lines": 1040
+  },
+  {
+    "file": "myapp/scan_engine.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "_risk_level",
+        "start": 131,
+        "end": 142
+      },
+      {
+        "symbol": "_file_reason",
+        "start": 145,
+        "end": 176
+      },
+      {
+        "symbol": "_file_resolution",
+        "start": 179,
+        "end": 190
+      },
+      {
+        "symbol": "_sha256",
+        "start": 193,
+        "end": 205
+      },
+      {
+        "symbol": "_file_entropy_hint",
+        "start": 208,
+        "end": 236
+      },
+      {
+        "symbol": "_file_soc_details",
+        "start": 239,
+        "end": 257
+      },
+      {
+        "symbol": "profile_system",
+        "start": 260,
+        "end": 284
+      },
+      {
+        "symbol": "_local_ip",
+        "start": 287,
+        "end": 296
+      },
+      {
+        "symbol": "compliance_check",
+        "start": 299,
+        "end": 337
+      },
+      {
+        "symbol": "process_audit",
+        "start": 340,
+        "end": 400
+      },
+      {
+        "symbol": "_contains_credential",
+        "start": 403,
+        "end": 407
+      },
+      {
+        "symbol": "startup_audit",
+        "start": 410,
+        "end": 450
+      },
+      {
+        "symbol": "active_network_connections",
+        "start": 453,
+        "end": 487
+      },
+      {
+        "symbol": "port_scan",
+        "start": 490,
+        "end": 518
+      },
+      {
+        "symbol": "_port_resolution",
+        "start": 521,
+        "end": 532
+      },
+      {
+        "symbol": "file_scan",
+        "start": 535,
+        "end": 622
+      },
+      {
+        "symbol": "credential_file_scan",
+        "start": 625,
+        "end": 639
+      },
+      {
+        "symbol": "exposure_assessment",
+        "start": 642,
+        "end": 657
+      },
+      {
+        "symbol": "identity_privilege_assessment",
+        "start": 660,
+        "end": 671
+      },
+      {
+        "symbol": "fim_snapshot",
+        "start": 674,
+        "end": 679
+      },
+      {
+        "symbol": "behavioral_analysis",
+        "start": 682,
+        "end": 713
+      },
+      {
+        "symbol": "threat_database_matches",
+        "start": 716,
+        "end": 719
+      },
+      {
+        "symbol": "threat_intel_lookup",
+        "start": 722,
+        "end": 767
+      },
+      {
+        "symbol": "ai_recommendations",
+        "start": 770,
+        "end": 813
+      },
+      {
+        "symbol": "_score_from_evidence",
+        "start": 816,
+        "end": 834
+      },
+      {
+        "symbol": "_scan_scope_payload",
+        "start": 837,
+        "end": 944
+      },
+      {
+        "symbol": "run_combined_scan",
+        "start": 947,
+        "end": 1092
+      }
+    ],
+    "lines": 1092
+  },
+  {
+    "file": "myapp/scanners/file_analysis.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "_entropy",
+        "start": 26,
+        "end": 32
+      },
+      {
+        "symbol": "analyze_uploaded",
+        "start": 35,
+        "end": 201
+      }
+    ],
+    "lines": 201
+  },
+  {
+    "file": "myapp/scanners/wifi.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "classify",
+        "start": 11,
+        "end": 83
+      },
+      {
+        "symbol": "_run",
+        "start": 86,
+        "end": 96
+      },
+      {
+        "symbol": "fields",
+        "start": 99,
+        "end": 105
+      },
+      {
+        "symbol": "parse_profiles",
+        "start": 108,
+        "end": 109
+      },
+      {
+        "symbol": "parse_profile_entries",
+        "start": 112,
+        "end": 122
+      },
+      {
+        "symbol": "parse_profile_security",
+        "start": 125,
+        "end": 129
+      },
+      {
+        "symbol": "parse_profile_connection_mode",
+        "start": 132,
+        "end": 140
+      },
+      {
+        "symbol": "split_terse",
+        "start": 143,
+        "end": 159
+      },
+      {
+        "symbol": "band",
+        "start": 162,
+        "end": 177
+      },
+      {
+        "symbol": "_row",
+        "start": 180,
+        "end": 188
+      },
+      {
+        "symbol": "_failure",
+        "start": 191,
+        "end": 198
+      },
+      {
+        "symbol": "collect_windows",
+        "start": 201,
+        "end": 245
+      },
+      {
+        "symbol": "linux_security",
+        "start": 248,
+        "end": 260
+      },
+      {
+        "symbol": "collect_linux",
+        "start": 263,
+        "end": 308
+      },
+      {
+        "symbol": "mac_interface",
+        "start": 311,
+        "end": 319
+      },
+      {
+        "symbol": "collect_macos",
+        "start": 322,
+        "end": 342
+      },
+      {
+        "symbol": "collect",
+        "start": 345,
+        "end": 358
+      },
+      {
+        "symbol": "collect_current_connection",
+        "start": 361,
+        "end": 508
+      }
+    ],
+    "lines": 508
+  },
+  {
+    "file": "myapp/security_pipeline.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "redact",
+        "start": 48,
+        "end": 85
+      },
+      {
+        "symbol": "ScannerHealth",
+        "start": 89,
+        "end": 92
+      },
+      {
+        "symbol": "BaseScanner",
+        "start": 95,
+        "end": 125
+      },
+      {
+        "symbol": "SystemScanner",
+        "start": 128,
+        "end": 149
+      },
+      {
+        "symbol": "ProcessScanner",
+        "start": 152,
+        "end": 188
+      },
+      {
+        "symbol": "PersistenceScanner",
+        "start": 191,
+        "end": 215
+      },
+      {
+        "symbol": "FileScanner",
+        "start": 218,
+        "end": 249
+      },
+      {
+        "symbol": "NetworkConfigScanner",
+        "start": 252,
+        "end": 276
+      },
+      {
+        "symbol": "PortScanner",
+        "start": 279,
+        "end": 301
+      },
+      {
+        "symbol": "ConnectionScanner",
+        "start": 304,
+        "end": 325
+      },
+      {
+        "symbol": "WiFiSecurityScanner",
+        "start": 328,
+        "end": 358
+      },
+      {
+        "symbol": "CapabilityScanner",
+        "start": 361,
+        "end": 366
+      },
+      {
+        "symbol": "ScannerRegistry",
+        "start": 415,
+        "end": 464
+      },
+      {
+        "symbol": "normalize",
+        "start": 467,
+        "end": 525
+      },
+      {
+        "symbol": "execute_job",
+        "start": 528,
+        "end": 635
+      }
+    ],
+    "lines": 635
+  },
+  {
+    "file": "myapp/severity.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "symbol": "meets",
+        "start": 4,
+        "end": 5
+      }
+    ],
+    "lines": 5
+  },
+  {
+    "file": "myapp/test_consolidated.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "symbol": "PassiveParserTests",
+        "start": 30,
+        "end": 90
+      },
+      {
+        "symbol": "ConsolidatedWorkflowTests",
+        "start": 93,
+        "end": 334
+      }
+    ],
+    "lines": 334
+  },
+  {
+    "file": "myapp/test_regressions.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "WorkflowTests",
+        "start": 22,
+        "end": 319
+      },
+      {
+        "symbol": "AnalysisSecurityTests",
+        "start": 322,
+        "end": 459
+      },
+      {
+        "symbol": "NetworkCapabilityTests",
+        "start": 462,
+        "end": 496
+      },
+      {
+        "symbol": "JobLifecycleTests",
+        "start": 499,
+        "end": 518
+      }
+    ],
+    "lines": 518
+  },
+  {
+    "file": "myapp/test_requested_fixes.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "RequestedWorkflowTests",
+        "start": 21,
+        "end": 296
+      },
+      {
+        "symbol": "RequestedAnalysisTests",
+        "start": 299,
+        "end": 333
+      }
+    ],
+    "lines": 333
+  },
+  {
+    "file": "myapp/urls.py",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 186
+  },
+  {
+    "file": "myapp/views.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "client_ip",
+        "start": 145,
+        "end": 152
+      },
+      {
+        "symbol": "client_device",
+        "start": 155,
+        "end": 157
+      },
+      {
+        "symbol": "score_to_level",
+        "start": 176,
+        "end": 187
+      },
+      {
+        "symbol": "scan_display_score",
+        "start": 190,
+        "end": 221
+      },
+      {
+        "symbol": "decorate_scan",
+        "start": 224,
+        "end": 231
+      },
+      {
+        "symbol": "traffic_label",
+        "start": 234,
+        "end": 251
+      },
+      {
+        "symbol": "scan_findings",
+        "start": 254,
+        "end": 279
+      },
+      {
+        "symbol": "scan_stat_summary",
+        "start": 282,
+        "end": 298
+      },
+      {
+        "symbol": "enrich_file_item",
+        "start": 301,
+        "end": 386
+      },
+      {
+        "symbol": "track_activity",
+        "start": 389,
+        "end": 401
+      },
+      {
+        "symbol": "home",
+        "start": 404,
+        "end": 412
+      },
+      {
+        "symbol": "register",
+        "start": 415,
+        "end": 486
+      },
+      {
+        "symbol": "user_login",
+        "start": 489,
+        "end": 541
+      },
+      {
+        "symbol": "user_logout",
+        "start": 545,
+        "end": 557
+      },
+      {
+        "symbol": "forgot_password",
+        "start": 560,
+        "end": 588
+      },
+      {
+        "symbol": "dashboard",
+        "start": 592,
+        "end": 613
+      },
+      {
+        "symbol": "launcher",
+        "start": 617,
+        "end": 706
+      },
+      {
+        "symbol": "feature_flags",
+        "start": 710,
+        "end": 748
+      },
+      {
+        "symbol": "ensure_default_feature_flags",
+        "start": 751,
+        "end": 783
+      },
+      {
+        "symbol": "feature_flag_map",
+        "start": 786,
+        "end": 788
+      },
+      {
+        "symbol": "feature_enabled",
+        "start": 791,
+        "end": 797
+      },
+      {
+        "symbol": "require_feature",
+        "start": 800,
+        "end": 807
+      },
+      {
+        "symbol": "audit_security_event",
+        "start": 810,
+        "end": 817
+      },
+      {
+        "symbol": "seed_initial_cms_content",
+        "start": 820,
+        "end": 904
+      },
+      {
+        "symbol": "phishing_scan",
+        "start": 908,
+        "end": 921
+      },
+      {
+        "symbol": "password_strength",
+        "start": 925,
+        "end": 944
+      },
+      {
+        "symbol": "file_scan",
+        "start": 948,
+        "end": 961
+      },
+      {
+        "symbol": "developer_profile",
+        "start": 964,
+        "end": 965
+      },
+      {
+        "symbol": "how_to_use",
+        "start": 968,
+        "end": 976
+      },
+      {
+        "symbol": "suggestions",
+        "start": 979,
+        "end": 992
+      },
+      {
+        "symbol": "applications",
+        "start": 996,
+        "end": 1007
+      },
+      {
+        "symbol": "download_application",
+        "start": 1011,
+        "end": 1036
+      },
+      {
+        "symbol": "cms_dashboard",
+        "start": 1040,
+        "end": 1055
+      },
+      {
+        "symbol": "cms_pages",
+        "start": 1059,
+        "end": 1065
+      },
+      {
+        "symbol": "cms_page_edit",
+        "start": 1069,
+        "end": 1132
+      },
+      {
+        "symbol": "cms_media",
+        "start": 1136,
+        "end": 1165
+      },
+      {
+        "symbol": "cms_developer_images",
+        "start": 1169,
+        "end": 1255
+      },
+      {
+        "symbol": "cms_settings",
+        "start": 1259,
+        "end": 1298
+      },
+      {
+        "symbol": "cms_navigation",
+        "start": 1302,
+        "end": 1330
+      },
+      {
+        "symbol": "security_policies",
+        "start": 1334,
+        "end": 1360
+      },
+      {
+        "symbol": "audit_logs",
+        "start": 1364,
+        "end": 1374
+      },
+      {
+        "symbol": "profile",
+        "start": 1378,
+        "end": 1382
+      },
+      {
+        "symbol": "edit_profile",
+        "start": 1386,
+        "end": 1422
+      },
+      {
+        "symbol": "change_password",
+        "start": 1426,
+        "end": 1444
+      },
+      {
+        "symbol": "_save_scan",
+        "start": 1447,
+        "end": 1469
+      },
+      {
+        "symbol": "combined_scan",
+        "start": 1473,
+        "end": 1548
+      },
+      {
+        "symbol": "target_scan_detail",
+        "start": 1552,
+        "end": 1583
+      },
+      {
+        "symbol": "target_scan_json",
+        "start": 1587,
+        "end": 1611
+      },
+      {
+        "symbol": "target_scan_pdf",
+        "start": 1615,
+        "end": 1701
+      },
+      {
+        "symbol": "scan_jobs",
+        "start": 1705,
+        "end": 1713
+      },
+      {
+        "symbol": "scan_job_detail",
+        "start": 1717,
+        "end": 1728
+      },
+      {
+        "symbol": "findings",
+        "start": 1732,
+        "end": 1756
+      },
+      {
+        "symbol": "scan_result",
+        "start": 1760,
+        "end": 1791
+      },
+      {
+        "symbol": "submit_scan_feedback",
+        "start": 1795,
+        "end": 1827
+      },
+      {
+        "symbol": "system_scan",
+        "start": 1831,
+        "end": 1849
+      },
+      {
+        "symbol": "network_scan",
+        "start": 1853,
+        "end": 1871
+      },
+      {
+        "symbol": "mobile_security_scan",
+        "start": 1875,
+        "end": 1887
+      },
+      {
+        "symbol": "wifi_security",
+        "start": 1891,
+        "end": 1926
+      },
+      {
+        "symbol": "chatbot",
+        "start": 1931,
+        "end": 1938
+      },
+      {
+        "symbol": "chatbot_api",
+        "start": 1942,
+        "end": 1974
+      },
+      {
+        "symbol": "email_configuration",
+        "start": 1978,
+        "end": 2086
+      },
+      {
+        "symbol": "threat_detection",
+        "start": 2090,
+        "end": 2108
+      },
+      {
+        "symbol": "threat_intelligence",
+        "start": 2112,
+        "end": 2120
+      },
+      {
+        "symbol": "ioc_correlation",
+        "start": 2124,
+        "end": 2126
+      },
+      {
+        "symbol": "real_time_monitoring",
+        "start": 2130,
+        "end": 2132
+      },
+      {
+        "symbol": "quarantine_view",
+        "start": 2136,
+        "end": 2138
+      },
+      {
+        "symbol": "risk_assessment",
+        "start": 2142,
+        "end": 2150
+      },
+      {
+        "symbol": "threat_timeline",
+        "start": 2154,
+        "end": 2156
+      },
+      {
+        "symbol": "download_scan_pdf",
+        "start": 2160,
+        "end": 2246
+      },
+      {
+        "symbol": "export_json_report",
+        "start": 2250,
+        "end": 2273
+      },
+      {
+        "symbol": "admin_dashboard",
+        "start": 2277,
+        "end": 2319
+      },
+      {
+        "symbol": "download_user_details",
+        "start": 2323,
+        "end": 2390
+      },
+      {
+        "symbol": "about",
+        "start": 2393,
+        "end": 2395
+      },
+      {
+        "symbol": "privacy_policy",
+        "start": 2398,
+        "end": 2400
+      },
+      {
+        "symbol": "contact",
+        "start": 2403,
+        "end": 2421
+      },
+      {
+        "symbol": "blogs",
+        "start": 2424,
+        "end": 2428
+      },
+      {
+        "symbol": "api_dashboard_metrics",
+        "start": 2432,
+        "end": 2468
+      }
+    ],
+    "lines": 2468
+  },
+  {
+    "file": "myapp/wifi_audit_service.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "symbol": "compare_risk",
+        "start": 22,
+        "end": 31
+      },
+      {
+        "symbol": "authorize",
+        "start": 34,
+        "end": 41
+      },
+      {
+        "symbol": "finding_type_for",
+        "start": 44,
+        "end": 51
+      },
+      {
+        "symbol": "annotate_rows",
+        "start": 54,
+        "end": 69
+      },
+      {
+        "symbol": "run_audit",
+        "start": 72,
+        "end": 104
+      },
+      {
+        "symbol": "persist_audit",
+        "start": 108,
+        "end": 295
+      },
+      {
+        "symbol": "history_queryset",
+        "start": 298,
+        "end": 307
+      }
+    ],
+    "lines": 307
+  },
+  {
+    "file": "myapp/wifi_records.py",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 2
+  },
+  {
+    "file": "myapp/workspace_views.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "symbol": "IncidentForm",
+        "start": 17,
+        "end": 57
+      },
+      {
+        "symbol": "incident_list",
+        "start": 61,
+        "end": 70
+      },
+      {
+        "symbol": "incident_edit",
+        "start": 74,
+        "end": 115
+      },
+      {
+        "symbol": "incident_detail",
+        "start": 119,
+        "end": 148
+      },
+      {
+        "symbol": "finding_detail",
+        "start": 152,
+        "end": 181
+      },
+      {
+        "symbol": "history",
+        "start": 185,
+        "end": 200
+      },
+      {
+        "symbol": "compare",
+        "start": 204,
+        "end": 225
+      },
+      {
+        "symbol": "csv_report",
+        "start": 229,
+        "end": 287
+      },
+      {
+        "symbol": "PostForm",
+        "start": 290,
+        "end": 312
+      },
+      {
+        "symbol": "public_queryset",
+        "start": 315,
+        "end": 318
+      },
+      {
+        "symbol": "public_posts",
+        "start": 321,
+        "end": 331
+      },
+      {
+        "symbol": "post_detail",
+        "start": 334,
+        "end": 342
+      },
+      {
+        "symbol": "post_edit",
+        "start": 346,
+        "end": 363
+      },
+      {
+        "symbol": "post_list",
+        "start": 367,
+        "end": 376
+      },
+      {
+        "symbol": "static_analysis",
+        "start": 380,
+        "end": 414
+      },
+      {
+        "symbol": "mitre",
+        "start": 418,
+        "end": 589
+      },
+      {
+        "symbol": "cancel_job",
+        "start": 593,
+        "end": 607
+      },
+      {
+        "symbol": "trust_wifi",
+        "start": 611,
+        "end": 642
+      }
+    ],
+    "lines": 642
+  },
+  {
+    "file": "scanner/settings.py",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 491
+  },
+  {
+    "file": "static/css/theme.css",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 17
+  },
+  {
+    "file": "static/images/assistant-bot.svg",
+    "action": "CREATE",
+    "symbols": [],
+    "lines": 1
+  },
+  {
+    "file": "static/vendor/chartjs/chart.umd.min.js",
+    "action": "CREATE",
+    "symbols": [],
+    "lines": 14
+  },
+  {
+    "file": "static/vendor/chartjs/LICENSE.md",
+    "action": "CREATE",
+    "symbols": [],
+    "lines": 9
+  },
+  {
+    "file": "templates/base.html",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 67
+  },
+  {
+    "file": "templates/myapp/chatbot.html",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 7
+  },
+  {
+    "file": "templates/myapp/dashboard.html",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 478
+  },
+  {
+    "file": "templates/myapp/developer.html",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 1
+  },
+  {
+    "file": "templates/myapp/email_configuration.html",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 364
+  },
+  {
+    "file": "templates/myapp/finding_detail.html",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 7
+  },
+  {
+    "file": "templates/myapp/incident_detail.html",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 7
+  },
+  {
+    "file": "templates/myapp/mitre_catalog.html",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 4
+  },
+  {
+    "file": "templates/myapp/target_scan_detail.html",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 447
+  },
+  {
+    "file": "templates/myapp/wifi_security.html",
+    "action": "MODIFY",
+    "symbols": [],
+    "lines": 5
+  }
+]

@@ -1,0 +1,2430 @@
+[
+  {
+    "path": ".env.example",
+    "type": ".example",
+    "size": 1172,
+    "sha256": "d5b56fc672d2a50e33b4182ad9a0f3b8b5f28ee2e7ce929afd9d770666035de1",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "README.md"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": ".gitignore",
+    "type": "",
+    "size": 178,
+    "sha256": "4a6874b09866180ffe82877351f622e7d9f9f4ca3471fe7f276e2b6e916463a9",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "AUDIT_AND_IMPLEMENTATION.md",
+    "type": ".md",
+    "size": 9996,
+    "sha256": "ce647b2ed479fb8f2d9aedb1d82fda9f6c55236f3e230bb1e3652338a3abedce",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "db.sqlite3",
+    "type": ".sqlite3",
+    "size": 6258688,
+    "sha256": "3ed2c4caf0d531a891008eda5c7eb03a15496ca84c182703fe1f0ce2f4fd49ad",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      ".env.example",
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "scanner/settings.py"
+    ],
+    "classification": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation."
+  },
+  {
+    "path": "docs/architecture.md",
+    "type": ".md",
+    "size": 1590,
+    "sha256": "6949050baf81f817cdca65a37df208ffeaaab194354ad7f7d52a2fa1d086752b",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "docs/limitations.md",
+    "type": ".md",
+    "size": 835,
+    "sha256": "223987083e62ed6cab6263a8aec0f110e1e2f54fd63b0364bc2efa7bd823b647",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "docs/requirements-traceability.md",
+    "type": ".md",
+    "size": 3269,
+    "sha256": "a5122c0a3f4c8a327f8ff6283f03fbe47e8efe2d9cab77301bd0019fc8dd4166",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "docs/scanner-reference.md",
+    "type": ".md",
+    "size": 4721,
+    "sha256": "ac4c8db3e5ad46c61b5d4feb2605054d5ca15d1c605e1264e8ac12a56645e0ca",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "docs/requirements-traceability.md",
+      "README.md"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "docs/testing.md",
+    "type": ".md",
+    "size": 1023,
+    "sha256": "c5c4cc4edf1bb0549a73762ddfd953e5ad1873981b2483105ad5eb367a35eb3c",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "README.md"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "logs/aegis.log",
+    "type": ".log",
+    "size": 18419,
+    "sha256": "8013d6d02f621a82f6b2ddd742e09b85014bc552d96186ecb09ab5ef72c37423",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "scanner/settings.py"
+    ],
+    "classification": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation."
+  },
+  {
+    "path": "logs/django-server.err.log",
+    "type": ".log",
+    "size": 18371,
+    "sha256": "cc784e41e9f972e5141fde736640ed6bf5de33216734e8c12715b302a9c641ae",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation."
+  },
+  {
+    "path": "logs/django-server.out.log",
+    "type": ".log",
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation."
+  },
+  {
+    "path": "manage.py",
+    "type": ".py",
+    "size": 663,
+    "sha256": "fb9f8ae195b0ad5fdfac80b48e1caafe0dcf1e7594b36a7cdea07ab8ca3bb006",
+    "imports": [
+      "import os",
+      "import sys",
+      "from django.core.management import execute_from_command_line"
+    ],
+    "symbols": [
+      "main"
+    ],
+    "referenced_by": [
+      ".env.example",
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/testing.md",
+      "myapp/chatbot/intents.py",
+      "myapp/migrations/0001_initial.py",
+      "myapp/models.py",
+      "myapp/scanners/target.py",
+      "myapp/views.py",
+      "README.md",
+      "scanner/settings.py",
+      "setup.ps1",
+      "templates/base.html",
+      "templates/myapp/home.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "media/cms_media/images_1.jpg",
+    "type": ".jpg",
+    "size": 14333,
+    "sha256": "85ec58a5e985e97f249c3a040d9a24b78fbef84fb5d4c2cf8244009d2d0f6395",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation."
+  },
+  {
+    "path": "media/cms_media/images_1_MvQgr43.jpg",
+    "type": ".jpg",
+    "size": 14333,
+    "sha256": "85ec58a5e985e97f249c3a040d9a24b78fbef84fb5d4c2cf8244009d2d0f6395",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation."
+  },
+  {
+    "path": "media/cms_media/images_1_WuNJiz5.jpg",
+    "type": ".jpg",
+    "size": 14333,
+    "sha256": "85ec58a5e985e97f249c3a040d9a24b78fbef84fb5d4c2cf8244009d2d0f6395",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation."
+  },
+  {
+    "path": "media/cms_media/images_1_yrh04Aq.jpg",
+    "type": ".jpg",
+    "size": 14333,
+    "sha256": "85ec58a5e985e97f249c3a040d9a24b78fbef84fb5d4c2cf8244009d2d0f6395",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation."
+  },
+  {
+    "path": "media/developer/dhithimos-es.jpg",
+    "type": ".jpg",
+    "size": 14333,
+    "sha256": "85ec58a5e985e97f249c3a040d9a24b78fbef84fb5d4c2cf8244009d2d0f6395",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/migrations/0007_developerimage.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/__init__.py",
+    "type": ".py",
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/admin.py",
+    "type": ".py",
+    "size": 3968,
+    "sha256": "9714050506e5315f4bb66dea7f23f153d017a3e08b0f1409914e1d3f90a26fc7",
+    "imports": [
+      "from django.contrib import admin",
+      "from django.contrib.auth.admin import UserAdmin",
+      "from django import forms",
+      "from .models import AssetInventory, AuditLog, ApplicationRelease, CMSAnnouncement, CMSBlogPost, CMSBlock, CMSDeveloperProfile, DeveloperImage, CMSMedia, CMSNavigationItem, CMSPage, CMSPageRevision, CMSSiteSettings, ComplianceCheck, ContactMessage, CustomUser, EndpointFingerprint, FeatureFlag, FalsePositiveReview, FileMonitorEvent, Incident, IOC, MitreMapping, MitreTechnique, QuarantineItem, RiskAssessment, ScanFeedback, ScanResult, ThreatFinding, ThreatIntel, ThreatTimeline, SecurityAuditEvent, SecurityPolicy, UserActivity, WiFiAudit, AlertEmailConfiguration, SecurityAlertDelivery"
+    ],
+    "symbols": [
+      "CustomUserAdmin",
+      "ScanResultAdmin",
+      "UserActivityAdmin",
+      "ScanFeedbackAdmin",
+      "ContactMessageAdmin",
+      "DeveloperImageAdmin"
+    ],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/scanner-reference.md",
+      "manage.py",
+      "myapp/migrations/0001_initial.py",
+      "myapp/scan_engine.py",
+      "myapp/scanner_backend.py",
+      "myapp/static/myapp/password-analyzer.js",
+      "myapp/tests.py",
+      "myapp/urls.py",
+      "myapp/views.py",
+      "README.md",
+      "scanner/settings.py",
+      "scanner/urls.py",
+      "templates/503.html",
+      "templates/myapp/applications.html",
+      "templates/myapp/contact.html",
+      "templates/myapp/developer.html",
+      "templates/myapp/network.html",
+      "templates/myapp/privacy.html",
+      "templates/myapp/scan_result.html",
+      "templates/myapp/system.html",
+      "templates/myapp/threat_detection.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/advanced_models.py",
+    "type": ".py",
+    "size": 17134,
+    "sha256": "34cbd35095e80f7495372e9779c0cfe30a1a971115df408fdb9715b3cdca830f",
+    "imports": [
+      "from django.db import models",
+      "from django.contrib.auth.models import User",
+      "from django.utils import timezone"
+    ],
+    "symbols": [
+      "MalwareSignature",
+      "FileReputation",
+      "ProcessAnalysis",
+      "BehavioralThreat",
+      "IPReputation",
+      "DomainReputation",
+      "FileIntegrityEvent",
+      "RealTimeAlert",
+      "ForensicSnapshot",
+      "RemediationAction",
+      "ThreatHuntingRule",
+      "IndicatorOfCompromise",
+      "ThreatIntelFeed",
+      "ThreatIntelMatch",
+      "AttackPatternDetection",
+      "ComplianceFramework",
+      "RiskMetric"
+    ],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/alerts.py",
+    "type": ".py",
+    "size": 3469,
+    "sha256": "2f6c6255d529e56537fd9836c355223e54f51536eac6673e9cfe92fe44c3f30b",
+    "imports": [
+      "from __future__ import annotations",
+      "import re",
+      "from html import escape",
+      "from django.conf import settings",
+      "from django.core.mail import EmailMultiAlternatives, get_connection",
+      "from django.utils import timezone",
+      "from .models import AlertEmailConfiguration, SecurityAlertDelivery",
+      "from .security_pipeline import redact"
+    ],
+    "symbols": [
+      "_config",
+      "_safe",
+      "send_critical_alert"
+    ],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/architecture.md",
+      "myapp/advanced_models.py",
+      "myapp/migrations/0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more.py",
+      "myapp/security_pipeline.py",
+      "myapp/test_alerts.py",
+      "myapp/views.py",
+      "README.md",
+      "templates/myapp/dashboard.html",
+      "templates/myapp/dashboard_advanced.html",
+      "templates/myapp/email_configuration.html",
+      "templates/myapp/incidents.html",
+      "templates/myapp/threat_detection.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/analysis/investigation.py",
+    "type": ".py",
+    "size": 4188,
+    "sha256": "7cbf1e668684d263893c67bd7673dce660bae42081a2605d3ef064c4c7d24c60",
+    "imports": [
+      "from __future__ import annotations",
+      "import uuid",
+      "from datetime import timedelta",
+      "from django.conf import settings",
+      "from django.utils import timezone",
+      "from myapp.models import TargetScan",
+      "from myapp.scanners.file_analysis import analyze_uploaded",
+      "from myapp.scanners.target import classify_target, dns_scan, http_scan, module_result, rdap_scan, safe_host, tls_scan",
+      "from myapp.threat_intel import provider_results"
+    ],
+    "symbols": [
+      "_level",
+      "_risk",
+      "_limit",
+      "run_target_scan"
+    ],
+    "referenced_by": [
+      "myapp/chatbot/intents.py",
+      "myapp/models.py",
+      "myapp/scanners/__init__.py",
+      "myapp/urls.py",
+      "myapp/views.py",
+      "README.md",
+      "scanner/settings.py",
+      "templates/myapp/target_scan_detail.html",
+      "templates/myapp/threat_intelligence.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/apps.py",
+    "type": ".py",
+    "size": 142,
+    "sha256": "ded9d66fb26734e3aa4a1ccf6de355a06181ed60d8d1ee4ca7ac12eab079a894",
+    "imports": [
+      "from django.apps import AppConfig"
+    ],
+    "symbols": [
+      "MyappConfig"
+    ],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/captcha.py",
+    "type": ".py",
+    "size": 3334,
+    "sha256": "0a2a7f14d17a97ed03e9de59b611a6f636162b6aceb2625145a7fe6395547195",
+    "imports": [
+      "import json",
+      "import urllib.parse",
+      "import urllib.request",
+      "from django.conf import settings"
+    ],
+    "symbols": [
+      "captcha_provider",
+      "captcha_site_key",
+      "captcha_configured",
+      "captcha_field_name",
+      "verify_captcha"
+    ],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "myapp/views.py",
+      "README.md",
+      "scanner/settings.py",
+      "templates/myapp/login.html",
+      "templates/myapp/register.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/chatbot/__init__.py",
+    "type": ".py",
+    "size": 49,
+    "sha256": "20e9ad2351eadd7fda314b3683d762ac2b13561e4b79104e5dd97389339fd811",
+    "imports": [
+      "from .engine import answer"
+    ],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/chatbot/engine.py",
+    "type": ".py",
+    "size": 3466,
+    "sha256": "7e9053c956914f207145d2195d208f28b743c6621b57f7410cac3c79a532a805",
+    "imports": [
+      "from __future__ import annotations",
+      "import re",
+      "from django.db.models import Count",
+      "from .intents import ALIASES, CONCEPTS",
+      "from myapp.models import Finding, ScanJob, ScanResult, WiFiAudit"
+    ],
+    "symbols": [
+      "_normalize",
+      "_find",
+      "answer"
+    ],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/requirements-traceability.md",
+      "myapp/chatbot/__init__.py",
+      "myapp/scan_engine.py",
+      "myapp/security_pipeline.py",
+      "myapp/test_chatbot_wifi.py",
+      "myapp/views.py",
+      "scanner/settings.py",
+      "templates/myapp/file_scan.html",
+      "templates/myapp/scan_result.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/chatbot/intents.py",
+    "type": ".py",
+    "size": 8426,
+    "sha256": "bc6ae55c2b4177b46f3506f4f799a0e741a2306b979063b862472ad25a77a0d3",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/chatbot/engine.py",
+      "myapp/test_chatbot_wifi.py",
+      "README.md"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/migrations/0001_initial.py",
+    "type": ".py",
+    "size": 12598,
+    "sha256": "b7b90967d0d7c353ed64e67e9f8bf56ea2355c3ace7f1fd3d765d0c96012ab50",
+    "imports": [
+      "import django.contrib.auth.models",
+      "import django.contrib.auth.validators",
+      "import django.db.models.deletion",
+      "import django.utils.timezone",
+      "from django.conf import settings",
+      "from django.db import migrations, models"
+    ],
+    "symbols": [
+      "Migration"
+    ],
+    "referenced_by": [
+      "myapp/migrations/0002_contactmessage_scanresult_useractivity.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/migrations/0002_contactmessage_scanresult_useractivity.py",
+    "type": ".py",
+    "size": 2723,
+    "sha256": "0382ee7cf6545b8cbf3d61cf045e084692a3774a76e9d408bc7c8e6d29508d4f",
+    "imports": [
+      "import django.db.models.deletion",
+      "from django.conf import settings",
+      "from django.db import migrations, models"
+    ],
+    "symbols": [
+      "Migration"
+    ],
+    "referenced_by": [
+      "myapp/migrations/0003_vigilant_profile_activity_feedback.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/migrations/0003_vigilant_profile_activity_feedback.py",
+    "type": ".py",
+    "size": 2432,
+    "sha256": "1429bd1311fe146bb8e18e4d1c55990658b370f095f33578e966db1ae6fc3db0",
+    "imports": [
+      "from django.conf import settings",
+      "from django.db import migrations, models",
+      "import django.db.models.deletion"
+    ],
+    "symbols": [
+      "Migration"
+    ],
+    "referenced_by": [
+      "myapp/migrations/0004_attackpatterndetection_behavioralthreat_and_more.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/migrations/0004_attackpatterndetection_behavioralthreat_and_more.py",
+    "type": ".py",
+    "size": 19289,
+    "sha256": "1096b2de27dcf415e8c1078cb2e21d94ab6c2eb7fca344b8ea22528e4f40ec6e",
+    "imports": [
+      "from django.db import migrations, models"
+    ],
+    "symbols": [
+      "Migration"
+    ],
+    "referenced_by": [
+      "myapp/migrations/0005_endpointagent_usbdevice_usbscanjob_usbscanfinding_and_more.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/migrations/0005_endpointagent_usbdevice_usbscanjob_usbscanfinding_and_more.py",
+    "type": ".py",
+    "size": 8665,
+    "sha256": "13f489d1c9cbbf3f7edd52702a962d70b8fd1589378bd50720cb3b08ad911dc6",
+    "imports": [
+      "from django.conf import settings",
+      "from django.db import migrations, models",
+      "import django.db.models.deletion"
+    ],
+    "symbols": [
+      "Migration"
+    ],
+    "referenced_by": [
+      "myapp/migrations/0006_applicationrelease_cmsannouncement_cmsblock_and_more.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/migrations/0006_applicationrelease_cmsannouncement_cmsblock_and_more.py",
+    "type": ".py",
+    "size": 14450,
+    "sha256": "ff455b324c2b92b5d5d41c45b530551e5293bfd8020d64c58a85f99b82c2b8c7",
+    "imports": [
+      "import django.db.models.deletion",
+      "from django.conf import settings",
+      "from django.db import migrations, models"
+    ],
+    "symbols": [
+      "Migration"
+    ],
+    "referenced_by": [
+      "myapp/migrations/0007_developerimage.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/migrations/0007_developerimage.py",
+    "type": ".py",
+    "size": 1415,
+    "sha256": "c852f5b452da1c9dcfbd42ca82f06b00ac5a0c1c84d2744c5c7002311034363c",
+    "imports": [
+      "from django.db import migrations, models",
+      "import django.core.validators"
+    ],
+    "symbols": [
+      "Migration"
+    ],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "myapp/migrations/0008_unified_security_pipeline.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/migrations/0008_unified_security_pipeline.py",
+    "type": ".py",
+    "size": 5584,
+    "sha256": "8fbb98a8b4469530586c62578c21ba65736aed2dcaa65d6499203db121313beb",
+    "imports": [
+      "from django.conf import settings",
+      "from django.db import migrations, models",
+      "import django.db.models.deletion"
+    ],
+    "symbols": [
+      "Migration"
+    ],
+    "referenced_by": [
+      "myapp/migrations/0009_normalize_pipeline_index_names.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/migrations/0009_normalize_pipeline_index_names.py",
+    "type": ".py",
+    "size": 581,
+    "sha256": "ad98ac44271906fa46ab3ee0faa9b564116b87ca1881bd1ef446933f18685557",
+    "imports": [
+      "from django.db import migrations"
+    ],
+    "symbols": [
+      "Migration"
+    ],
+    "referenced_by": [
+      "myapp/migrations/0010_targetscan.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/migrations/0010_targetscan.py",
+    "type": ".py",
+    "size": 1834,
+    "sha256": "532ff6c7bc60986af6c172ca655b69486909c8906f6ec3f1475e844739b12284",
+    "imports": [
+      "from django.conf import settings",
+      "from django.db import migrations, models"
+    ],
+    "symbols": [
+      "Migration"
+    ],
+    "referenced_by": [
+      "myapp/migrations/0011_wifi_email_alerts.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/migrations/0011_wifi_email_alerts.py",
+    "type": ".py",
+    "size": 2930,
+    "sha256": "e01ea4015c0152842376bc061738226a6091b9aa6bbbc55017cbcaf0a03e2cc2",
+    "imports": [
+      "from django.conf import settings",
+      "from django.db import migrations, models"
+    ],
+    "symbols": [
+      "Migration"
+    ],
+    "referenced_by": [
+      "myapp/migrations/0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/migrations/0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more.py",
+    "type": ".py",
+    "size": 1258,
+    "sha256": "ced3ba32ffdfd53cfdee56c0d1e794156180f3d15ec9dee76256af62d0922cc6",
+    "imports": [
+      "from django.db import migrations, models"
+    ],
+    "symbols": [
+      "Migration"
+    ],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/migrations/__init__.py",
+    "type": ".py",
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/models.py",
+    "type": ".py",
+    "size": 32521,
+    "sha256": "29e839eb4690df34a2545060a2a9d64ed34a885d55cba0d91b5d441bedca9cd8",
+    "imports": [
+      "from django.db import models",
+      "from django.contrib.auth.models import AbstractUser",
+      "from django.utils import timezone",
+      "from django.core.validators import FileExtensionValidator"
+    ],
+    "symbols": [
+      "CustomUser",
+      "AssetInventory",
+      "EndpointFingerprint",
+      "ComplianceCheck",
+      "ThreatFinding",
+      "Incident",
+      "ThreatIntel",
+      "IOC",
+      "MitreTechnique",
+      "MitreMapping",
+      "ThreatTimeline",
+      "QuarantineItem",
+      "RiskAssessment",
+      "FileMonitorEvent",
+      "ScanResult",
+      "UserActivity",
+      "ScanFeedback",
+      "ContactMessage",
+      "AuditLog",
+      "FeatureFlag",
+      "SecurityAuditEvent",
+      "FalsePositiveReview",
+      "SecurityPolicy",
+      "ApplicationRelease",
+      "CMSPage",
+      "CMSPageRevision",
+      "CMSBlock",
+      "CMSMedia",
+      "CMSBlogPost",
+      "CMSNavigationItem",
+      "CMSSiteSettings",
+      "CMSAnnouncement",
+      "CMSDeveloperProfile",
+      "DeveloperImage",
+      "ScanJob",
+      "Finding",
+      "SecurityAlert",
+      "FindingEvidence",
+      "ResponseApproval",
+      "TargetScan",
+      "WiFiAudit",
+      "AlertEmailConfiguration",
+      "SecurityAlertDelivery"
+    ],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/limitations.md",
+      "docs/requirements-traceability.md",
+      "myapp/admin.py",
+      "myapp/advanced_models.py",
+      "myapp/alerts.py",
+      "myapp/analysis/investigation.py",
+      "myapp/apps.py",
+      "myapp/chatbot/engine.py",
+      "myapp/migrations/0001_initial.py",
+      "myapp/migrations/0002_contactmessage_scanresult_useractivity.py",
+      "myapp/migrations/0003_vigilant_profile_activity_feedback.py",
+      "myapp/migrations/0004_attackpatterndetection_behavioralthreat_and_more.py",
+      "myapp/migrations/0005_endpointagent_usbdevice_usbscanjob_usbscanfinding_and_more.py",
+      "myapp/migrations/0006_applicationrelease_cmsannouncement_cmsblock_and_more.py",
+      "myapp/migrations/0007_developerimage.py",
+      "myapp/migrations/0008_unified_security_pipeline.py",
+      "myapp/migrations/0010_targetscan.py",
+      "myapp/migrations/0011_wifi_email_alerts.py",
+      "myapp/migrations/0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more.py",
+      "myapp/security_pipeline.py",
+      "myapp/test_alerts.py",
+      "myapp/test_chatbot_wifi.py",
+      "myapp/tests.py",
+      "myapp/views.py",
+      "README.md",
+      "scanner/settings.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/scan_engine.py",
+    "type": ".py",
+    "size": 34455,
+    "sha256": "4349650a20b75d60da324017cab705c2f7208fbabae6ab27f17f56f14f896610",
+    "imports": [
+      "import hashlib",
+      "import os",
+      "import platform",
+      "import re",
+      "import socket",
+      "import uuid",
+      "from pathlib import Path",
+      "import psutil",
+      "from math import log2",
+      "from django.conf import settings"
+    ],
+    "symbols": [
+      "_risk_level",
+      "_file_reason",
+      "_file_resolution",
+      "_sha256",
+      "_file_entropy_hint",
+      "_file_soc_details",
+      "profile_system",
+      "_local_ip",
+      "compliance_check",
+      "process_audit",
+      "_contains_credential",
+      "startup_audit",
+      "active_network_connections",
+      "port_scan",
+      "_port_resolution",
+      "file_scan",
+      "credential_file_scan",
+      "exposure_assessment",
+      "identity_privilege_assessment",
+      "fim_snapshot",
+      "behavioral_analysis",
+      "threat_database_matches",
+      "threat_intel_lookup",
+      "ai_recommendations",
+      "_score_from_evidence",
+      "_scan_scope_payload",
+      "run_combined_scan"
+    ],
+    "referenced_by": [
+      "docs/requirements-traceability.md",
+      "myapp/security_pipeline.py",
+      "myapp/views.py",
+      "scanner/settings.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/scanner_backend.py",
+    "type": ".py",
+    "size": 7865,
+    "sha256": "359b6856d841f9c12874497872c31409969b9128d771473c48c09159a86ac908",
+    "imports": [
+      "import os",
+      "import sys",
+      "import ctypes",
+      "import platform",
+      "import subprocess",
+      "import time",
+      "import socket",
+      "import hashlib",
+      "import json",
+      "import re",
+      "from datetime import datetime, timedelta",
+      "import psutil",
+      "import psutil",
+      "import urllib.request"
+    ],
+    "symbols": [
+      "is_admin",
+      "get_uptime",
+      "get_external_ip",
+      "profile_system_details",
+      "run_powershell_cmd",
+      "get_extended_hardware_specs"
+    ],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/scanners/__init__.py",
+    "type": ".py",
+    "size": 82,
+    "sha256": "4e12579af2768c8c2116c1f185a931abc9e7d921982f30420dcde511ae055bc9",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/scanners/file_analysis.py",
+    "type": ".py",
+    "size": 4090,
+    "sha256": "a7129447ee4d2748a9cdf383b66847dd4b3d6816191ba5bdf91eadcaea400c9a",
+    "imports": [
+      "from __future__ import annotations",
+      "import hashlib",
+      "import math",
+      "import mimetypes",
+      "import os",
+      "import re",
+      "import zipfile",
+      "from collections import Counter",
+      "from io import BytesIO",
+      "from .target import module_result"
+    ],
+    "symbols": [
+      "_entropy",
+      "analyze_uploaded"
+    ],
+    "referenced_by": [
+      "myapp/analysis/investigation.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/scanners/target.py",
+    "type": ".py",
+    "size": 13318,
+    "sha256": "7b37984d14193a527bbd41742783ba57ad4bedbd2e21a8c4c8703ba9a3a0e705",
+    "imports": [
+      "from __future__ import annotations",
+      "import datetime as dt",
+      "import ipaddress",
+      "import json",
+      "import re",
+      "import socket",
+      "import ssl",
+      "import time",
+      "from html.parser import HTMLParser",
+      "from urllib.error import HTTPError, URLError",
+      "from urllib.parse import urljoin, urlsplit, urlunsplit",
+      "from urllib.request import HTTPRedirectHandler, Request, build_opener",
+      "from django.conf import settings"
+    ],
+    "symbols": [
+      "module_result",
+      "classify_target",
+      "normalize_url",
+      "_public_ip",
+      "safe_host",
+      "_NoRedirect",
+      "PassiveHTML",
+      "url_details",
+      "http_scan",
+      "dns_scan",
+      "tls_scan",
+      "rdap_scan"
+    ],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/scanner-reference.md",
+      "myapp/advanced_models.py",
+      "myapp/analysis/investigation.py",
+      "myapp/chatbot/intents.py",
+      "myapp/migrations/0004_attackpatterndetection_behavioralthreat_and_more.py",
+      "myapp/migrations/0005_endpointagent_usbdevice_usbscanjob_usbscanfinding_and_more.py",
+      "myapp/migrations/0010_targetscan.py",
+      "myapp/migrations/0011_wifi_email_alerts.py",
+      "myapp/migrations/0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more.py",
+      "myapp/models.py",
+      "myapp/scan_engine.py",
+      "myapp/scanners/__init__.py",
+      "myapp/scanners/file_analysis.py",
+      "myapp/security_pipeline.py",
+      "myapp/test_target_investigation.py",
+      "myapp/urls.py",
+      "myapp/views.py",
+      "README.md",
+      "templates/myapp/audit_logs.html",
+      "templates/myapp/combined_scan.html",
+      "templates/myapp/developer.html",
+      "templates/myapp/scan_result.html",
+      "templates/myapp/target_scan_detail.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/scanners/wifi.py",
+    "type": ".py",
+    "size": 5069,
+    "sha256": "6de439a16454f0969dc74119edfdb06da02bc6acfd52dc640bdf0665c0e19abe",
+    "imports": [
+      "from __future__ import annotations",
+      "import platform",
+      "import re",
+      "import subprocess"
+    ],
+    "symbols": [
+      "classify",
+      "_run",
+      "parse_profiles",
+      "parse_profile_security",
+      "collect"
+    ],
+    "referenced_by": [
+      "docs/scanner-reference.md",
+      "myapp/chatbot/engine.py",
+      "myapp/chatbot/intents.py",
+      "myapp/migrations/0011_wifi_email_alerts.py",
+      "myapp/migrations/0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more.py",
+      "myapp/models.py",
+      "myapp/security_pipeline.py",
+      "myapp/test_chatbot_wifi.py",
+      "myapp/urls.py",
+      "myapp/views.py",
+      "README.md",
+      "templates/base.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/security_pipeline.py",
+    "type": ".py",
+    "size": 14437,
+    "sha256": "23a21cc22dbe02310ca399bdba2c04dca3e0e2ca116ce5ef7b8b4fc0bd59342c",
+    "imports": [
+      "from __future__ import annotations",
+      "import hashlib",
+      "import importlib.util",
+      "import socket",
+      "import uuid",
+      "from dataclasses import dataclass",
+      "from datetime import timedelta",
+      "from typing import Any",
+      "from django.db import transaction",
+      "from django.utils import timezone",
+      "from . import scan_engine",
+      "from .models import Finding, FindingEvidence, Incident, ScanJob, SecurityAlert",
+      "from .scanners.wifi import collect as collect_wifi",
+      "from .alerts import send_critical_alert"
+    ],
+    "symbols": [
+      "redact",
+      "ScannerHealth",
+      "BaseScanner",
+      "SystemScanner",
+      "ProcessScanner",
+      "PersistenceScanner",
+      "FileScanner",
+      "NetworkConfigScanner",
+      "PortScanner",
+      "ConnectionScanner",
+      "WiFiSecurityScanner",
+      "CapabilityScanner",
+      "ScannerRegistry",
+      "normalize",
+      "execute_job"
+    ],
+    "referenced_by": [
+      "docs/requirements-traceability.md",
+      "myapp/alerts.py",
+      "myapp/migrations/0009_normalize_pipeline_index_names.py",
+      "myapp/tasks.py",
+      "myapp/tests.py",
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/static/myapp/password-analyzer.js",
+    "type": ".js",
+    "size": 5156,
+    "sha256": "f0b30e37d7ad04a96252b0c6d8dc63b3a336dc7868edbd5c4d5f241eb84766e9",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "templates/myapp/mobile_security.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/static/myapp/profile_pics/user_1_cd216479.png",
+    "type": ".png",
+    "size": 943514,
+    "sha256": "17791d3d1b44a0096d6fcb6af88a55e851bcf93ef1b4329e3c46fb4311b6b95b",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "REMOVE",
+    "reason": "Packaged runtime database/log/upload may contain personal data; not needed for clean installation."
+  },
+  {
+    "path": "myapp/tasks.py",
+    "type": ".py",
+    "size": 299,
+    "sha256": "c4fa236eb604cb3e4f52af134b50748426de2c543d75ea81d7cdbdd1639461d2",
+    "imports": [
+      "from .security_pipeline import execute_job"
+    ],
+    "symbols": [
+      "run_scan_job"
+    ],
+    "referenced_by": [
+      "docs/architecture.md",
+      "docs/limitations.md",
+      "docs/requirements-traceability.md",
+      "manage.py",
+      "myapp/scan_engine.py",
+      "templates/myapp/threat_detection.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/test_alerts.py",
+    "type": ".py",
+    "size": 1668,
+    "sha256": "421b9c46953411b50cf79a0f04788a401fbe188390f070949cad655078d05ffd",
+    "imports": [
+      "from django.contrib.auth import get_user_model",
+      "from django.test import TestCase, override_settings",
+      "from .alerts import send_critical_alert",
+      "from .models import AlertEmailConfiguration, AssetInventory, Finding, ScanJob, SecurityAlert"
+    ],
+    "symbols": [
+      "CriticalAlertTests"
+    ],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/test_chatbot_wifi.py",
+    "type": ".py",
+    "size": 2400,
+    "sha256": "b3220908b0ccda4af3638d98bce57bd55a80d20e1cb8e17dee410fad4f47b872",
+    "imports": [
+      "from django.contrib.auth import get_user_model",
+      "from django.test import TestCase",
+      "from .chatbot.intents import CONCEPTS",
+      "from .chatbot.engine import answer",
+      "from .models import AssetInventory, Finding, ScanJob",
+      "from .scanners.wifi import classify, parse_profile_security, parse_profiles"
+    ],
+    "symbols": [
+      "WiFiClassifierTests",
+      "ChatbotTests"
+    ],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/test_target_investigation.py",
+    "type": ".py",
+    "size": 1014,
+    "sha256": "b755e23119378281b6660932a094b944d0991806f089aa55a1c7e45336976fd5",
+    "imports": [
+      "from django.test import SimpleTestCase",
+      "from .scanners.target import classify_target, normalize_url, safe_host"
+    ],
+    "symbols": [
+      "TargetClassificationTests"
+    ],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/tests.py",
+    "type": ".py",
+    "size": 2642,
+    "sha256": "4cb25e0c40d032573e7c73b936abd744a5a2774e74ad7441f4818e2648d5ea46",
+    "imports": [
+      "from django.contrib.auth import get_user_model",
+      "from django.test import TestCase",
+      "from django.urls import reverse",
+      "from .models import DeveloperImage",
+      "from .models import AssetInventory, Finding, ScanJob",
+      "from .security_pipeline import SCANNER_CATALOG, ScannerRegistry, normalize, redact"
+    ],
+    "symbols": [
+      "NavigationAndDeveloperTests",
+      "SecurityPipelineTests"
+    ],
+    "referenced_by": [
+      "docs/requirements-traceability.md"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/threat_intel/__init__.py",
+    "type": ".py",
+    "size": 148,
+    "sha256": "c6fbf2f61c22a0931ccf37478758cca42812c25194b2394f80f5b4b779a2556b",
+    "imports": [
+      "from .providers import provider_results, provider_status, hibp_email_lookup"
+    ],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/threat_intel/providers.py",
+    "type": ".py",
+    "size": 6356,
+    "sha256": "c69f64debaaf1934f447432ebb4d9177b31d2b006f11b30bbe21d8746c124a37",
+    "imports": [
+      "from __future__ import annotations",
+      "import datetime as dt",
+      "import json",
+      "from urllib.error import HTTPError, URLError",
+      "from urllib.parse import quote",
+      "from urllib.request import Request, urlopen",
+      "from django.conf import settings"
+    ],
+    "symbols": [
+      "_result",
+      "_request",
+      "provider_status",
+      "_error",
+      "virustotal",
+      "abuseipdb",
+      "otx",
+      "hibp_email_lookup",
+      "provider_results"
+    ],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "myapp/analysis/investigation.py",
+      "myapp/scan_engine.py",
+      "myapp/threat_intel/__init__.py",
+      "README.md",
+      "templates/myapp/home.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/urls.py",
+    "type": ".py",
+    "size": 5610,
+    "sha256": "636532a7d2a47e140d10620b517147e47a2027cee7775cf9f9174c2400a7def2",
+    "imports": [
+      "from django.urls import path, include",
+      "from . import views"
+    ],
+    "symbols": [],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/scanner-reference.md",
+      "myapp/scanners/file_analysis.py",
+      "myapp/scanners/target.py",
+      "myapp/security_pipeline.py",
+      "myapp/tests.py",
+      "myapp/threat_intel/providers.py",
+      "scanner/settings.py",
+      "scanner/urls.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "myapp/views.py",
+    "type": ".py",
+    "size": 75520,
+    "sha256": "d55e199740e99e1cd4dddf692647310eeba917843d51eb7b7fefcbcbdadc4cd7",
+    "imports": [
+      "import csv",
+      "import hashlib",
+      "import json",
+      "import math",
+      "import os",
+      "import re",
+      "from urllib.parse import urlparse",
+      "from django.contrib import messages",
+      "from django.contrib.admin.views.decorators import staff_member_required",
+      "from django.contrib.auth import authenticate, get_user_model, login, logout",
+      "from django.contrib.auth.decorators import login_required",
+      "from django.contrib.auth import update_session_auth_hash",
+      "from django.contrib.auth.forms import PasswordChangeForm",
+      "from django.contrib.auth.password_validation import validate_password",
+      "from django.core.exceptions import ValidationError",
+      "from django.contrib.sessions.models import Session",
+      "from django.db.models import Count",
+      "from django.http import HttpResponse, JsonResponse",
+      "from django.shortcuts import get_object_or_404, redirect, render",
+      "from django.conf import settings",
+      "from django.utils.html import strip_tags",
+      "from django.utils.text import slugify",
+      "from django.utils import timezone",
+      "from reportlab.lib.pagesizes import letter",
+      "from reportlab.pdfgen import canvas",
+      "import psutil",
+      "from PIL import Image, UnidentifiedImageError",
+      "from .models import AuditLog, ApplicationRelease, CMSAnnouncement, CMSBlogPost, CMSDeveloperProfile, DeveloperImage, CMSMedia, CMSNavigationItem, CMSPage, CMSPageRevision, CMSSiteSettings, ContactMessage, FeatureFlag, FalsePositiveReview, Incident, RiskAssessment, SecurityAuditEvent, SecurityPolicy, ScanFeedback, ScanResult, ThreatFinding, UserActivity, ScanJob, Finding, SecurityAlert, AssetInventory, WiFiAudit, AlertEmailConfiguration",
+      "from .scan_engine import active_network_connections, run_combined_scan",
+      "from .security_pipeline import SCANNER_CATALOG, ScannerRegistry, execute_job",
+      "from .captcha import captcha_configured, captcha_provider, captcha_site_key, verify_captcha",
+      "from .analysis.investigation import run_target_scan",
+      "from .models import TargetScan",
+      "from .threat_intel import provider_status",
+      "from .scanners.wifi import collect as collect_wifi",
+      "from .alerts import send_critical_alert",
+      "from .chatbot import answer as chatbot_answer",
+      "from uuid import uuid4",
+      "from .scan_engine import profile_system",
+      "from .models import SecurityAlert",
+      "from django.core.mail import send_mail",
+      "from django.conf import settings as django_settings",
+      "from uuid import uuid4",
+      "from .models import SecurityAlert"
+    ],
+    "symbols": [
+      "client_ip",
+      "client_device",
+      "score_to_level",
+      "scan_display_score",
+      "decorate_scan",
+      "traffic_label",
+      "scan_findings",
+      "scan_stat_summary",
+      "enrich_file_item",
+      "uploaded_file_entropy",
+      "hash_uploaded_file",
+      "analyze_mobile_url",
+      "analyze_password_strength",
+      "analyze_uploaded_mobile_file",
+      "track_activity",
+      "home",
+      "register",
+      "user_login",
+      "user_logout",
+      "forgot_password",
+      "dashboard",
+      "launcher",
+      "feature_flags",
+      "ensure_default_feature_flags",
+      "feature_flag_map",
+      "feature_enabled",
+      "require_feature",
+      "audit_security_event",
+      "seed_initial_cms_content",
+      "phishing_scan",
+      "password_strength",
+      "file_scan",
+      "scan_history",
+      "reports",
+      "developer_profile",
+      "how_to_use",
+      "suggestions",
+      "applications",
+      "download_application",
+      "cms_dashboard",
+      "cms_pages",
+      "cms_page_edit",
+      "cms_blog",
+      "cms_media",
+      "cms_developer_images",
+      "cms_settings",
+      "cms_navigation",
+      "security_policies",
+      "audit_logs",
+      "profile",
+      "edit_profile",
+      "change_password",
+      "_save_scan",
+      "combined_scan",
+      "target_scan_detail",
+      "target_scan_json",
+      "target_scan_pdf",
+      "scan_jobs",
+      "scan_job_detail",
+      "findings",
+      "scan_result",
+      "submit_scan_feedback",
+      "system_scan",
+      "network_scan",
+      "mobile_security_scan",
+      "wifi_security",
+      "chatbot",
+      "chatbot_api",
+      "email_configuration",
+      "threat_detection",
+      "threat_intelligence",
+      "ioc_correlation",
+      "mitre_mapping",
+      "real_time_monitoring",
+      "incidents",
+      "quarantine_view",
+      "risk_assessment",
+      "threat_timeline",
+      "download_scan_pdf",
+      "export_json_report",
+      "admin_dashboard",
+      "download_user_details",
+      "about",
+      "privacy_policy",
+      "contact",
+      "blogs",
+      "api_dashboard_metrics"
+    ],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "myapp/migrations/0006_applicationrelease_cmsannouncement_cmsblock_and_more.py",
+      "myapp/models.py",
+      "myapp/urls.py",
+      "templates/myapp/network.html",
+      "templates/myapp/system.html",
+      "templates/myapp/threat_detection.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "README.md",
+    "type": ".md",
+    "size": 8404,
+    "sha256": "0b6fa90544d4efd100af11767205bbbd0621787b2d087d99765e226497967762",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "requirements.txt",
+    "type": ".txt",
+    "size": 82,
+    "sha256": "977f04aeb86435b8627f11f7736ea996d3825a973f968e0bccdc9486754125a1",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/testing.md",
+      "README.md",
+      "setup.ps1"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "scanner/__init__.py",
+    "type": ".py",
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "scanner/asgi.py",
+    "type": ".py",
+    "size": 391,
+    "sha256": "56a454661b0537ceb3cc74435ad34600ddfd22a7b78fa798947970b617b76d4a",
+    "imports": [
+      "import os",
+      "from django.core.asgi import get_asgi_application"
+    ],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "scanner/settings.py",
+    "type": ".py",
+    "size": 14765,
+    "sha256": "f87d7e007df8b97331e431b1ce2b745bde72c0b2cb2b819d1ffaf1c42dfedf89",
+    "imports": [
+      "from pathlib import Path",
+      "import hashlib",
+      "import os",
+      "from django.core.exceptions import ImproperlyConfigured",
+      "from dotenv import load_dotenv"
+    ],
+    "symbols": [],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/requirements-traceability.md",
+      "manage.py",
+      "myapp/alerts.py",
+      "myapp/analysis/investigation.py",
+      "myapp/captcha.py",
+      "myapp/migrations/0001_initial.py",
+      "myapp/migrations/0002_contactmessage_scanresult_useractivity.py",
+      "myapp/migrations/0003_vigilant_profile_activity_feedback.py",
+      "myapp/migrations/0005_endpointagent_usbdevice_usbscanjob_usbscanfinding_and_more.py",
+      "myapp/migrations/0006_applicationrelease_cmsannouncement_cmsblock_and_more.py",
+      "myapp/migrations/0008_unified_security_pipeline.py",
+      "myapp/migrations/0010_targetscan.py",
+      "myapp/migrations/0011_wifi_email_alerts.py",
+      "myapp/models.py",
+      "myapp/scan_engine.py",
+      "myapp/scanners/target.py",
+      "myapp/scanners/wifi.py",
+      "myapp/test_alerts.py",
+      "myapp/threat_intel/providers.py",
+      "myapp/urls.py",
+      "myapp/views.py",
+      "README.md",
+      "scanner/asgi.py",
+      "scanner/urls.py",
+      "scanner/wsgi.py",
+      "templates/myapp/cms_dashboard.html",
+      "templates/myapp/cms_settings.html",
+      "templates/myapp/home.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "scanner/urls.py",
+    "type": ".py",
+    "size": 411,
+    "sha256": "5e67db59eb15c61db72976a68ebf82b9a632124a604cfd730f42ce0e755965c2",
+    "imports": [
+      "from django.contrib import admin",
+      "from django.urls import path, include",
+      "from django.conf import settings",
+      "from django.conf.urls.static import static"
+    ],
+    "symbols": [],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md",
+      "docs/scanner-reference.md",
+      "myapp/scanners/file_analysis.py",
+      "myapp/scanners/target.py",
+      "myapp/security_pipeline.py",
+      "myapp/tests.py",
+      "myapp/threat_intel/providers.py",
+      "myapp/urls.py",
+      "scanner/settings.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "scanner/wsgi.py",
+    "type": ".py",
+    "size": 391,
+    "sha256": "060480141a22c0764dd2cc0a36f695df3222b640ed1de8703485e675ba2573c6",
+    "imports": [
+      "import os",
+      "from django.core.wsgi import get_wsgi_application"
+    ],
+    "symbols": [],
+    "referenced_by": [
+      "scanner/settings.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "setup.ps1",
+    "type": ".ps1",
+    "size": 536,
+    "sha256": "598ebaf996736debceb213f2129cbe37f658157e4e043a7f8018bea7f2defcbe",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "README.md"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "static/css/theme.css",
+    "type": ".css",
+    "size": 7657,
+    "sha256": "7e7b3374c2f33187d3e8ca603316914525810df4a070b07e26739c270dccae33",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "templates/base.html",
+      "templates/myapp/dashboard_advanced.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/400.html",
+    "type": ".html",
+    "size": 384,
+    "sha256": "1c4155ca35c324eff68c9f3abf98b48335d9248165e3bcdd6f828e246c14b528",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/401.html",
+    "type": ".html",
+    "size": 391,
+    "sha256": "61a3f78ae475fe5ddbf749484512cd7d033bb4ca066922b349f67126ac32d3be",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/403.html",
+    "type": ".html",
+    "size": 394,
+    "sha256": "8b622e794e629b3479da9cb4c6780a6c136d87f69bc35cbd2151ace1e61724f3",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/404.html",
+    "type": ".html",
+    "size": 382,
+    "sha256": "f98e45f69a16aecdcc00bb7f19cf005b1ec7c9a45056576dbfcee424c2159ea7",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/429.html",
+    "type": ".html",
+    "size": 386,
+    "sha256": "c04513eaca84a6c245f180e15345b2da39d2c64892e04b30631aaf993c869be4",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/500.html",
+    "type": ".html",
+    "size": 404,
+    "sha256": "3e73c4af7596a7c37d509f294c5e29dc2b4cf12a59c2c30be1adaead2a9f4f21",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/503.html",
+    "type": ".html",
+    "size": 406,
+    "sha256": "785ef349212f729cc95ad4c34cb992fddfef79a58dbbd52fee7df3c8c601c138",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/base.html",
+    "type": ".html",
+    "size": 4764,
+    "sha256": "ab36add82ac4919e12562ddb79e0867bd3394e483e05fafcb3bb0d0c7062bc0a",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "templates/myapp/about.html",
+      "templates/myapp/admin_dashboard.html",
+      "templates/myapp/advanced_unavailable.html",
+      "templates/myapp/applications.html",
+      "templates/myapp/audit_logs.html",
+      "templates/myapp/blogs.html",
+      "templates/myapp/change_password.html",
+      "templates/myapp/chatbot.html",
+      "templates/myapp/cms_blog.html",
+      "templates/myapp/cms_dashboard.html",
+      "templates/myapp/cms_developer_images.html",
+      "templates/myapp/cms_media.html",
+      "templates/myapp/cms_navigation.html",
+      "templates/myapp/cms_page_edit.html",
+      "templates/myapp/cms_pages.html",
+      "templates/myapp/cms_settings.html",
+      "templates/myapp/combined_scan.html",
+      "templates/myapp/contact.html",
+      "templates/myapp/dashboard.html",
+      "templates/myapp/developer.html",
+      "templates/myapp/edit_profile.html",
+      "templates/myapp/email_configuration.html",
+      "templates/myapp/feature_flags.html",
+      "templates/myapp/file_scan.html",
+      "templates/myapp/findings.html",
+      "templates/myapp/forgot_password.html",
+      "templates/myapp/home.html",
+      "templates/myapp/how_to_use.html",
+      "templates/myapp/incidents.html",
+      "templates/myapp/launcher.html",
+      "templates/myapp/login.html",
+      "templates/myapp/mitre_mapping.html",
+      "templates/myapp/mobile_security.html",
+      "templates/myapp/network.html",
+      "templates/myapp/password_strength.html",
+      "templates/myapp/phishing.html",
+      "templates/myapp/privacy.html",
+      "templates/myapp/profile.html",
+      "templates/myapp/register.html",
+      "templates/myapp/reports.html",
+      "templates/myapp/scan_history.html",
+      "templates/myapp/scan_job_detail.html",
+      "templates/myapp/scan_jobs.html",
+      "templates/myapp/scan_result.html",
+      "templates/myapp/security_policies.html",
+      "templates/myapp/suggestions.html",
+      "templates/myapp/system.html",
+      "templates/myapp/target_scan_detail.html",
+      "templates/myapp/threat_detection.html",
+      "templates/myapp/threat_intelligence.html",
+      "templates/myapp/wifi_security.html"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/about.html",
+    "type": ".html",
+    "size": 3629,
+    "sha256": "12f1964a4b930797614afcd1806a01df48285422971f184792283718208d427e",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/admin_dashboard.html",
+    "type": ".html",
+    "size": 9260,
+    "sha256": "2bd72fd83d06d49092c6ace9b4e960b11e13ca9119563b210c2ca5786498a33a",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/advanced_unavailable.html",
+    "type": ".html",
+    "size": 2794,
+    "sha256": "400829fccf067209d22ecbcc0901edfbb4212daa96bb4b831445d0425fee6d3c",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "AUDIT_AND_IMPLEMENTATION.md"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/applications.html",
+    "type": ".html",
+    "size": 4388,
+    "sha256": "aef92f6bc34018ce365161b0298d17824ac088ee138736f99acf8d35586b148b",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/audit_logs.html",
+    "type": ".html",
+    "size": 3067,
+    "sha256": "c48dea426de08969fe18d84ee02e9c7ad1955a9803eab2fb28d1ba8e170308a9",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/blogs.html",
+    "type": ".html",
+    "size": 2904,
+    "sha256": "2115adf2843e09b54c871c2e9dbcb500ae67209f5127c44eb34f5095ad96fb0b",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/change_password.html",
+    "type": ".html",
+    "size": 3905,
+    "sha256": "16c36e714bf4b9af55c10d39cd92eb0c7e2b3744e74437749b173078ae9b7dbd",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/chatbot.html",
+    "type": ".html",
+    "size": 4875,
+    "sha256": "c20b77741da5f5f3412e6582c8cb43fb96a68737070fd1aeb37d308654d1f8e6",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/cms_blog.html",
+    "type": ".html",
+    "size": 5396,
+    "sha256": "09197fea264c8d1aacc5830f76ca9d13821513e14502ac1c006695f7ef0fac90",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/cms_dashboard.html",
+    "type": ".html",
+    "size": 6263,
+    "sha256": "69a3c9e18fdb8f96362b14af7d10176616e8e71694397120f6d3c99f2030dd25",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/cms_developer_images.html",
+    "type": ".html",
+    "size": 8942,
+    "sha256": "f02c5b4ecdb307a8aa0ac80c716e78d61535d0adb4322dc808b8e5cdd41a57fe",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/cms_media.html",
+    "type": ".html",
+    "size": 5597,
+    "sha256": "30e91b12adc87255dce07a3a0f261a5848acf18add64b9863613c6b5de83bc27",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/cms_navigation.html",
+    "type": ".html",
+    "size": 5619,
+    "sha256": "e55a5c4688f6ef45e30527914f54149296ac1e30cd4d726ff046768cadc7d5ca",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/cms_page_edit.html",
+    "type": ".html",
+    "size": 6012,
+    "sha256": "8ce5698894956a6c5728f60b9e84a51aa2d5ab9f5da8b605711ceef528dcf13d",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/cms_pages.html",
+    "type": ".html",
+    "size": 3875,
+    "sha256": "c91d228562b4bcba6c985328dac6702218d055c92ccd9a371f41f02e25c80ff8",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/cms_settings.html",
+    "type": ".html",
+    "size": 4274,
+    "sha256": "ac50314e450bb03348129c0b32453313f66aedd7adb78b1b50b0bcc95f888080",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/combined_scan.html",
+    "type": ".html",
+    "size": 7587,
+    "sha256": "b75a15623e39ec3af45c18e002a157a3f7cdc2108eaca1c4a4344f41751c2701",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/contact.html",
+    "type": ".html",
+    "size": 4256,
+    "sha256": "993620e5e05bf93d1318fbdad6914734f5ded0947eee2bd7e76fe31b7381376c",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/dashboard.html",
+    "type": ".html",
+    "size": 14359,
+    "sha256": "5c6aa15139a3666554e3427e8db805f77167c1a66c1eb19416af5913eb851c72",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/dashboard_advanced.html",
+    "type": ".html",
+    "size": 27183,
+    "sha256": "f8717b90da8b651251e2527df08b78f05d70899309fe43842a911d62a95ae1a9",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/developer.html",
+    "type": ".html",
+    "size": 10995,
+    "sha256": "6ff0d230209052922d99c2205b3647c126990ae38d4f58934f28b5487af35a54",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/edit_profile.html",
+    "type": ".html",
+    "size": 10247,
+    "sha256": "4917f7b78586c9d91291e8589fc6334502631202da5bc0b233bbe92542cdb65a",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/email_configuration.html",
+    "type": ".html",
+    "size": 10383,
+    "sha256": "422c6546883d42d5187eb019c04b6a49a8d0e5aa67dddb913540ebc0eb439fb0",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/feature_flags.html",
+    "type": ".html",
+    "size": 9767,
+    "sha256": "0e1c525e190eec74fc37103f0ba146c9e044c851865167ea75cfab897295e352",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/file_scan.html",
+    "type": ".html",
+    "size": 10785,
+    "sha256": "79af371ed3fdd8957f334f2096fd21dbde5156a5169664290ddc71617c32897e",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/findings.html",
+    "type": ".html",
+    "size": 7614,
+    "sha256": "8e11fbf9a43353288b9f0ccd22b94aaceb04297d8d006c1e768afa8bbba3640b",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/forgot_password.html",
+    "type": ".html",
+    "size": 9045,
+    "sha256": "2cada867bfff40803d1568aedd695bbda82fd7246a55f81072b40216369b1187",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/home.html",
+    "type": ".html",
+    "size": 9004,
+    "sha256": "b97745d149b4bee5366379fe4fd8c08bb84da771bfb507a22b6fc56781dd9d91",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/how_to_use.html",
+    "type": ".html",
+    "size": 4926,
+    "sha256": "d69f5a375fa8e9fa5a625b85e951b11fe230a7f212b2ebaf6fb4a256aef5a115",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/incidents.html",
+    "type": ".html",
+    "size": 6123,
+    "sha256": "4536182bdc443677a2d18cc8e0c063fd2ef3280b7cfd7fa0d529fd3f60d31c32",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/launcher.html",
+    "type": ".html",
+    "size": 5054,
+    "sha256": "dbb4befceeb69f3cb24cd8020dad4b99113be8b10d39a60d483c1c3b7b3b86f6",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/login.html",
+    "type": ".html",
+    "size": 8686,
+    "sha256": "3784e4ea4571f4c1dc43cb955e4d6c9edbb388305518ebe4e3b7090fb2dfd098",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/mitre_mapping.html",
+    "type": ".html",
+    "size": 5390,
+    "sha256": "904c7d0a7017408716170eadac6245aec69eccb01833cc2124357dce1372a384",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/mobile_security.html",
+    "type": ".html",
+    "size": 11831,
+    "sha256": "cbad50ee1dbf7a401108e91896b516fb4f794a4ace2eabca02f6627d19c82a32",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/network.html",
+    "type": ".html",
+    "size": 8812,
+    "sha256": "c284786e33ef27e7490a98e5c75d7f609fe7c4ad5b442be30e2a04fd82f563b7",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/password_strength.html",
+    "type": ".html",
+    "size": 5316,
+    "sha256": "3e44cfe3812c0e13302abf2bbec0948cc48e7817b8d8f1879b9d700fab995171",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/phishing.html",
+    "type": ".html",
+    "size": 12050,
+    "sha256": "9595159a054f4bcc5aa404b4f2fc6166e088c726319b5be5999fdd25a5c3fc70",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/privacy.html",
+    "type": ".html",
+    "size": 3028,
+    "sha256": "9700d906679e754cb849fea8e537b1747f951de2cdffa8d91ec0e40221da59b4",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/profile.html",
+    "type": ".html",
+    "size": 7420,
+    "sha256": "a96a3c2fded4ffce2880a7d173dd8c0a06b4a4c09350728cd27fb2895d4d5c93",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/register.html",
+    "type": ".html",
+    "size": 10627,
+    "sha256": "a0e8c2ae7680b6e6eedc2590318b88e4448c5a2d6f949073e3330b571cb22cd7",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/reports.html",
+    "type": ".html",
+    "size": 7830,
+    "sha256": "d7cbfa4a21b8f0818d56d7841247ff35ef9f16f92968d4a5be9ce4459c4c9562",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/scan_history.html",
+    "type": ".html",
+    "size": 7010,
+    "sha256": "8b1f23ea4c925f20329aae1c554fc318446b3ff6b6f207457920b2c11edb837b",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/scan_job_detail.html",
+    "type": ".html",
+    "size": 6666,
+    "sha256": "9d9d8b3ca8840b00f46921341afac71dac4b1f001e1a29959227699c963e455d",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/scan_jobs.html",
+    "type": ".html",
+    "size": 3983,
+    "sha256": "d7e1b30d4670fd859b47c15fa0af628c6d5a17be33c85e7e77dfc22dc374aa49",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/scan_result.html",
+    "type": ".html",
+    "size": 19384,
+    "sha256": "dc508e734586b102bed49f1cb77d58bdf0b129b2cc4ea6c662b51b7e2d18580d",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/security_policies.html",
+    "type": ".html",
+    "size": 7553,
+    "sha256": "14e98d25193a2b9e287e2671f0e398bb0c8c4d59bf1a0ee190376348cd5c9d14",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/suggestions.html",
+    "type": ".html",
+    "size": 4474,
+    "sha256": "5555b6f2eef1b5fb9572b24d3bc0b2588271b72464a001f40fee0a1a58de3d42",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/system.html",
+    "type": ".html",
+    "size": 12444,
+    "sha256": "8a2feed40dea4f9f43021326cf3cf28da7530c8e9c36bfe3264f14a42f820ebc",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/target_scan_detail.html",
+    "type": ".html",
+    "size": 11611,
+    "sha256": "0d69644f10b8bc9d62544c118361a2205280eb5310b3afc09e7bc99304ff97de",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/threat_detection.html",
+    "type": ".html",
+    "size": 10316,
+    "sha256": "13ab0cfd106be8176609e83a5a8adc4ba0fb615fd908d002baa5a8af69c1b166",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/threat_intelligence.html",
+    "type": ".html",
+    "size": 5970,
+    "sha256": "1f8a96676aca598681a6072513d401df900f74112f3dd9d339c1bfde3bd756c0",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  },
+  {
+    "path": "templates/myapp/wifi_security.html",
+    "type": ".html",
+    "size": 8304,
+    "sha256": "5b02e8d57ad96e1cad0ce7ce1a1a3dd1ac02f307855de56b5f187a4e5b8a224b",
+    "imports": [],
+    "symbols": [],
+    "referenced_by": [
+      "myapp/views.py"
+    ],
+    "classification": "KEEP",
+    "reason": "Preserve referenced source, schema, documentation or asset pending detailed audit."
+  }
+]

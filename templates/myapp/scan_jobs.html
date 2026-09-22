@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h1>Scan Jobs</h1>
+<p>Jobs retain scanner progress, partial failures, normalized evidence, and risk results.</p>
+
+<div class="table-wrap vs-table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Scan ID</th>
+        <th>Profile</th>
+        <th>Status</th>
+        <th>Progress</th>
+        <th>Findings</th>
+        <th>Risk</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for job in jobs %}
+      <tr>
+        <td><a href="{% url 'scan_job_detail' job.id %}">{{ job.scan_id|slice:":8" }}</a></td>
+        <td>{{ job.scan_type }}</td>
+        <td>{{ job.status }}</td>
+        <td>{{ job.progress }}%</td>
+        <td>{{ job.finding_count }}</td>
+        <td>{{ job.risk_score }}/100</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="6">No jobs yet.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

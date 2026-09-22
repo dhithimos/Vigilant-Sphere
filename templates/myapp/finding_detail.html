@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ finding.title }}</h1><p>{{ finding.severity }} · Confidence {{ finding.confidence }} · {{ finding.status }}</p><p>{{ finding.description }}</p><pre>{{ finding.evidence }}</pre><p>{{ finding.recommendation }}</p>{% if finding.mitre_technique %}<a href="{% url 'technique_detail' finding.mitre_technique %}">{{ finding.mitre_technique }}</a>{% endif %}<p>Risk: {{ finding.risk_score }}/100 · <a href="{% url 'scan_job_detail' finding.job_id %}">Related scan job</a> · <a href="{% url 'incident_new' %}?finding={{ finding.pk }}">Escalate to Incident</a></p><form method="post">{% csrf_token %}<select name="status">{% for choice in choices %}<option {% if choice == finding.status %}selected{% endif %}>{{ choice }}</option>{% endfor %}</select><button>Update status</button></form>
+
+<section class="panel vs-card"><h2>IOC correlation</h2><p>{{ finding.ioc.note|default:'IOC check unavailable for this historical record' }}</p>{% for match in finding.ioc.matches %}<p>{{ match.ioc_type }}: {{ match.value }} · {% if match.source == 'local_reviewed' %}Local reviewed set{% else %}External or operator source{% endif %} · confidence {{ match.confidence }}/100 · {{ match.threat_name }}</p>{% endfor %}{% for related in related_ioc_findings %}<p><a href="{% url 'finding_detail' related.pk %}">{{ related.title }}</a></p>{% endfor %}<p>Alert delivery: {{ delivery_status }}</p></section>{% endblock %}

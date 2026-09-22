@@ -1,0 +1,1219 @@
+[
+  {
+    "path": "templates/400.html",
+    "sha256": "50f1deef009dc259e3e68c80fb11b97ab37c266a4a2daf8b03b5823f91526c1e",
+    "bytes": 231,
+    "extends": [],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "box"
+    ]
+  },
+  {
+    "path": "templates/401.html",
+    "sha256": "53bcfea8c16dc019a2dc5008271e63f7901f9d8b209b95b2a18ff72f3e605d10",
+    "bytes": 238,
+    "extends": [],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "box"
+    ]
+  },
+  {
+    "path": "templates/403.html",
+    "sha256": "37cffc23ce51905dafa8ee134cbc9c7a51b2ef8d16bfdc3ee6ca9bee54eff536",
+    "bytes": 241,
+    "extends": [],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "box"
+    ]
+  },
+  {
+    "path": "templates/404.html",
+    "sha256": "fec64ce4d206a85c35f52c114d1641a65723290701d883e5ea9c6f73bac2412c",
+    "bytes": 229,
+    "extends": [],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "box"
+    ]
+  },
+  {
+    "path": "templates/429.html",
+    "sha256": "7f18170af484a9304e5c470b8658696860e163626b1a93ca6ea523d5996c333b",
+    "bytes": 233,
+    "extends": [],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "box"
+    ]
+  },
+  {
+    "path": "templates/500.html",
+    "sha256": "d2e5709d4f13d13038fb6b72e42976d7d472cd402f583c16ebafac7980317678",
+    "bytes": 251,
+    "extends": [],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "box"
+    ]
+  },
+  {
+    "path": "templates/503.html",
+    "sha256": "6451c2fc914eed3a4a4dbf03e842a163f5c72103cc078040c0fb045798c3a0c0",
+    "bytes": 253,
+    "extends": [],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "box"
+    ]
+  },
+  {
+    "path": "templates/admin/base_site.html",
+    "sha256": "43206247fed310b0b67a346adcc90dce14f9b41f75e1fffb48a0cff5932a4870",
+    "bytes": 597,
+    "extends": [
+      "admin/base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "theme-toggle"
+    ]
+  },
+  {
+    "path": "templates/admin/color_theme_toggle.html",
+    "sha256": "a08960d20a71149ce9ede0cde89da93e390c35dc599fd87021467901261f693f",
+    "bytes": 64,
+    "extends": [],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": []
+  },
+  {
+    "path": "templates/base.html",
+    "sha256": "63e2a5277d15691d191a17487bec599f96321fb33a5e16a152ef7cb255852b1e",
+    "bytes": 5211,
+    "extends": [],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "app-shell",
+      "drawer-backdrop",
+      "sidebar no-print",
+      "drawer-close",
+      "brand",
+      "brand-mark",
+      "sidebar-label",
+      "sidebar-nav",
+      "sidebar-footer",
+      "shell-content",
+      "topbar no-print",
+      "menu-button",
+      "mobile-brand",
+      "theme-toggle",
+      "topnav",
+      "button-link",
+      "content",
+      "messages",
+      "message {{ message.tags }}",
+      "site-footer no-print",
+      "assistant-launcher no-print"
+    ]
+  },
+  {
+    "path": "templates/myapp/about.html",
+    "sha256": "518831ce6ca9649209696a4ad6f0e455e42b9e6e3667dc1a30c46cf404241371",
+    "bytes": 965,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "page-heading",
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/admin_dashboard.html",
+    "sha256": "fb33312a0bc02c9548903a7501dc551772dfebb4cea60e696fc731598b1d0c73",
+    "bytes": 5171,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "muted",
+      "grid",
+      "card",
+      "stat",
+      "card",
+      "stat",
+      "card",
+      "stat",
+      "card",
+      "stat",
+      "actions",
+      "btn btn-primary",
+      "btn",
+      "btn",
+      "btn",
+      "panel",
+      "panel",
+      "panel",
+      "panel",
+      "panel",
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/audit_logs.html",
+    "sha256": "8fe5ad2992e8ff529706e03db30198633be23336a684876dddcf5d1f5c195551",
+    "bytes": 645,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "text-strong",
+      "muted",
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/change_password.html",
+    "sha256": "83f1c8c0997d52f2d1f6422a7825c6ecb6a405961020a5424e6da033bd1cafb6",
+    "bytes": 273,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "wide-form"
+    ]
+  },
+  {
+    "path": "templates/myapp/chatbot.html",
+    "sha256": "d4360e3cf1a3eb63b73ea9721efcd0c088afbecebbca0b2bda1ff95ab4fd0aac",
+    "bytes": 3623,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "chat-layout"
+    ]
+  },
+  {
+    "path": "templates/myapp/cms_developer_images.html",
+    "sha256": "07942906ee5dbffe69a926bb4406f055284d5a356485c4bfe07180d56ae0dc63",
+    "bytes": 2164,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel hero-panel",
+      "muted",
+      "panel",
+      "wide-form",
+      "muted",
+      "panel",
+      "developer-gallery",
+      "developer-image",
+      "status {% if image.is_active %}status-success{% endif %}",
+      "actions",
+      "muted"
+    ]
+  },
+  {
+    "path": "templates/myapp/cms_media.html",
+    "sha256": "3104b57f6a30e41dcbcfb29723a80285a438ee1cbbff530ee17335ce2349fb8a",
+    "bytes": 897,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "text-strong",
+      "muted",
+      "panel",
+      "wide-form",
+      "grid",
+      "card",
+      "card"
+    ]
+  },
+  {
+    "path": "templates/myapp/cms_navigation.html",
+    "sha256": "5538de76dacda8b3fc3d66b10e81880661b050eb2fc6678beba28534d914f64f",
+    "bytes": 1238,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "text-strong",
+      "muted",
+      "panel",
+      "wide-form",
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/cms_page_edit.html",
+    "sha256": "3ccd05acb620e7f60b25963fbb37390ea2134b584d2cb249c23dd84f3be17edc",
+    "bytes": 1894,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "text-strong",
+      "muted",
+      "panel",
+      "wide-form",
+      "actions",
+      "btn"
+    ]
+  },
+  {
+    "path": "templates/myapp/cms_pages.html",
+    "sha256": "47b516b9b6051efffce4af46ed4a339aaea11ef1a37cff45a6433f528a48a944",
+    "bytes": 634,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "text-strong",
+      "btn btn-primary",
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/cms_settings.html",
+    "sha256": "55af66f9cbdb0c2e648f2a1a524124b2daeba985d04980e145171e6449ce26d8",
+    "bytes": 1109,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "text-strong",
+      "muted",
+      "panel",
+      "wide-form"
+    ]
+  },
+  {
+    "path": "templates/myapp/combined_scan.html",
+    "sha256": "13293ed6d636e9367d85aa42fc560284d64f2b7514ef49d12dd83f775cda66fc",
+    "bytes": 1651,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "muted",
+      "panel",
+      "grid",
+      "card",
+      "muted",
+      "panel",
+      "risk-{{ latest_scan.risk_level }}",
+      "btn"
+    ]
+  },
+  {
+    "path": "templates/myapp/compare.html",
+    "sha256": "41162098963150f3260b36c450b252fec3c1d04626fb61aa00c20f072cb3788b",
+    "bytes": 481,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": []
+  },
+  {
+    "path": "templates/myapp/dashboard.html",
+    "sha256": "2c0446877f29d4acb108df74b25caf7e4469d65c053a8210ac5a93a2dea48fa0",
+    "bytes": 8020,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "dashboard-container",
+      "hero-panel panel",
+      "muted",
+      "muted",
+      "grid",
+      "card",
+      "metric-label",
+      "metric-value",
+      "risk-{{ risk_level }}",
+      "card",
+      "metric-label",
+      "metric-value",
+      "card",
+      "metric-label",
+      "metric-value risk-CRITICAL",
+      "card",
+      "metric-label",
+      "metric-value",
+      "actions",
+      "btn btn-primary",
+      "btn",
+      "grid-two-col",
+      "panel",
+      "muted",
+      "panel",
+      "muted",
+      "panel",
+      "table-wrap",
+      "muted",
+      "panel",
+      "table-wrap",
+      "risk-{{ scan.status }}",
+      "muted",
+      "muted",
+      "muted",
+      "muted"
+    ]
+  },
+  {
+    "path": "templates/myapp/developer.html",
+    "sha256": "21871d6854e53b8c69ff726dce1a75b61e274a6e8eba7c5e5818253c787a28cf",
+    "bytes": 1711,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "developer-profile",
+      "page-heading",
+      "panel",
+      "developer-gallery",
+      "actions"
+    ]
+  },
+  {
+    "path": "templates/myapp/domain_result.html",
+    "sha256": "203c92db6d905a3f699f11a696a88640846673f63e58d26cd3dce3810e41b95d",
+    "bytes": 1498,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "page-heading",
+      "summary-grid",
+      "panel",
+      "stat",
+      "panel",
+      "actions",
+      "domain-sections",
+      "panel",
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/domain_scanner.html",
+    "sha256": "54d0aaa47e149e393959d4c2ecd140e6772abe6a11aff71595478585ebd8c77d",
+    "bytes": 841,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "page-heading",
+      "scanner-layout",
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/edit_profile.html",
+    "sha256": "5dbec7aad289a8231c7c2b54fcbd7ebc8127d863266448fae08eb57d0a6384ee",
+    "bytes": 2872,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "profile-edit-wrapper",
+      "page-title",
+      "wide-form",
+      "grid",
+      "form-group",
+      "form-group",
+      "form-group",
+      "form-group",
+      "form-group",
+      "form-group",
+      "form-group",
+      "form-group",
+      "form-group",
+      "actions",
+      "btn"
+    ]
+  },
+  {
+    "path": "templates/myapp/editor.html",
+    "sha256": "0b84030f7d44212c8eac49f24847e73b892e3d05f80fcd41b7d06005976205c6",
+    "bytes": 316,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": []
+  },
+  {
+    "path": "templates/myapp/email_configuration.html",
+    "sha256": "3265ea2a8e76c74a8ec499a7e19cfb1d068a167e8d1aa15bf522947a84ff7520",
+    "bytes": 3484,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "alerts-wrapper",
+      "panel",
+      "wide-form",
+      "checkbox-group-container",
+      "checkbox-label",
+      "grid",
+      "form-group",
+      "form-group",
+      "checkbox-group-container",
+      "checkbox-label",
+      "checkbox-label",
+      "form-group",
+      "form-group",
+      "actions"
+    ]
+  },
+  {
+    "path": "templates/myapp/feature_flags.html",
+    "sha256": "8de85a6a83e2dad4ecb0b554a82e0c499ae69cc17e23e8bfa0aa20134b94f9d7",
+    "bytes": 1781,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "flags-wrapper",
+      "panel",
+      "text-strong",
+      "muted",
+      "panel",
+      "wide-form",
+      "table-container"
+    ]
+  },
+  {
+    "path": "templates/myapp/feedback.html",
+    "sha256": "df9ae0ce8532b0b4d2ef1365f04be1741a0dbb253c90ff536bf4909dca47427b",
+    "bytes": 422,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "page-heading"
+    ]
+  },
+  {
+    "path": "templates/myapp/finding_detail.html",
+    "sha256": "9673599fb78607ed698dd6e0aebf6ce4b2512f91ea7c9c4a1585fd051fe5bebd",
+    "bytes": 1455,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/findings.html",
+    "sha256": "03099b00c268b689968119c0277a3cd606411e322cb104a020e457051cadaa45",
+    "bytes": 2221,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "findings-wrapper",
+      "findings-header",
+      "filter-panel",
+      "table-container"
+    ]
+  },
+  {
+    "path": "templates/myapp/home.html",
+    "sha256": "ae02e8553efee76d47cd049857a21e2a5bb64f47aaa2f18416e8bfd5afa01df5",
+    "bytes": 2350,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel hero-panel",
+      "badge-state",
+      "text-strong",
+      "muted",
+      "actions",
+      "btn btn-primary",
+      "btn",
+      "grid",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "panel",
+      "text-strong",
+      "muted"
+    ]
+  },
+  {
+    "path": "templates/myapp/how_to_use.html",
+    "sha256": "6876b0a1190549cad58e119f713ac61dcccdac9291fd2e6d39b1995fd1ba60f8",
+    "bytes": 440,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel info-page"
+    ]
+  },
+  {
+    "path": "templates/myapp/incident_detail.html",
+    "sha256": "d6c97e1c5e0354bde4904b3d076d74ac61aa7ff183d9e9b3e4566864027fdc9f",
+    "bytes": 3346,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "page-heading",
+      "summary-grid",
+      "panel",
+      "panel",
+      "panel",
+      "panel",
+      "panel",
+      "incident-timeline"
+    ]
+  },
+  {
+    "path": "templates/myapp/launcher.html",
+    "sha256": "40271d0571c776f63bbdba2bddcfb1e4b7494b3682d49c09eee4d7c229aebd8c",
+    "bytes": 529,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "muted",
+      "grid",
+      "card",
+      "text-strong"
+    ]
+  },
+  {
+    "path": "templates/myapp/login.html",
+    "sha256": "955a33214a4896e7f2726b12ad1e9ae3a64e0b4ec37d7a8c3c732cf8ba50b3c6",
+    "bytes": 2416,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "auth-shell",
+      "card auth-card",
+      "text-strong",
+      "muted",
+      "form-group",
+      "form-group",
+      "password-toggle",
+      "toggle-btn",
+      "g-recaptcha",
+      "cf-turnstile",
+      "alert alert-warning",
+      "alert-icon",
+      "btn btn-primary",
+      "auth-links"
+    ]
+  },
+  {
+    "path": "templates/myapp/mitre_catalog.html",
+    "sha256": "60030538990c70b48c44f4b8be956322d591bb1a17427946653807d98808e5f0",
+    "bytes": 4008,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "mitre-matrix",
+      "panel mitre-tactic",
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/mobile_security.html",
+    "sha256": "627e911c08ae07cd0744a39327a23a64c1c55757bcb496abf0022b557aa1b8b4",
+    "bytes": 2530,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel hero-panel",
+      "muted",
+      "grid",
+      "wide-form",
+      "password-toggle",
+      "toggle-btn",
+      "actions",
+      "card",
+      "actions",
+      "technical",
+      "muted",
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/network.html",
+    "sha256": "53e8009adf6f2f749f024eccbbd2e2177ae2910e7f9898cc12695e6fde09528c",
+    "bytes": 2880,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "grid",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "actions",
+      "btn",
+      "btn"
+    ]
+  },
+  {
+    "path": "templates/myapp/password_strength.html",
+    "sha256": "abd07a5bd5810d84a834603dec5ff359ef394515969b2ca421005da473bc3c2b",
+    "bytes": 44,
+    "extends": [
+      "myapp/mobile_security.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": []
+  },
+  {
+    "path": "templates/myapp/post_detail.html",
+    "sha256": "818189204b7f88b2c098766a0fd7043cbe40fdb87923312ecec1e57cea7b04ae",
+    "bytes": 209,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": []
+  },
+  {
+    "path": "templates/myapp/privacy.html",
+    "sha256": "9fe2f93d9b81fe542734bc5df1704d4f7bf4e4ce4aad386df595f3b79d782876",
+    "bytes": 2289,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "page-heading",
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/profile.html",
+    "sha256": "cf6ab326ec3eff6060c18fa64af6ebfaa01bdeb95ca5ac50d5235e3227da187c",
+    "bytes": 1858,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "text-strong",
+      "grid",
+      "card card-avatar",
+      "profile-avatar-img",
+      "brand-mark",
+      "card",
+      "text-strong",
+      "text-strong",
+      "card",
+      "text-strong",
+      "text-strong",
+      "card",
+      "text-strong",
+      "text-strong",
+      "card",
+      "text-strong",
+      "text-strong",
+      "card",
+      "text-strong",
+      "text-strong",
+      "card",
+      "text-strong",
+      "text-strong",
+      "card",
+      "text-strong",
+      "text-strong",
+      "actions",
+      "btn btn-primary",
+      "btn",
+      "btn",
+      "btn"
+    ]
+  },
+  {
+    "path": "templates/myapp/public_blog.html",
+    "sha256": "1d2d4ae6da80aa125b2bff0cb6981d5b76d31e9e2ccb5d6d74a062defe67604c",
+    "bytes": 656,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/recovery.html",
+    "sha256": "c995ad93d90cfeeafbf7f8e2576edce3947ff4f36726aa71adea441c98efea86",
+    "bytes": 318,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": []
+  },
+  {
+    "path": "templates/myapp/register.html",
+    "sha256": "1a507f83ecf492ca61818650d3b4836323a110d98fe788a10bf8134e25c77794",
+    "bytes": 3731,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "auth-shell",
+      "card auth-card",
+      "text-strong",
+      "muted",
+      "form-group",
+      "form-group",
+      "form-group",
+      "password-toggle",
+      "toggle-btn",
+      "password-strength",
+      "password-strength-bar",
+      "form-group",
+      "password-toggle",
+      "toggle-btn",
+      "g-recaptcha",
+      "cf-turnstile",
+      "alert alert-warning",
+      "alert-icon",
+      "btn btn-primary",
+      "auth-links"
+    ]
+  },
+  {
+    "path": "templates/myapp/scan_job_detail.html",
+    "sha256": "34c5cf849c35d006f9735618ad79562c066f1cc2de9bf964d03c09b346eaa0db",
+    "bytes": 2104,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "grid",
+      "card",
+      "card",
+      "card",
+      "panel",
+      "table-wrap"
+    ]
+  },
+  {
+    "path": "templates/myapp/scan_jobs.html",
+    "sha256": "41e4705e6d45176835b4c2ea06085695316f4129db268acd26168e574af107ef",
+    "bytes": 926,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "table-wrap"
+    ]
+  },
+  {
+    "path": "templates/myapp/scan_result.html",
+    "sha256": "7848f0f140cba4dba39ca64f6423bbaabaf9441d0d47588d64c95820ae8b2035",
+    "bytes": 9742,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "muted",
+      "panel",
+      "text-strong",
+      "grid",
+      "card",
+      "metric-label",
+      "stat",
+      "badge-state risk-{{ result.display_risk_level }}",
+      "muted",
+      "card",
+      "text-strong",
+      "stat risk-{{ result.display_risk_level }}",
+      "card",
+      "text-strong",
+      "stat",
+      "card",
+      "text-strong",
+      "stat",
+      "actions no-print",
+      "btn btn-primary",
+      "btn",
+      "btn",
+      "panel",
+      "table-wrap",
+      "risk-{{ port.risk|upper }}",
+      "panel",
+      "table-wrap",
+      "card",
+      "panel",
+      "panel",
+      "grid",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "card",
+      "panel no-print",
+      "muted",
+      "wide-form",
+      "btn-primary",
+      "panel",
+      "card",
+      "muted"
+    ]
+  },
+  {
+    "path": "templates/myapp/scanner_access.html",
+    "sha256": "fdd64fd421dc1b41d0dedd33e7922544fbca013c81d0802b5400579a2b406795",
+    "bytes": 128,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": []
+  },
+  {
+    "path": "templates/myapp/security_policies.html",
+    "sha256": "dae161908317ce05094b0485bf1e9a06c2bdd3bc815a9e890edc609f46d2b756",
+    "bytes": 1485,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "text-strong",
+      "muted",
+      "panel",
+      "wide-form",
+      "checkbox-label",
+      "panel",
+      "table-wrap"
+    ]
+  },
+  {
+    "path": "templates/myapp/static_analysis.html",
+    "sha256": "0b3d62359adca7bd12493740c97e227ae946eb065e4e56b78d381b03f7814eb9",
+    "bytes": 412,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": []
+  },
+  {
+    "path": "templates/myapp/system.html",
+    "sha256": "71d714dd7152725837169c912951d31e085c16ee29de8af2db55fccfccb5b7bd",
+    "bytes": 7054,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "grid",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "panel",
+      "terminal",
+      "grid",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "card",
+      "text-strong",
+      "actions",
+      "btn",
+      "btn"
+    ]
+  },
+  {
+    "path": "templates/myapp/target_scan_detail.html",
+    "sha256": "411f6333b73abb908f71425ea84443cc9d32bc680920ca7f5d46b0fd6e593a4d",
+    "bytes": 5215,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "panel",
+      "muted",
+      "grid",
+      "card",
+      "card",
+      "stat risk-{{ scan.risk_level }}",
+      "card",
+      "card",
+      "btn",
+      "btn",
+      "panel",
+      "risk-{{ finding.severity }}",
+      "panel",
+      "panel",
+      "technical",
+      "panel",
+      "technical",
+      "panel",
+      "panel",
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/wifi_security.html",
+    "sha256": "3e46b8633cd4355630ffbda46f6ed7abedcafe9663d4c3ae0a34f3b74a260a5f",
+    "bytes": 5240,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "page-heading",
+      "summary-grid",
+      "panel",
+      "panel",
+      "stat",
+      "actions",
+      "panel",
+      "summary-grid",
+      "panel",
+      "panel",
+      "panel",
+      "panel",
+      "wifi-current",
+      "os-missing",
+      "grid",
+      "card",
+      "wifi-history",
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/myapp/workspace_list.html",
+    "sha256": "44d45096cff1aadaf2136b2c90add80b73a42e9e826c685b2f57851894ca4826",
+    "bytes": 1400,
+    "extends": [
+      "base.html"
+    ],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": [
+      "panel",
+      "panel",
+      "panel",
+      "panel"
+    ]
+  },
+  {
+    "path": "templates/registration/password_reset_email.txt",
+    "sha256": "da91bb41517567f3f461f692054d363b97ae265a55a56c15a63d8b030b58a081",
+    "bytes": 177,
+    "extends": [],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": []
+  },
+  {
+    "path": "static/css/theme.css",
+    "sha256": "9122801c4077144db55bb4808e6441b45b56ecbdf2a8ebecbb10b856080444e0",
+    "bytes": 11087,
+    "extends": [],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": []
+  },
+  {
+    "path": "static/js/app.js",
+    "sha256": "68822577ad456a3642ac1eda1f0c2ebce46e4ccbcf7d90d8718db40ca69ce564",
+    "bytes": 3334,
+    "extends": [],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": []
+  },
+  {
+    "path": "static/js/theme-init.js",
+    "sha256": "32188189e877eb3b58c09174e12526000f02bb7c31a77f56280ef82d85001795",
+    "bytes": 437,
+    "extends": [],
+    "inline_style_blocks": 0,
+    "inline_style_attributes": 0,
+    "classes": []
+  }
+]

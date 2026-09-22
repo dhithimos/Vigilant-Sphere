@@ -1,0 +1,3 @@
+# Requirement traceability
+
+The delivery retains the provided project, audits real paths, consolidates duplicate analyzer entry points, removes runtime/unused files, preserves migrations, supplies optional-provider states and produces a validated ZIP. Security fixes and file changes are indexed in `file-audit.json` and `AUDIT_AND_IMPLEMENTATION.md`. The acceptance checklist intentionally distinguishes tested functionality from partial implementations. See `limitations.md` for specification items not fully implemented. No blanket “all requirements complete” or “production certified” claim is made.

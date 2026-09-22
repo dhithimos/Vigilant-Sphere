@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="alerts-wrapper">
+    <section class="panel vs-card">
+        <h1>Critical Email Alerts</h1>
+        <p>SMTP passwords are read only from environment variables and are never displayed or stored here. Only CRITICAL findings trigger automatic delivery.</p>
+        
+        <form method="post" class="wide-form">
+            {% csrf_token %}
+            
+            <div class="checkbox-group-container">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="enabled" {% if config.enabled %}checked{% endif %}> 
+                    Enable critical alerts
+                </label>
+            </div>
+
+            <div class="grid">
+                <div class="form-group">
+                    <label for="host">SMTP host</label>
+                    <input id="host" name="host" value="{{ config.host }}" placeholder="smtp.example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="port">SMTP port</label>
+                    <input id="port" name="port" type="number" value="{{ config.port }}">
+                </div>
+            </div>
+
+            <div class="checkbox-group-container">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="use_tls" {% if config.use_tls %}checked{% endif %}> 
+                    Use TLS
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="use_ssl" {% if config.use_ssl %}checked{% endif %}> 
+                    Use SSL
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="from_email">From email</label>
+                <input id="from_email" type="email" name="from_email" value="{{ config.from_email }}">
+            </div>
+
+            <div class="form-group">
+                <label for="recipients">Recipients</label>
+                <textarea id="recipients" name="recipients" rows="4">{{ config.recipients }}</textarea>
+            </div>
+
+            <fieldset><legend>Alert policy</legend><label>Minimum severity <select name="alert_severity_threshold"><option value="CRITICAL" {% if config.alert_severity_threshold == 'CRITICAL' %}selected{% endif %}>Critical</option><option value="HIGH" {% if config.alert_severity_threshold == 'HIGH' %}selected{% endif %}>High and Critical</option></select></label><label>Wi-Fi duplicate window (hours)<input type="number" name="alert_dedup_window_hours" min="0" max="8760" value="{{ config.alert_dedup_window_hours }}"></label><label><input type="checkbox" name="digest_enabled" {% if config.digest_enabled %}checked{% endif %}>Enable digest</label><select name="digest_frequency"><option value="DAILY" {% if config.digest_frequency == 'DAILY' %}selected{% endif %}>Daily</option><option value="WEEKLY" {% if config.digest_frequency == 'WEEKLY' %}selected{% endif %}>Weekly</option></select><p>Last digest: {{ config.last_digest_sent_at|default:'Never sent' }}. Run the send_alert_digest management command from your scheduler. SMTP credentials remain environment-only.</p></fieldset><div class="actions vs-actions">
+                <button name="action" value="save">Save Configuration</button>
+                <button name="action" value="test">Test Email</button>
+            </div>
+        </form>
+    </section>
+</div>
+{% endblock %}

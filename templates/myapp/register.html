@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="auth-shell">
+  <div class="card auth-card vs-card">
+    <h2 class="text-strong">Create Your Account</h2>
+    <p class="muted">Register to access Vigilant Sphere security tools.</p>
+
+    <form method="post" autocomplete="off">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="id_username">Username</label>
+        <input type="text" id="id_username" name="username" required autofocus>
+      </div>
+
+      <div class="form-group">
+        <label for="id_email">Email</label>
+        <input type="email" id="id_email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="id_password">Password</label>
+        <div class="password-toggle">
+          <input type="password" id="id_password" name="password" required minlength="8"
+                 oninput="vsUpdateStrength(this.value)">
+          <button type="button" class="toggle-btn" data-toggle-for="id_password" aria-label="Show password">Show</button>
+        </div>
+        <div class="password-strength"><div class="password-strength-bar" id="vsStrengthBar"></div></div>
+      </div>
+
+      <div class="form-group">
+        <label for="id_confirm_password">Confirm password</label>
+        <div class="password-toggle">
+          <input type="password" id="id_confirm_password" name="confirm_password" required minlength="8">
+          <button type="button" class="toggle-btn" data-toggle-for="id_confirm_password" aria-label="Show password">Show</button>
+        </div>
+      </div>
+
+      {% if captcha_configured %}
+        {% if captcha_provider == "recaptcha" %}
+          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+          <div class="g-recaptcha" data-sitekey="{{ captcha_site_key }}"></div>
+        {% else %}
+          <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+          <div class="cf-turnstile" data-sitekey="{{ captcha_site_key }}"></div>
+        {% endif %}
+      {% else %}
+        <div class="alert alert-warning vs-alert">
+          <span class="alert-icon">&#9888;</span>
+          <div>
+            Development mode: CAPTCHA is not configured (no CAPTCHA_SITE_KEY / CAPTCHA_SECRET_KEY set),
+            so registration is not protected by CAPTCHA in this environment.
+          </div>
+        </div>
+      {% endif %}
+
+      <button type="submit" class="btn btn-primary vs-button vs-button-primary">Register</button>
+    </form>
+
+    <div class="auth-links">
+      <a href="{% url 'login' %}">Already have an account? Log in</a>
+    </div>
+  </div>
+</div>
+
+<script>
+
+
+function vsUpdateStrength(value) {
+    var bar = document.getElementById('vsStrengthBar');
+    if (!bar) return;
+    var score = 0;
+    if (value.length >= 8) score++;
+    if (value.length >= 12) score++;
+    if (/[A-Z]/.test(value) && /[a-z]/.test(value)) score++;
+    if (/[0-9]/.test(value)) score++;
+    if (/[^A-Za-z0-9]/.test(value)) score++;
+    bar.className = 'password-strength-bar';
+    if (score <= 1) bar.classList.add('weak');
+    else if (score <= 3) bar.classList.add('medium');
+    else bar.classList.add('strong');
+}
+</script>
+{% endblock %}
+

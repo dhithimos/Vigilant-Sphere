@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="panel vs-card">
+    <h1>Security Intelligence &amp; Threat Analysis</h1>
+    <p>Analyze a URL, domain, IP, hash, email address, or uploaded file. Local observations and provider-reported intelligence remain separately identified.</p>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="scan-target">Scan target</label>
+        <input id="scan-target" name="target" maxlength="2048" placeholder="URL, domain, IP, hash, or email" aria-describedby="scan-help">
+        <p id="scan-help" class="muted">For files, choose an upload instead. URL requests are SSRF-protected, passive, size-limited, and revalidated after redirects.</p>
+        <label for="scan-file">Upload file</label>
+        <input id="scan-file" type="file" name="file">
+        <button type="submit">Analyze target</button>
+    </form>
+</section>
+
+<section class="panel vs-card"><h2>Capability coverage</h2><div class="grid">{% for provider, state in provider_status.items %}<div class="card vs-card"><strong>{{ provider }}</strong><p>{{ state }}</p></div>{% endfor %}</div><p class="muted">A provider is queried only when configured and supports this indicator. “No detection” is not a safety verdict.</p></section>
+
+{% if latest_scan %}
+<section class="panel vs-card">
+    <h2>Latest Scan</h2>
+    <p>Score: <strong>{{ latest_scan.score }}</strong> | Risk: <strong class="risk-{{ latest_scan.risk_level }}">{{ latest_scan.risk_level }}</strong></p>
+    <a href="{% url 'scan_result' latest_scan.id %}" class="btn vs-button">Open Latest Result</a>
+</section>
+{% endif %}
+{% endblock %}

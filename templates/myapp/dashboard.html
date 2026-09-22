@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Security Operations Dashboard | Vigilant Sphere{% endblock %}
+{% block content %}
+
+
+<div class="dashboard-container">
+  <section class="hero-panel panel vs-card">
+    <p class="muted">Security Operations / Overview</p>
+    <h1>Security Operations Dashboard</h1>
+    <p class="muted">Evidence-led endpoint and network visibility for {{ user.username }}.</p>
+  </section>
+
+  <section class="grid">
+    <article class="card vs-card">
+      <p class="metric-label">Threat score</p>
+      <p id="riskScore" class="metric-value">{% if risk_score != None %}{{ risk_score }}/100{% else %}No Evidence{% endif %}</p>
+      <progress id="riskMeter" max="100" value="{{ risk_score }}"></progress>
+      <p id="riskLevel" class="risk-{{ risk_level }}">{{ risk_level }}</p>
+    </article>
+
+    <article class="card vs-card">
+      <p class="metric-label">Total findings</p>
+      <p id="totalFindings" class="metric-value">{{ total_findings }}</p>
+    </article>
+
+    <article class="card vs-card">
+      <p class="metric-label">Critical findings</p>
+      <p id="criticalFindings" class="metric-value risk-CRITICAL">{{ critical_findings }}</p>
+    </article>
+
+    <article class="card vs-card">
+      <p class="metric-label">Open incidents</p>
+      <p id="openIncidents" class="metric-value">{{ open_incidents }}</p>
+    </article>
+  </section>
+
+  <div class="actions vs-actions">
+    <a href="{% url 'combined_scan' %}" class="btn btn-primary vs-button vs-button-primary">Run combined scan</a>
+    {% if latest_scan %}
+      <a href="{% url 'scan_result' latest_scan.id %}" class="btn vs-button">Latest result</a>
+    {% endif %}
+  </div>
+
+  <section class="grid-two-col">
+    <article class="panel vs-card">
+      <h2>Live CPU utilization</h2>
+      <canvas id="cpuChart" height="160" aria-label="Live CPU utilization chart"></canvas>
+      <p id="cpuFallback" class="muted">Loading system metric…</p>
+    </article>
+
+    <article class="panel vs-card">
+      <h2>Live alerts</h2>
+      <div id="alerts" aria-live="polite">
+        <p class="muted">Loading security alerts…</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="panel vs-card">
+    <h2>Live network observations</h2>
+    <div class="table-wrap vs-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Protocol</th>
+            <th>Local</th>
+            <th>Remote</th>
+            <th>Port</th>
+            <th>Status</th>
+            <th>Risk</th>
+          </tr>
+        </thead>
+        <tbody id="networkLogs">
+          <tr>
+            <td colspan="6" class="muted">Loading security data…</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel vs-card">
+    <h2>Recent scans</h2>
+    <div class="table-wrap vs-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Score</th>
+            <th>Risk</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for scan in scans %}
+            <tr>
+              <td>{{ scan.created_at }}</td>
+              <td>{{ scan.scan_type }}</td>
+              <td>{{ scan.risk_score }}/100</td>
+              <td><span class="risk-{{ scan.status }}">{{ scan.status }}</span></td>
+              <td><a href="{% url 'scan_job_detail' scan.id %}">View</a></td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="5" class="muted">No scan data available. Run a scan to generate evidence.</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script src="{% static 'vendor/chartjs/chart.umd.min.js' %}"></script>
+<script>
+const cpuLabels=[], cpuPoints=[]; let cpuChart;
+const text=(value)=>document.createTextNode(value || '-');
+function cell(row,value,cls){const td=document.createElement('td');if(cls)td.className=cls;td.append(text(String(value ?? '-')));row.append(td)}
+function renderAlerts(alerts){const host=document.getElementById('alerts');host.replaceChildren();if(!alerts.length){host.innerHTML='<p class="muted">No active high-risk alerts.</p>';return}alerts.forEach(alert=>{const item=document.createElement('article');item.className='card';const severity=document.createElement('strong');severity.className='risk-'+alert.severity;severity.textContent=alert.severity;const detail=document.createElement('p');detail.textContent=alert.message;item.append(severity,detail);host.append(item)})}
+function renderNetwork(rows){const body=document.getElementById('networkLogs');body.replaceChildren();if(!rows.length){body.innerHTML='<tr><td colspan="6" class="muted">Network telemetry not collected on this page.</td></tr>';return}rows.forEach(data=>{const row=document.createElement('tr');cell(row,data.protocol);cell(row,data.local_address);cell(row,data.remote_address);cell(row,data.port);cell(row,data.status);cell(row,data.risk,'risk-'+String(data.risk||'').toUpperCase());body.append(row)})}
+function updateChart(cpu){document.getElementById('cpuFallback').textContent=cpu === null ? 'Host metrics unavailable for this account' : 'CPU '+cpu+'% (actual host metric)';if(cpu===null||typeof Chart==='undefined')return;cpuLabels.push(new Date().toLocaleTimeString());cpuPoints.push(cpu);if(cpuPoints.length>12){cpuLabels.shift();cpuPoints.shift()}if(!cpuChart){cpuChart=new Chart(document.getElementById('cpuChart'),{type:'line',data:{labels:cpuLabels,datasets:[{label:'CPU %',data:cpuPoints,borderColor:getComputedStyle(document.documentElement).getPropertyValue('--accent').trim(),backgroundColor:getComputedStyle(document.documentElement).getPropertyValue('--chart-fill').trim(),fill:true,tension:.3}]},options:{animation:false,responsive:true,scales:{y:{min:0,max:100,ticks:{color:getComputedStyle(document.documentElement).getPropertyValue('--text-secondary').trim()},grid:{color:getComputedStyle(document.documentElement).getPropertyValue('--chart-grid').trim()}},x:{ticks:{color:getComputedStyle(document.documentElement).getPropertyValue('--text-secondary').trim()},grid:{color:getComputedStyle(document.documentElement).getPropertyValue('--chart-grid').trim()}},},plugins:{legend:{labels:{color:getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trim()}}}}})}else cpuChart.update()}
+async function refreshDashboard(){try{const response=await fetch('{% url "api_dashboard_metrics" %}');if(!response.ok)throw Error('request failed');const data=await response.json();document.getElementById('riskScore').textContent=data.risk_score === null ? 'No Evidence' : data.risk_score+'/100';document.getElementById('riskMeter').value=data.risk_score;const level=document.getElementById('riskLevel');level.textContent=data.risk_level;level.className='risk-'+data.risk_level;document.getElementById('totalFindings').textContent=data.total_findings;document.getElementById('criticalFindings').textContent=data.critical_findings;document.getElementById('openIncidents').textContent=data.open_incidents;updateChart(data.cpu);renderAlerts(data.alerts);renderNetwork(data.network_logs)}catch(error){document.getElementById('cpuFallback').textContent='Unable to load live metrics. Reload the page to retry.';document.getElementById('alerts').innerHTML='<p class="muted">Unable to load live alerts.</p>'}}
+document.addEventListener('vs-theme-change',()=>{if(!cpuChart)return;const style=getComputedStyle(document.documentElement);cpuChart.data.datasets[0].borderColor=style.getPropertyValue('--accent').trim();cpuChart.data.datasets[0].backgroundColor=style.getPropertyValue('--chart-fill').trim();for(const axis of Object.values(cpuChart.options.scales)){axis.ticks.color=style.getPropertyValue('--text-secondary').trim();axis.grid.color=style.getPropertyValue('--chart-grid').trim()}cpuChart.options.plugins.legend.labels.color=style.getPropertyValue('--text-primary').trim();cpuChart.update('none')});refreshDashboard();setInterval(refreshDashboard,10000);
+</script>
+{% endblock %}

@@ -1,0 +1,285 @@
+{
+  "route_results": [
+    {
+      "url": "/incidents/new/",
+      "status": 200
+    },
+    {
+      "url": "/compare/",
+      "status": 200
+    },
+    {
+      "url": "/admin-dashboard/cms/blog/new/",
+      "status": 200
+    },
+    {
+      "url": "/",
+      "status": 200
+    },
+    {
+      "url": "/about/",
+      "status": 200
+    },
+    {
+      "url": "/contact/",
+      "status": 200
+    },
+    {
+      "url": "/privacy/",
+      "status": 200
+    },
+    {
+      "url": "/blogs/",
+      "status": 200
+    },
+    {
+      "url": "/blog/",
+      "status": 200
+    },
+    {
+      "url": "/login/",
+      "status": 302
+    },
+    {
+      "url": "/register/",
+      "status": 302
+    },
+    {
+      "url": "/forgot-password/",
+      "status": 200
+    },
+    {
+      "url": "/change-password/",
+      "status": 200
+    },
+    {
+      "url": "/dashboard/",
+      "status": 200
+    },
+    {
+      "url": "/security-admin/",
+      "status": 200
+    },
+    {
+      "url": "/profile/",
+      "status": 200
+    },
+    {
+      "url": "/edit-profile/",
+      "status": 200
+    },
+    {
+      "url": "/launcher/",
+      "status": 200
+    },
+    {
+      "url": "/scan/",
+      "status": 200
+    },
+    {
+      "url": "/scan-jobs/",
+      "status": 200
+    },
+    {
+      "url": "/findings/",
+      "status": 200
+    },
+    {
+      "url": "/system/",
+      "status": 200
+    },
+    {
+      "url": "/network/",
+      "status": 200
+    },
+    {
+      "url": "/mobile-security/",
+      "status": 200
+    },
+    {
+      "url": "/phishing/",
+      "status": 200
+    },
+    {
+      "url": "/password-strength/",
+      "status": 200
+    },
+    {
+      "url": "/password-checker/",
+      "status": 200
+    },
+    {
+      "url": "/wifi-security/",
+      "status": 200
+    },
+    {
+      "url": "/chatbot/",
+      "status": 200
+    },
+    {
+      "url": "/api/chatbot/",
+      "status": 405
+    },
+    {
+      "url": "/email-configuration/",
+      "status": 200
+    },
+    {
+      "url": "/file-scan/",
+      "status": 200
+    },
+    {
+      "url": "/feature-flags/",
+      "status": 200
+    },
+    {
+      "url": "/threat-detection/",
+      "status": 200
+    },
+    {
+      "url": "/threat-intelligence/",
+      "status": 200
+    },
+    {
+      "url": "/ioc-correlation/",
+      "status": 200
+    },
+    {
+      "url": "/mitre-mapping/",
+      "status": 200
+    },
+    {
+      "url": "/fim/",
+      "status": 200
+    },
+    {
+      "url": "/incidents/",
+      "status": 200
+    },
+    {
+      "url": "/quarantine/",
+      "status": 200
+    },
+    {
+      "url": "/risk-assessment/",
+      "status": 200
+    },
+    {
+      "url": "/timeline/",
+      "status": 200
+    },
+    {
+      "url": "/scan-history/",
+      "status": 200
+    },
+    {
+      "url": "/reports/",
+      "status": 200
+    },
+    {
+      "url": "/developer/",
+      "status": 200
+    },
+    {
+      "url": "/how-to-use/",
+      "status": 200
+    },
+    {
+      "url": "/documentation/",
+      "status": 200
+    },
+    {
+      "url": "/suggestions/",
+      "status": 200
+    },
+    {
+      "url": "/applications/",
+      "status": 200
+    },
+    {
+      "url": "/downloads/",
+      "status": 200
+    },
+    {
+      "url": "/report/pdf/",
+      "status": 302
+    },
+    {
+      "url": "/report/json/",
+      "status": 404
+    },
+    {
+      "url": "/api/dashboard-metrics/",
+      "status": 200
+    },
+    {
+      "url": "/admin-dashboard/",
+      "status": 200
+    },
+    {
+      "url": "/admin-dashboard/cms/",
+      "status": 200
+    },
+    {
+      "url": "/admin-dashboard/cms/pages/",
+      "status": 200
+    },
+    {
+      "url": "/admin-dashboard/cms/pages/new/",
+      "status": 200
+    },
+    {
+      "url": "/admin-dashboard/cms/media/",
+      "status": 200
+    },
+    {
+      "url": "/admin-dashboard/cms/developer-images/",
+      "status": 200
+    },
+    {
+      "url": "/admin-dashboard/cms/blog/",
+      "status": 200
+    },
+    {
+      "url": "/admin-dashboard/cms/navigation/",
+      "status": 200
+    },
+    {
+      "url": "/admin-dashboard/cms/settings/",
+      "status": 200
+    },
+    {
+      "url": "/admin-dashboard/security-policies/",
+      "status": 200
+    },
+    {
+      "url": "/admin-dashboard/audit-logs/",
+      "status": 200
+    },
+    {
+      "url": "/security-admin/users/download/",
+      "status": 200
+    },
+    {
+      "url": "/dns/",
+      "status": 200
+    },
+    {
+      "url": "/tls/",
+      "status": 200
+    },
+    {
+      "url": "/http/",
+      "status": 200
+    },
+    {
+      "url": "/html/",
+      "status": 200
+    },
+    {
+      "url": "/javascript/",
+      "status": 200
+    }
+  ],
+  "template_and_static_errors": []
+}

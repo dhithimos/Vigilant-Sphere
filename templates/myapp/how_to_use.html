@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="panel info-page vs-card">
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.content|linebreaksbr }}</p>
+    <ol>
+        <li>Open the launcher.</li>
+        <li>Choose a scanner.</li>
+        <li>Run the scan.</li>
+        <li>Review evidence and score contributors.</li>
+        <li>Download a report or follow remediation guidance.</li>
+    </ol>
+</section>
+{% endblock %}

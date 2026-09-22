@@ -1,0 +1,60 @@
+"""Authored local guidance retrieved by topic; no network or language model calls."""
+
+ARTICLES = {
+    "phishing": {
+        "terms": "phishing email message link url login fake website domain credential harvest homograph scam suspicious",
+        "title": "Investigating a suspicious link",
+        "explanation": "Phishing persuades someone to disclose information or perform an action under a false identity. A convincing logo, HTTPS certificate, or familiar word in a URL does not establish who operates a site. Conversely, a missing security header does not prove phishing. Interpret combinations of observations and the context in which the link arrived.",
+        "steps": "Check the exact hostname before interacting. Review redirects and the final destination, certificate verification, password form destinations, and whether credentials would cross domains or use unencrypted HTTP. Confirm unexpected requests through a separately known contact channel. Avoid signing in from the message itself.",
+        "example": "A password field posting to a different hostname is an observable fact. It can indicate credential collection, but legitimate federated sign-in can also cross domains. Verify that destination before declaring compromise.",
+        "application": "Use the URL analyzer and open the saved investigation. Each finding lists evidence, confidence, and a recommendation. Network failures mean Unavailable; screenshots and JavaScript execution are not provided.",
+    },
+    "files": {
+        "terms": "file malware ransomware executable script entropy hash archive attachment trojan virus quarantine suspicious download",
+        "title": "Assessing a suspicious file without running it",
+        "explanation": "Static analysis examines bytes, structure, and embedded content without executing a sample. A cryptographic digest identifies the exact bytes; it does not establish that those bytes are trustworthy. Entropy measures byte distribution. Compressed archives and encrypted documents often have high entropy without being malicious.",
+        "steps": "Preserve the original and record its source and SHA-256. Review signature bytes, extension mismatches, container metadata, embedded URLs, and script command patterns. Keep uncertain files isolated and do not open active content to test whether it is safe. Compare observations with the expected purpose of the file.",
+        "example": "An encoded command in a script warrants inspection. Its presence is not evidence that the command executed. A rule match may identify a family of content rather than confirm malware, so check the rule meaning and supporting evidence.",
+        "application": "The File Scanner shows hashes, metadata, bounded strings, IOC candidates, optional local engine observations, and linked findings. Missing engines are reported as unavailable. No dynamic sandbox or behavioral execution is performed.",
+    },
+    "incidents": {
+        "terms": "incident response compromised breach contain investigate evidence triage findings escalate soc dfir recover ransomware",
+        "title": "Turning an observation into an investigation",
+        "explanation": "A finding is an observation; an incident is a coordinated investigation of a suspected or confirmed event. Severity helps prioritize work, while confidence describes the strength of the evidence. Neither is a probability of compromise. Start by separating what was observed from what is inferred.",
+        "steps": "Record the affected asset, collection time, relevant findings, and uncertainty. Validate the scope using records you are authorized to inspect. If harm is ongoing, use approved containment procedures while preserving evidence. Record who acted, what changed, and why. Verify recovery before resolving the incident.",
+        "example": "An unexpected local listener may be an intended development service. Correlate its process, owner, binding address, and business purpose before deciding whether containment is needed.",
+        "application": "Open a finding and choose Escalate to Incident, or select an existing scan job in the incident form. Add notes as evidence develops. Archive removes the incident from the active list while retaining its record. I do not perform containment actions for you.",
+    },
+    "network": {
+        "terms": "network port connection tcp udp dns tls certificate http firewall service server https hsts csp",
+        "title": "Interpreting network and web observations",
+        "explanation": "An open port means a service accepted a connection at collection time. It does not establish a vulnerability or an intrusion. DNS records identify infrastructure, while TLS verification checks a certificate chain and hostname. A connection timeout is not evidence of an invalid certificate.",
+        "steps": "Compare listeners with intended services and firewall scope. Review address binding and whether exposure is necessary. For a web target, distinguish DNS resolution, TLS verification, HTTP response, redirect behavior, and application content. Diagnose failures at the layer where evidence is available.",
+        "example": "A web page with no observed content security policy presents a hardening opportunity. That observation alone does not demonstrate a working injection vulnerability. A failed fetch cannot support a claim that the header is missing.",
+        "application": "Host scans inspect the machine running Django. Target scans use bounded public-destination requests and block internal addresses. Detailed reports preserve actual response and failure states; they do not act as an unrestricted network proxy.",
+    },
+    "passwords": {
+        "terms": "password passphrase mfa authentication account login strength generator credential privacy breach reusable",
+        "title": "Protecting account access",
+        "explanation": "Length and uniqueness matter more than a predictable substitution pattern. Reusing a password means one disclosure can affect several accounts. Multi-factor authentication adds an independent check, while a password manager helps maintain unique credentials without memorizing them all.",
+        "steps": "Generate a unique password or long passphrase for each account. Enable multi-factor authentication and keep recovery codes in a protected location. If exposure is suspected, change the credential through the service's known address and review active sessions and recovery settings.",
+        "example": "Replacing letters with numbers in a familiar word may satisfy a composition rule but remain predictable. A displayed entropy or crack-time estimate is a model, not a guarantee against real attack strategies.",
+        "application": "Use the browser-local password analyzer and generator. Do not paste passwords into this chat. The optional breach comparison sends only a short locally computed hash prefix; strength analysis does not require it. Neither a low breach count nor a strong estimate proves account safety.",
+    },
+    "wifi": {
+        "terms": "wifi wireless wpa wpa2 wpa3 wep ssid router encryption network profile wlan hotspot",
+        "title": "Assessing saved wireless security settings",
+        "explanation": "A saved Wi-Fi profile describes how a device expects to authenticate and encrypt traffic. It does not prove that a nearby access point is authentic, that router firmware is current, or that no wireless attack has occurred. Normal web pages cannot enumerate a user's wireless adapter.",
+        "steps": "Review the recorded authentication and cipher. Replace obsolete WEP or legacy TKIP configurations where possible, and use a supported modern configuration. Review router administration credentials and updates through a trusted management interface. Avoid treating signal strength as a security verdict.",
+        "example": "A saved profile marked open establishes that wireless authentication is absent for that profile. It does not establish that the device is currently connected to it, nor identify the operator of a nearby network with the same name.",
+        "application": "The local Windows collector inspects saved-profile metadata without retrieving Wi-Fi keys. Other platforms or unsupported command output return an honest capability state. Collection is controlled by the Wi-Fi feature flag; the assistant only reports audits saved for your account.",
+    },
+    "web": {
+        "terms": "django owasp authorization idor csrf xss injection ssrf upload application api session security database sql",
+        "title": "Reviewing application security controls",
+        "explanation": "Start with the data and actions an application exposes. Authentication identifies the user; authorization checks whether that user may perform a specific action on a specific object. Passing a login check is not enough to authorize another user's record.",
+        "steps": "Apply ownership checks on reads and writes. Use parameterized database access, contextual output escaping, and CSRF protection for authenticated mutations. Bound uploads and outbound requests. Validate every redirect destination and resolved address in a URL-fetching feature. Avoid logging secrets or embedding them in error messages.",
+        "example": "Changing a numeric record ID should not reveal another user's scan. Test this with two separate accounts and both detail and export endpoints. A hidden navigation link is not an authorization control.",
+        "application": "Personal investigation pages are ownership-filtered. Shared management intentionally follows this project's trusted-local-user model. When testing changes, include negative authorization cases, feature-disabled requests, malformed inputs, and unavailable dependencies.",
+    },
+}

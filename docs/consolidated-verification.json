@@ -1,0 +1,366 @@
+{
+  "source_tests": 78,
+  "extracted_validation": [
+    {
+      "command": "python manage.py migrate --noinput",
+      "exit_code": 0,
+      "output": "Operations to perform:\n  Apply all migrations: admin, auth, contenttypes, myapp, sessions\nRunning migrations:\n  Applying contenttypes.0001_initial... OK\n  Applying contenttypes.0002_remove_content_type_name... OK\n  Applying auth.0001_initial... OK\n  Applying auth.0002_alter_permission_name_max_length... OK\n  Applying auth.0003_alter_user_email_max_length... OK\n  Applying auth.0004_alter_user_username_opts... OK\n  Applying auth.0005_alter_user_last_login_null... OK\n  Applying auth.0006_require_contenttypes_0002... OK\n  Applying auth.0007_alter_validators_add_error_messages... OK\n  Applying auth.0008_alter_user_username_max_length... OK\n  Applying auth.0009_alter_user_last_name_max_length... OK\n  Applying auth.0010_alter_group_name_max_length... OK\n  Applying auth.0011_update_proxy_permissions... OK\n  Applying auth.0012_alter_user_first_name_max_length... OK\n  Applying myapp.0001_initial... OK\n  Applying admin.0001_initial... OK\n  Applying admin.0002_logentry_remove_auto_add... OK\n  Applying admin.0003_logentry_add_action_flag_choices... OK\n  Applying myapp.0002_contactmessage_scanresult_useractivity... OK\n  Applying myapp.0003_vigilant_profile_activity_feedback... OK\n  Applying myapp.0004_attackpatterndetection_behavioralthreat_and_more... OK\n  Applying myapp.0005_endpointagent_usbdevice_usbscanjob_usbscanfinding_and_more... OK\n  Applying myapp.0006_applicationrelease_cmsannouncement_cmsblock_and_more... OK\n  Applying myapp.0007_developerimage... OK\n  Applying myapp.0008_unified_security_pipeline... OK\n  Applying myapp.0009_normalize_pipeline_index_names... OK\n  Applying myapp.0010_targetscan... OK\n  Applying myapp.0011_wifi_email_alerts... OK\n  Applying myapp.0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more... OK\n  Applying myapp.0013_finding_updated_at_incident_archived_and_more... OK\n  Applying myapp.0014_incident_scan_jobs... OK\n  Applying myapp.0015_alertemailconfiguration_alert_dedup_window_hours_and_more... OK\n  Applying sessions.0001_initial... OK\n"
+    },
+    {
+      "command": "python manage.py check",
+      "exit_code": 0,
+      "output": "System check identified no issues (0 silenced).\n"
+    },
+    {
+      "command": "python manage.py makemigrations --check --dry-run",
+      "exit_code": 0,
+      "output": "No changes detected\n"
+    },
+    {
+      "command": "python manage.py test myapp --noinput",
+      "exit_code": 0,
+      "output": "Found 78 test(s).\nSystem check identified no issues (0 silenced).\nCreating test database for alias 'default'...\n\n..............................................................................\n----------------------------------------------------------------------\nRan 78 tests in 71.502s\n\nOK\nDestroying test database for alias 'default'...\n\n"
+    }
+  ],
+  "fresh_and_existing_copy_migration": "PASS",
+  "undefined_names": "PASS",
+  "optional_provider_keys": "empty",
+  "protected_inputs_unchanged": [
+    ".env.example",
+    "requirements.txt",
+    "constraints.txt",
+    "myapp/threat_intel/providers.py"
+  ],
+  "live_windows": {
+    "state": "AVAILABLE",
+    "profile_count": 17,
+    "classified_count": 0,
+    "current_status": "Unavailable"
+  },
+  "live_linux_macos": "Not run; fixtures only",
+  "smtp": "locmem backend; no external email",
+  "browser": "Not verified: browser webview attachment timeout",
+  "source_matches_extracted": true,
+  "javascript_syntax": [
+    {
+      "route": "/dashboard/",
+      "script": 0,
+      "exit_code": 0
+    },
+    {
+      "route": "/dashboard/",
+      "script": 1,
+      "exit_code": 0
+    },
+    {
+      "route": "/dashboard/",
+      "script": 2,
+      "exit_code": 0
+    },
+    {
+      "route": "/chatbot/",
+      "script": 0,
+      "exit_code": 0
+    },
+    {
+      "route": "/chatbot/",
+      "script": 1,
+      "exit_code": 0
+    },
+    {
+      "route": "/developer/",
+      "script": 0,
+      "exit_code": 0
+    },
+    {
+      "route": "/wifi-security/",
+      "script": 0,
+      "exit_code": 0
+    }
+  ],
+  "references": {
+    "route_results": [
+      {
+        "url": "/incidents/new/",
+        "status": 200
+      },
+      {
+        "url": "/compare/",
+        "status": 200
+      },
+      {
+        "url": "/admin-dashboard/cms/blog/new/",
+        "status": 200
+      },
+      {
+        "url": "/",
+        "status": 200
+      },
+      {
+        "url": "/about/",
+        "status": 200
+      },
+      {
+        "url": "/contact/",
+        "status": 200
+      },
+      {
+        "url": "/privacy/",
+        "status": 200
+      },
+      {
+        "url": "/blogs/",
+        "status": 200
+      },
+      {
+        "url": "/blog/",
+        "status": 200
+      },
+      {
+        "url": "/login/",
+        "status": 302
+      },
+      {
+        "url": "/register/",
+        "status": 302
+      },
+      {
+        "url": "/forgot-password/",
+        "status": 200
+      },
+      {
+        "url": "/change-password/",
+        "status": 200
+      },
+      {
+        "url": "/dashboard/",
+        "status": 200
+      },
+      {
+        "url": "/security-admin/",
+        "status": 200
+      },
+      {
+        "url": "/profile/",
+        "status": 200
+      },
+      {
+        "url": "/edit-profile/",
+        "status": 200
+      },
+      {
+        "url": "/launcher/",
+        "status": 200
+      },
+      {
+        "url": "/scan/",
+        "status": 200
+      },
+      {
+        "url": "/scan-jobs/",
+        "status": 200
+      },
+      {
+        "url": "/findings/",
+        "status": 200
+      },
+      {
+        "url": "/system/",
+        "status": 200
+      },
+      {
+        "url": "/network/",
+        "status": 200
+      },
+      {
+        "url": "/mobile-security/",
+        "status": 200
+      },
+      {
+        "url": "/phishing/",
+        "status": 200
+      },
+      {
+        "url": "/password-strength/",
+        "status": 200
+      },
+      {
+        "url": "/password-checker/",
+        "status": 200
+      },
+      {
+        "url": "/wifi-security/",
+        "status": 200
+      },
+      {
+        "url": "/chatbot/",
+        "status": 200
+      },
+      {
+        "url": "/api/chatbot/",
+        "status": 405
+      },
+      {
+        "url": "/email-configuration/",
+        "status": 200
+      },
+      {
+        "url": "/file-scan/",
+        "status": 200
+      },
+      {
+        "url": "/feature-flags/",
+        "status": 200
+      },
+      {
+        "url": "/threat-detection/",
+        "status": 200
+      },
+      {
+        "url": "/threat-intelligence/",
+        "status": 200
+      },
+      {
+        "url": "/ioc-correlation/",
+        "status": 200
+      },
+      {
+        "url": "/mitre-mapping/",
+        "status": 200
+      },
+      {
+        "url": "/fim/",
+        "status": 200
+      },
+      {
+        "url": "/incidents/",
+        "status": 200
+      },
+      {
+        "url": "/quarantine/",
+        "status": 200
+      },
+      {
+        "url": "/risk-assessment/",
+        "status": 200
+      },
+      {
+        "url": "/timeline/",
+        "status": 200
+      },
+      {
+        "url": "/scan-history/",
+        "status": 200
+      },
+      {
+        "url": "/reports/",
+        "status": 200
+      },
+      {
+        "url": "/developer/",
+        "status": 200
+      },
+      {
+        "url": "/how-to-use/",
+        "status": 200
+      },
+      {
+        "url": "/documentation/",
+        "status": 200
+      },
+      {
+        "url": "/suggestions/",
+        "status": 200
+      },
+      {
+        "url": "/applications/",
+        "status": 200
+      },
+      {
+        "url": "/downloads/",
+        "status": 200
+      },
+      {
+        "url": "/report/pdf/",
+        "status": 302
+      },
+      {
+        "url": "/report/json/",
+        "status": 404
+      },
+      {
+        "url": "/api/dashboard-metrics/",
+        "status": 200
+      },
+      {
+        "url": "/admin-dashboard/",
+        "status": 200
+      },
+      {
+        "url": "/admin-dashboard/cms/",
+        "status": 200
+      },
+      {
+        "url": "/admin-dashboard/cms/pages/",
+        "status": 200
+      },
+      {
+        "url": "/admin-dashboard/cms/pages/new/",
+        "status": 200
+      },
+      {
+        "url": "/admin-dashboard/cms/media/",
+        "status": 200
+      },
+      {
+        "url": "/admin-dashboard/cms/developer-images/",
+        "status": 200
+      },
+      {
+        "url": "/admin-dashboard/cms/blog/",
+        "status": 200
+      },
+      {
+        "url": "/admin-dashboard/cms/navigation/",
+        "status": 200
+      },
+      {
+        "url": "/admin-dashboard/cms/settings/",
+        "status": 200
+      },
+      {
+        "url": "/admin-dashboard/security-policies/",
+        "status": 200
+      },
+      {
+        "url": "/admin-dashboard/audit-logs/",
+        "status": 200
+      },
+      {
+        "url": "/security-admin/users/download/",
+        "status": 200
+      },
+      {
+        "url": "/dns/",
+        "status": 200
+      },
+      {
+        "url": "/tls/",
+        "status": 200
+      },
+      {
+        "url": "/http/",
+        "status": 200
+      },
+      {
+        "url": "/html/",
+        "status": 200
+      },
+      {
+        "url": "/javascript/",
+        "status": 200
+      }
+    ],
+    "template_and_static_errors": []
+  }
+}

@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block content %}
+<article><h1>{{ post.title }}</h1><p>{{ post.category }} · {{ post.tags }} · {{ post.published_at }}</p>{{ post.content|linebreaks }}</article>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="panel vs-card"><h1 class="text-strong">Media Library</h1><p class="muted">Secure uploads with extension and size checks. Uploaded media is never executed.</p></section>
+<section class="panel vs-card"><form class="wide-form" method="post" enctype="multipart/form-data">{% csrf_token %}<label for="vs-field-title">Title</label><input name="title" id="vs-field-title"><label for="vs-field-alt_text">Alt Text</label><input name="alt_text" id="vs-field-alt_text"><label for="vs-field-media_file">File</label><input type="file" name="media_file" accept=".png,.jpg,.jpeg,.webp,.svg,.pdf" required id="vs-field-media_file"><button type="submit">Upload Media</button></form></section>
+<section class="grid">{% for media in media_files %}<div class="card vs-card"><h3>{{ media.title }}</h3><p>{{ media.file.name }}</p><p>{{ media.alt_text }}</p><p>{{ media.created_at }}</p></div>{% empty %}<div class="card vs-card"><h3>No media</h3><p>Upload a file to begin.</p></div>{% endfor %}</section>
+{% endblock %}

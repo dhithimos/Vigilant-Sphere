@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block title %}Investigation {{ scan.scan_id|slice:":8" }} | Vigilant Sphere<section class="panel vs-card"><h2>Indicators of Compromise</h2>{% for finding in scan.job.findings.all %}<p><a href="{% url 'finding_detail' finding.pk %}">{{ finding.title }}</a>: {{ finding.ioc.note|default:'IOC check unavailable' }}</p>{% empty %}<p>No correlated indicators. Absence is not a safety claim.</p>{% endfor %}</section>{% endblock %}
+{% block content %}
+
+
+<section class="panel vs-card">
+  <p class="muted">Security investigation</p>
+  <h1>{{ scan.target }}</h1>
+  <div class="grid">
+    <div class="card vs-card">
+      <h2>Target</h2>
+      <p>{{ scan.target_type }}</p>
+    </div>
+    <div class="card vs-card">
+      <h2>Risk</h2>
+      <p class="stat risk-{{ scan.risk_level }} vs-stat">{{ scan.risk_score }}/100 Â· {{ scan.risk_level }}</p>
+    </div>
+    <div class="card vs-card">
+      <h2>Confidence</h2>
+      <p>{{ scan.confidence }}</p>
+    </div>
+    <div class="card vs-card">
+      <h2>Scan time</h2>
+      <p>{{ scan.completed_at }}</p>
+    </div>
+  </div>
+  <p>
+    <a class="btn vs-button" href="{% url 'target_scan_json' scan.scan_id %}">Export JSON</a> 
+    <a class="btn vs-button" href="{% url 'target_scan_pdf' scan.scan_id %}">Export PDF</a>
+  </p>
+</section>
+
+<section class="panel vs-card">
+  <h2>Assessment</h2><p>{{ assessment }}</p><p>Screenshot/interactive preview: Unavailable. This application does not execute target scripts or embed untrusted pages.</p><h2>Key findings</h2>
+  {% if scan.findings %}
+  <table>
+    <thead>
+      <tr>
+        <th>Severity</th>
+        <th>Finding</th>
+        <th>Evidence</th>
+        <th>Confidence / Recommendation</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for finding in scan.findings %}
+      <tr>
+        <td><strong class="risk-{{ finding.severity }}">{{ finding.severity }}</strong></td>
+        <td>{{ finding.title }}<br><small>{{ finding.description }}</small></td>
+        <td>{{ finding.evidence }}</td>
+        <td>{{ finding.confidence }} · {{ finding.recommendation }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>No local risk findings were generated. This does not establish that the target is safe.</p>
+  {% endif %}
+</section>
+
+<section class="panel vs-card"><h2>Linked findings and MITRE evidence</h2>{% for finding in linked_findings %}<p><a href="{% url 'finding_detail' finding.pk %}">{{ finding.title }}</a> · {{ finding.confidence }}{% if finding.mitre_technique %} · <a href="{% url 'technique_detail' finding.mitre_technique %}">{{ finding.mitre_technique }}</a>{% else %} · No Evidence for technique mapping{% endif %}</p>{% empty %}<p>No normalized findings recorded.</p>{% endfor %}</section>{% for name, module in modules.items %}
+<section class="panel vs-card">
+  <h2>{{ name|title }}</h2>
+  <p><strong>Source:</strong> {{ module.source }} Â· <strong>Status:</strong> {{ module.status }} Â· <strong>Retrieved:</strong> {{ module.timestamp }}</p>
+  {% if module.errors %}
+  <p>
+    {% for error in module.errors %}
+      <span>{{ error }}</span>{% if not forloop.last %}<br>{% endif %}
+    {% endfor %}
+  </p>
+  {% endif %}
+  <pre class="technical">{{ module.data|pprint }}</pre>
+</section>
+{% endfor %}
+
+<section class="panel vs-card">
+  <h2>Threat intelligence</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Capability</th>
+        <th>Indicator</th>
+        <th>Status</th>
+        <th>Retrieved</th>
+        <th>Reported data</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in scan.provider_results %}
+      <tr>
+        <td><strong>{{ row.provider }}</strong></td>
+        <td>{{ row.indicator }}</td>
+        <td>{{ row.status }}</td>
+        <td>{{ row.timestamp }}</td>
+        <td>
+          <pre class="technical">{{ row.data|pprint }}</pre>
+          {% for error in row.errors %}
+            <small>{{ error }}</small>
+          {% endfor %}
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="5">No provider supports this target type or none was configured.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section class="panel vs-card">
+  <h2>Capability status</h2>
+  {% for provider, state in provider_status.items %}
+  <p><strong>{{ provider }}:</strong> <span>{{ state }}</span></p>
+  {% endfor %}
+</section>
+<section class="panel vs-card"><h2>Complete observed evidence</h2><p>State: {{ scan.status }}. A zero score is not a safety verdict.</p><a href="{% url 'target_scan_csv' scan.scan_id %}">CSV report</a>{% for row in scan.results %}<details><summary>{{ row.module }} · {{ row.status }}</summary><pre>{{ row.data }}</pre>{% for error in row.errors %}<p>{{ error }}</p>{% endfor %}</details>{% endfor %}{% if scan.job %}<a href="{% url 'scan_job_detail' scan.job_id %}">Related scan job and findings</a>{% endif %}</section><section class="panel vs-card"><h2>Indicators of Compromise</h2>{% for finding in scan.job.findings.all %}<p><a href="{% url 'finding_detail' finding.pk %}">{{ finding.title }}</a>: {{ finding.ioc.note|default:'IOC check unavailable' }}</p>{% empty %}<p>No correlated indicators. Absence is not a safety claim.</p>{% endfor %}</section>{% endblock %}

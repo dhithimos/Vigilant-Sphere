@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Password Checker | Vigilant Sphere{% endblock %}
+{% block content %}
+
+
+<section class="panel hero-panel vs-card">
+  <p class="muted">Educational &amp; Security Analysis Tool</p>
+  <h1>Password Security Analyzer</h1>
+  <p>Password analysis is performed entirely in your browser. The plaintext password is never stored or sent to Django.</p>
+</section>
+
+<section class="grid">
+  <form autocomplete="off" class="wide-form" id="passwordAnalyzer">
+    <h2>Analyze a password</h2>
+    <label for="password_to_check">Password</label>
+    <div class="password-toggle">
+      <input id="password_to_check" type="password" maxlength="256" required autocomplete="new-password">
+      <button type="button" class="toggle-btn" id="passwordToggle" aria-label="Show password">Show</button>
+    </div>
+    <div class="actions vs-actions">
+      <button type="submit">Analyze Password</button>
+      <button type="button" id="clearPassword">Clear</button>
+    </div>
+    <label><input type="checkbox" id="breachOptIn"> Optional breach database check: send only a 5-character SHA-1 prefix for anonymous comparison</label><div id="passwordResult" aria-live="polite"></div>
+  </form>
+
+  <section class="card vs-card">
+    <h2>Secure generator</h2>
+    <label>Length <input id="generatorLength" type="number" min="8" max="128" value="20"></label>
+    <label><input id="useLower" type="checkbox" checked> Lowercase</label>
+    <label><input id="useUpper" type="checkbox" checked> Uppercase</label>
+    <label><input id="useNumbers" type="checkbox" checked> Numbers</label>
+    <label><input id="useSymbols" type="checkbox" checked> Symbols</label>
+    <label><input id="excludeAmbiguous" type="checkbox"> Exclude ambiguous characters</label>
+    <div class="actions vs-actions">
+      <button type="button" id="generatePassword">Generate Secure Password</button>
+      <button type="button" id="copyPassword">Copy</button>
+    </div>
+    <p id="generatedPassword" class="technical" aria-live="polite">No password generated yet.</p>
+    <p class="muted">Generated in your browser and not stored.</p>
+  </section>
+</section>
+
+<section class="panel vs-card">
+  <h2>How to interpret estimates</h2>
+  <p>Entropy estimates theoretical search space. Real attackers use leaked passwords, dictionaries, cracking rules, rate limits, and specialized hardware, so modeled crack time is not a guarantee.</p>
+</section>
+
+<script src="{% static 'myapp/password-analyzer.js' %}"></script>
+{% endblock %}

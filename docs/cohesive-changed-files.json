@@ -1,0 +1,1412 @@
+[
+  {
+    "file": "README.md",
+    "action": "MODIFY"
+  },
+  {
+    "file": "docs/COHESIVE_IMPLEMENTATION.md",
+    "action": "CREATE"
+  },
+  {
+    "file": "docs/cohesive-changed-files.json",
+    "action": "CREATE"
+  },
+  {
+    "file": "docs/cohesive-reference-verification.json",
+    "action": "CREATE"
+  },
+  {
+    "file": "docs/cohesive-verification.json",
+    "action": "CREATE"
+  },
+  {
+    "file": "docs/final-tree.txt",
+    "action": "MODIFY"
+  },
+  {
+    "file": "myapp/admin.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "name": "CustomUserAdmin",
+        "line": 47,
+        "end_line": 62
+      },
+      {
+        "name": "ScanResultAdmin",
+        "line": 66,
+        "end_line": 69
+      },
+      {
+        "name": "UserActivityAdmin",
+        "line": 73,
+        "end_line": 76
+      },
+      {
+        "name": "ScanFeedbackAdmin",
+        "line": 80,
+        "end_line": 83
+      },
+      {
+        "name": "ContactMessageAdmin",
+        "line": 87,
+        "end_line": 90
+      },
+      {
+        "name": "DeveloperImageAdmin",
+        "line": 102,
+        "end_line": 118
+      },
+      {
+        "name": "IndicatorForm",
+        "line": 156,
+        "end_line": 167
+      },
+      {
+        "name": "IndicatorOfCompromiseAdmin",
+        "line": 170,
+        "end_line": 176
+      }
+    ]
+  },
+  {
+    "file": "myapp/analysis/domain_scanners.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "name": "entropy",
+        "line": 24,
+        "end_line": 35
+      },
+      {
+        "name": "finding",
+        "line": 38,
+        "end_line": 55
+      },
+      {
+        "name": "finish",
+        "line": 58,
+        "end_line": 79
+      },
+      {
+        "name": "edit_distance",
+        "line": 82,
+        "end_line": 96
+      },
+      {
+        "name": "phishing_intelligence",
+        "line": 99,
+        "end_line": 305
+      },
+      {
+        "name": "static_file_analysis",
+        "line": 308,
+        "end_line": 373
+      },
+      {
+        "name": "collect_process_snapshot",
+        "line": 376,
+        "end_line": 388
+      },
+      {
+        "name": "threat_detection",
+        "line": 391,
+        "end_line": 512
+      },
+      {
+        "name": "threat_intelligence",
+        "line": 515,
+        "end_line": 576
+      },
+      {
+        "name": "detect_ioc",
+        "line": 579,
+        "end_line": 598
+      },
+      {
+        "name": "ioc_correlation",
+        "line": 601,
+        "end_line": 667
+      },
+      {
+        "name": "security_intelligence",
+        "line": 670,
+        "end_line": 744
+      }
+    ]
+  },
+  {
+    "file": "myapp/analysis/ioc_correlation.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "name": "_load",
+        "line": 22,
+        "end_line": 31
+      },
+      {
+        "name": "load_local_iocs",
+        "line": 34,
+        "end_line": 41
+      },
+      {
+        "name": "normalize_indicator",
+        "line": 44,
+        "end_line": 93
+      },
+      {
+        "name": "local_entries",
+        "line": 96,
+        "end_line": 114
+      },
+      {
+        "name": "upsert_indicator",
+        "line": 118,
+        "end_line": 145
+      },
+      {
+        "name": "clean_indicators",
+        "line": 148,
+        "end_line": 156
+      },
+      {
+        "name": "correlate_indicators",
+        "line": 159,
+        "end_line": 205
+      },
+      {
+        "name": "extract_indicators",
+        "line": 208,
+        "end_line": 255
+      },
+      {
+        "name": "correlation_payload",
+        "line": 258,
+        "end_line": 297
+      },
+      {
+        "name": "persist_provider_results",
+        "line": 300,
+        "end_line": 363
+      }
+    ]
+  },
+  {
+    "file": "myapp/analysis/persistence.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "name": "persist_findings",
+        "line": 11,
+        "end_line": 81
+      }
+    ]
+  },
+  {
+    "file": "myapp/context.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "name": "site_context",
+        "line": 5,
+        "end_line": 30
+      },
+      {
+        "name": "can_inspect_host",
+        "line": 33,
+        "end_line": 35
+      }
+    ]
+  },
+  {
+    "file": "myapp/domain_views.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "name": "scanner_page",
+        "line": 57,
+        "end_line": 201
+      },
+      {
+        "name": "scanner_result",
+        "line": 205,
+        "end_line": 273
+      }
+    ]
+  },
+  {
+    "file": "myapp/forms.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "name": "ContactForm",
+        "line": 5,
+        "end_line": 13
+      },
+      {
+        "name": "SuggestionForm",
+        "line": 16,
+        "end_line": 33
+      }
+    ]
+  },
+  {
+    "file": "myapp/incident_response.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "name": "authorized_incident",
+        "line": 17,
+        "end_line": 20
+      },
+      {
+        "name": "default_playbook",
+        "line": 23,
+        "end_line": 33
+      },
+      {
+        "name": "timeline",
+        "line": 36,
+        "end_line": 44
+      },
+      {
+        "name": "update_response",
+        "line": 50,
+        "end_line": 78
+      },
+      {
+        "name": "validate_artifact",
+        "line": 81,
+        "end_line": 118
+      },
+      {
+        "name": "upload_artifact",
+        "line": 124,
+        "end_line": 150
+      },
+      {
+        "name": "download_artifact",
+        "line": 154,
+        "end_line": 172
+      }
+    ]
+  },
+  {
+    "file": "myapp/migrations/0016_incidentartifact_delete_applicationrelease_and_more.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "name": "Migration",
+        "line": 8,
+        "end_line": 65
+      }
+    ]
+  },
+  {
+    "file": "myapp/models.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "name": "CustomUser",
+        "line": 11,
+        "end_line": 29
+      },
+      {
+        "name": "AssetInventory",
+        "line": 37,
+        "end_line": 55
+      },
+      {
+        "name": "EndpointFingerprint",
+        "line": 63,
+        "end_line": 79
+      },
+      {
+        "name": "ComplianceCheck",
+        "line": 87,
+        "end_line": 104
+      },
+      {
+        "name": "ThreatFinding",
+        "line": 112,
+        "end_line": 142
+      },
+      {
+        "name": "Incident",
+        "line": 150,
+        "end_line": 192
+      },
+      {
+        "name": "ThreatIntel",
+        "line": 200,
+        "end_line": 214
+      },
+      {
+        "name": "IOC",
+        "line": 222,
+        "end_line": 241
+      },
+      {
+        "name": "MitreTechnique",
+        "line": 249,
+        "end_line": 259
+      },
+      {
+        "name": "MitreMapping",
+        "line": 267,
+        "end_line": 274
+      },
+      {
+        "name": "ThreatTimeline",
+        "line": 282,
+        "end_line": 290
+      },
+      {
+        "name": "QuarantineItem",
+        "line": 298,
+        "end_line": 310
+      },
+      {
+        "name": "RiskAssessment",
+        "line": 318,
+        "end_line": 325
+      },
+      {
+        "name": "FileMonitorEvent",
+        "line": 333,
+        "end_line": 346
+      },
+      {
+        "name": "ScanResult",
+        "line": 354,
+        "end_line": 378
+      },
+      {
+        "name": "UserActivity",
+        "line": 386,
+        "end_line": 405
+      },
+      {
+        "name": "ScanFeedback",
+        "line": 413,
+        "end_line": 436
+      },
+      {
+        "name": "ContactMessage",
+        "line": 444,
+        "end_line": 473
+      },
+      {
+        "name": "AuditLog",
+        "line": 481,
+        "end_line": 493
+      },
+      {
+        "name": "FeatureFlag",
+        "line": 496,
+        "end_line": 508
+      },
+      {
+        "name": "SecurityAuditEvent",
+        "line": 511,
+        "end_line": 521
+      },
+      {
+        "name": "FalsePositiveReview",
+        "line": 524,
+        "end_line": 546
+      },
+      {
+        "name": "SecurityPolicy",
+        "line": 549,
+        "end_line": 561
+      },
+      {
+        "name": "CMSPage",
+        "line": 566,
+        "end_line": 596
+      },
+      {
+        "name": "CMSPageRevision",
+        "line": 599,
+        "end_line": 613
+      },
+      {
+        "name": "CMSBlock",
+        "line": 616,
+        "end_line": 628
+      },
+      {
+        "name": "CMSMedia",
+        "line": 631,
+        "end_line": 643
+      },
+      {
+        "name": "CMSBlogPost",
+        "line": 646,
+        "end_line": 668
+      },
+      {
+        "name": "CMSNavigationItem",
+        "line": 671,
+        "end_line": 682
+      },
+      {
+        "name": "CMSSiteSettings",
+        "line": 685,
+        "end_line": 698
+      },
+      {
+        "name": "CMSAnnouncement",
+        "line": 701,
+        "end_line": 717
+      },
+      {
+        "name": "CMSDeveloperProfile",
+        "line": 720,
+        "end_line": 740
+      },
+      {
+        "name": "DeveloperImage",
+        "line": 743,
+        "end_line": 761
+      },
+      {
+        "name": "ScanJob",
+        "line": 769,
+        "end_line": 802
+      },
+      {
+        "name": "Finding",
+        "line": 805,
+        "end_line": 841
+      },
+      {
+        "name": "SecurityAlert",
+        "line": 844,
+        "end_line": 851
+      },
+      {
+        "name": "FindingEvidence",
+        "line": 854,
+        "end_line": 861
+      },
+      {
+        "name": "ResponseApproval",
+        "line": 864,
+        "end_line": 885
+      },
+      {
+        "name": "TargetScan",
+        "line": 888,
+        "end_line": 919
+      },
+      {
+        "name": "WiFiAudit",
+        "line": 922,
+        "end_line": 946
+      },
+      {
+        "name": "TrustedWifiProfile",
+        "line": 949,
+        "end_line": 957
+      },
+      {
+        "name": "AlertEmailConfiguration",
+        "line": 960,
+        "end_line": 981
+      },
+      {
+        "name": "SecurityAlertDelivery",
+        "line": 984,
+        "end_line": 1000
+      },
+      {
+        "name": "IncidentArtifact",
+        "line": 1025,
+        "end_line": 1034
+      }
+    ]
+  },
+  {
+    "file": "myapp/scanners/binary_metadata.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "name": "_entropy",
+        "line": 8,
+        "end_line": 18
+      },
+      {
+        "name": "_slice",
+        "line": 21,
+        "end_line": 24
+      },
+      {
+        "name": "_text",
+        "line": 27,
+        "end_line": 32
+      },
+      {
+        "name": "pe_metadata",
+        "line": 35,
+        "end_line": 119
+      },
+      {
+        "name": "elf_metadata",
+        "line": 122,
+        "end_line": 223
+      },
+      {
+        "name": "binary_metadata",
+        "line": 226,
+        "end_line": 227
+      }
+    ]
+  },
+  {
+    "file": "myapp/scanners/wifi_report.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "name": "executive_report",
+        "line": 7,
+        "end_line": 127
+      }
+    ]
+  },
+  {
+    "file": "myapp/test_cohesive.py",
+    "action": "CREATE",
+    "symbols": [
+      {
+        "name": "CohesiveTests",
+        "line": 21,
+        "end_line": 242
+      }
+    ]
+  },
+  {
+    "file": "myapp/threat_intel/providers.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "name": "NoRedirect",
+        "line": 12,
+        "end_line": 14
+      },
+      {
+        "name": "_result",
+        "line": 22,
+        "end_line": 32
+      },
+      {
+        "name": "_request",
+        "line": 35,
+        "end_line": 38
+      },
+      {
+        "name": "provider_status",
+        "line": 41,
+        "end_line": 52
+      },
+      {
+        "name": "_error",
+        "line": 55,
+        "end_line": 74
+      },
+      {
+        "name": "virustotal",
+        "line": 77,
+        "end_line": 119
+      },
+      {
+        "name": "abuseipdb",
+        "line": 122,
+        "end_line": 157
+      },
+      {
+        "name": "otx",
+        "line": 160,
+        "end_line": 192
+      },
+      {
+        "name": "hibp_email_lookup",
+        "line": 195,
+        "end_line": 258
+      },
+      {
+        "name": "provider_results",
+        "line": 261,
+        "end_line": 269
+      }
+    ]
+  },
+  {
+    "file": "myapp/urls.py",
+    "action": "MODIFY",
+    "symbols": []
+  },
+  {
+    "file": "myapp/views.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "name": "client_ip",
+        "line": 144,
+        "end_line": 151
+      },
+      {
+        "name": "client_device",
+        "line": 154,
+        "end_line": 156
+      },
+      {
+        "name": "score_to_level",
+        "line": 175,
+        "end_line": 186
+      },
+      {
+        "name": "scan_display_score",
+        "line": 189,
+        "end_line": 220
+      },
+      {
+        "name": "decorate_scan",
+        "line": 223,
+        "end_line": 230
+      },
+      {
+        "name": "traffic_label",
+        "line": 233,
+        "end_line": 250
+      },
+      {
+        "name": "scan_findings",
+        "line": 253,
+        "end_line": 278
+      },
+      {
+        "name": "scan_stat_summary",
+        "line": 281,
+        "end_line": 297
+      },
+      {
+        "name": "enrich_file_item",
+        "line": 300,
+        "end_line": 385
+      },
+      {
+        "name": "track_activity",
+        "line": 388,
+        "end_line": 400
+      },
+      {
+        "name": "home",
+        "line": 403,
+        "end_line": 411
+      },
+      {
+        "name": "register",
+        "line": 414,
+        "end_line": 485
+      },
+      {
+        "name": "user_login",
+        "line": 488,
+        "end_line": 540
+      },
+      {
+        "name": "user_logout",
+        "line": 544,
+        "end_line": 556
+      },
+      {
+        "name": "forgot_password",
+        "line": 559,
+        "end_line": 587
+      },
+      {
+        "name": "dashboard",
+        "line": 591,
+        "end_line": 612
+      },
+      {
+        "name": "launcher",
+        "line": 616,
+        "end_line": 700
+      },
+      {
+        "name": "feature_flags",
+        "line": 704,
+        "end_line": 742
+      },
+      {
+        "name": "ensure_default_feature_flags",
+        "line": 745,
+        "end_line": 777
+      },
+      {
+        "name": "feature_flag_map",
+        "line": 780,
+        "end_line": 782
+      },
+      {
+        "name": "feature_enabled",
+        "line": 785,
+        "end_line": 791
+      },
+      {
+        "name": "require_feature",
+        "line": 794,
+        "end_line": 801
+      },
+      {
+        "name": "audit_security_event",
+        "line": 804,
+        "end_line": 811
+      },
+      {
+        "name": "seed_initial_cms_content",
+        "line": 814,
+        "end_line": 872
+      },
+      {
+        "name": "password_strength",
+        "line": 879,
+        "end_line": 898
+      },
+      {
+        "name": "how_to_use",
+        "line": 905,
+        "end_line": 913
+      },
+      {
+        "name": "cms_pages",
+        "line": 925,
+        "end_line": 931
+      },
+      {
+        "name": "cms_page_edit",
+        "line": 935,
+        "end_line": 998
+      },
+      {
+        "name": "cms_media",
+        "line": 1002,
+        "end_line": 1031
+      },
+      {
+        "name": "cms_developer_images",
+        "line": 1035,
+        "end_line": 1121
+      },
+      {
+        "name": "cms_settings",
+        "line": 1125,
+        "end_line": 1164
+      },
+      {
+        "name": "cms_navigation",
+        "line": 1168,
+        "end_line": 1196
+      },
+      {
+        "name": "security_policies",
+        "line": 1200,
+        "end_line": 1226
+      },
+      {
+        "name": "audit_logs",
+        "line": 1230,
+        "end_line": 1240
+      },
+      {
+        "name": "profile",
+        "line": 1244,
+        "end_line": 1248
+      },
+      {
+        "name": "edit_profile",
+        "line": 1252,
+        "end_line": 1288
+      },
+      {
+        "name": "change_password",
+        "line": 1292,
+        "end_line": 1310
+      },
+      {
+        "name": "_save_scan",
+        "line": 1313,
+        "end_line": 1335
+      },
+      {
+        "name": "combined_scan",
+        "line": 1339,
+        "end_line": 1414
+      },
+      {
+        "name": "target_scan_detail",
+        "line": 1418,
+        "end_line": 1449
+      },
+      {
+        "name": "target_scan_json",
+        "line": 1453,
+        "end_line": 1477
+      },
+      {
+        "name": "target_scan_pdf",
+        "line": 1481,
+        "end_line": 1567
+      },
+      {
+        "name": "scan_jobs",
+        "line": 1571,
+        "end_line": 1579
+      },
+      {
+        "name": "scan_job_detail",
+        "line": 1583,
+        "end_line": 1594
+      },
+      {
+        "name": "findings",
+        "line": 1598,
+        "end_line": 1622
+      },
+      {
+        "name": "scan_result",
+        "line": 1626,
+        "end_line": 1657
+      },
+      {
+        "name": "submit_scan_feedback",
+        "line": 1661,
+        "end_line": 1693
+      },
+      {
+        "name": "system_scan",
+        "line": 1697,
+        "end_line": 1715
+      },
+      {
+        "name": "network_scan",
+        "line": 1719,
+        "end_line": 1737
+      },
+      {
+        "name": "mobile_security_scan",
+        "line": 1741,
+        "end_line": 1753
+      },
+      {
+        "name": "wifi_security",
+        "line": 1757,
+        "end_line": 1794
+      },
+      {
+        "name": "chatbot",
+        "line": 1799,
+        "end_line": 1806
+      },
+      {
+        "name": "chatbot_api",
+        "line": 1810,
+        "end_line": 1842
+      },
+      {
+        "name": "email_configuration",
+        "line": 1846,
+        "end_line": 1954
+      },
+      {
+        "name": "real_time_monitoring",
+        "line": 1964,
+        "end_line": 1966
+      },
+      {
+        "name": "quarantine_view",
+        "line": 1970,
+        "end_line": 1972
+      },
+      {
+        "name": "risk_assessment",
+        "line": 1976,
+        "end_line": 1984
+      },
+      {
+        "name": "threat_timeline",
+        "line": 1988,
+        "end_line": 1990
+      },
+      {
+        "name": "download_scan_pdf",
+        "line": 1994,
+        "end_line": 2080
+      },
+      {
+        "name": "export_json_report",
+        "line": 2084,
+        "end_line": 2107
+      },
+      {
+        "name": "admin_dashboard",
+        "line": 2111,
+        "end_line": 2153
+      },
+      {
+        "name": "download_user_details",
+        "line": 2157,
+        "end_line": 2224
+      },
+      {
+        "name": "about",
+        "line": 2227,
+        "end_line": 2229
+      },
+      {
+        "name": "privacy_policy",
+        "line": 2232,
+        "end_line": 2234
+      },
+      {
+        "name": "blogs",
+        "line": 2239,
+        "end_line": 2243
+      },
+      {
+        "name": "api_dashboard_metrics",
+        "line": 2247,
+        "end_line": 2283
+      },
+      {
+        "name": "_feedback",
+        "line": 2286,
+        "end_line": 2296
+      },
+      {
+        "name": "contact",
+        "line": 2298,
+        "end_line": 2299
+      },
+      {
+        "name": "suggestions",
+        "line": 2301,
+        "end_line": 2302
+      },
+      {
+        "name": "developer_profile",
+        "line": 2304,
+        "end_line": 2306
+      },
+      {
+        "name": "phishing_scan",
+        "line": 2309,
+        "end_line": 2311
+      },
+      {
+        "name": "file_scan",
+        "line": 2313,
+        "end_line": 2315
+      },
+      {
+        "name": "threat_detection",
+        "line": 2317,
+        "end_line": 2319
+      },
+      {
+        "name": "threat_intelligence",
+        "line": 2321,
+        "end_line": 2323
+      },
+      {
+        "name": "ioc_correlation",
+        "line": 2325,
+        "end_line": 2327
+      }
+    ]
+  },
+  {
+    "file": "myapp/wifi_audit_service.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "name": "compare_risk",
+        "line": 22,
+        "end_line": 31
+      },
+      {
+        "name": "authorize",
+        "line": 34,
+        "end_line": 41
+      },
+      {
+        "name": "finding_type_for",
+        "line": 44,
+        "end_line": 51
+      },
+      {
+        "name": "annotate_rows",
+        "line": 54,
+        "end_line": 69
+      },
+      {
+        "name": "run_audit",
+        "line": 72,
+        "end_line": 104
+      },
+      {
+        "name": "persist_audit",
+        "line": 108,
+        "end_line": 298
+      },
+      {
+        "name": "history_queryset",
+        "line": 301,
+        "end_line": 310
+      }
+    ]
+  },
+  {
+    "file": "myapp/workspace_views.py",
+    "action": "MODIFY",
+    "symbols": [
+      {
+        "name": "IncidentForm",
+        "line": 17,
+        "end_line": 61
+      },
+      {
+        "name": "incident_list",
+        "line": 65,
+        "end_line": 74
+      },
+      {
+        "name": "incident_edit",
+        "line": 78,
+        "end_line": 119
+      },
+      {
+        "name": "incident_detail",
+        "line": 123,
+        "end_line": 158
+      },
+      {
+        "name": "finding_detail",
+        "line": 162,
+        "end_line": 191
+      },
+      {
+        "name": "history",
+        "line": 195,
+        "end_line": 210
+      },
+      {
+        "name": "compare",
+        "line": 214,
+        "end_line": 235
+      },
+      {
+        "name": "csv_report",
+        "line": 239,
+        "end_line": 297
+      },
+      {
+        "name": "PostForm",
+        "line": 300,
+        "end_line": 322
+      },
+      {
+        "name": "public_queryset",
+        "line": 325,
+        "end_line": 328
+      },
+      {
+        "name": "public_posts",
+        "line": 331,
+        "end_line": 341
+      },
+      {
+        "name": "post_detail",
+        "line": 344,
+        "end_line": 352
+      },
+      {
+        "name": "post_edit",
+        "line": 356,
+        "end_line": 373
+      },
+      {
+        "name": "post_list",
+        "line": 377,
+        "end_line": 386
+      },
+      {
+        "name": "static_analysis",
+        "line": 390,
+        "end_line": 424
+      },
+      {
+        "name": "mitre",
+        "line": 428,
+        "end_line": 601
+      },
+      {
+        "name": "cancel_job",
+        "line": 605,
+        "end_line": 619
+      },
+      {
+        "name": "trust_wifi",
+        "line": 623,
+        "end_line": 654
+      }
+    ]
+  },
+  {
+    "file": "static/css/theme.css",
+    "action": "MODIFY"
+  },
+  {
+    "file": "static/js/app.js",
+    "action": "CREATE"
+  },
+  {
+    "file": "static/js/theme-init.js",
+    "action": "CREATE"
+  },
+  {
+    "file": "templates/400.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/401.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/403.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/404.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/429.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/500.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/503.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/admin/base_site.html",
+    "action": "CREATE"
+  },
+  {
+    "file": "templates/admin/color_theme_toggle.html",
+    "action": "CREATE"
+  },
+  {
+    "file": "templates/base.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/about.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/admin_dashboard.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/applications.html",
+    "action": "REMOVE",
+    "reason": "Superseded unreferenced template or explicitly removed Applications/CMS landing feature"
+  },
+  {
+    "file": "templates/myapp/audit_logs.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/change_password.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/cms_dashboard.html",
+    "action": "REMOVE",
+    "reason": "Superseded unreferenced template or explicitly removed Applications/CMS landing feature"
+  },
+  {
+    "file": "templates/myapp/cms_developer_images.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/cms_media.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/cms_navigation.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/cms_page_edit.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/cms_pages.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/cms_settings.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/combined_scan.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/contact.html",
+    "action": "REMOVE",
+    "reason": "Superseded unreferenced template or explicitly removed Applications/CMS landing feature"
+  },
+  {
+    "file": "templates/myapp/dashboard.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/developer.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/domain_result.html",
+    "action": "CREATE"
+  },
+  {
+    "file": "templates/myapp/domain_scanner.html",
+    "action": "CREATE"
+  },
+  {
+    "file": "templates/myapp/edit_profile.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/email_configuration.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/feature_flags.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/feedback.html",
+    "action": "CREATE"
+  },
+  {
+    "file": "templates/myapp/file_scan.html",
+    "action": "REMOVE",
+    "reason": "Superseded unreferenced template or explicitly removed Applications/CMS landing feature"
+  },
+  {
+    "file": "templates/myapp/findings.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/home.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/how_to_use.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/incident_detail.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/launcher.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/login.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/mitre_catalog.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/mobile_security.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/network.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/phishing.html",
+    "action": "REMOVE",
+    "reason": "Superseded unreferenced template or explicitly removed Applications/CMS landing feature"
+  },
+  {
+    "file": "templates/myapp/privacy.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/profile.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/register.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/scan_job_detail.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/scan_jobs.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/scan_result.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/security_policies.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/suggestions.html",
+    "action": "REMOVE",
+    "reason": "Superseded unreferenced template or explicitly removed Applications/CMS landing feature"
+  },
+  {
+    "file": "templates/myapp/system.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/target_scan_detail.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/threat_detection.html",
+    "action": "REMOVE",
+    "reason": "Superseded unreferenced template or explicitly removed Applications/CMS landing feature"
+  },
+  {
+    "file": "templates/myapp/threat_intelligence.html",
+    "action": "REMOVE",
+    "reason": "Superseded unreferenced template or explicitly removed Applications/CMS landing feature"
+  },
+  {
+    "file": "templates/myapp/wifi_security.html",
+    "action": "MODIFY"
+  }
+]

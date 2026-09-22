@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Vigilant Sphere Blog</h1><form><label>Category<input name="category" value="{{ request.GET.category }}"></label><button>Filter</button></form>{% for post in posts %}<article class="panel vs-card"><h2><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></h2><p>{{ post.category }} · {{ post.published_at }}</p><p>{{ post.excerpt }}</p></article>{% empty %}<p>No published posts yet.</p>{% endfor %}{% if posts.has_previous %}<a href="?page={{ posts.previous_page_number }}">Previous</a>{% endif %}{% if posts.has_next %}<a href="?page={{ posts.next_page_number }}">Next</a>{% endif %}
+{% endblock %}

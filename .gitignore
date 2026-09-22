@@ -1,0 +1,25 @@
+# Secrets and local runtime state
+.env
+venv/
+__pycache__/
+*.py[cod]
+*.log
+staticfiles/
+reports/
+quarantine/
+logs/
+
+# Do not distribute rebuilt archives from source control
+*.zip
+
+# Never publish local secrets or runtime data
+.env
+.env.*
+!.env.example
+*.sqlite3
+*.sqlite3-*
+__pycache__/
+*.py[cod]
+.venv/
+media/
+staticfiles/

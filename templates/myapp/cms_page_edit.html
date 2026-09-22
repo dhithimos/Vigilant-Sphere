@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="panel vs-card"><h1 class="text-strong">{% if page_obj %}Edit Page{% else %}Create Page{% endif %}</h1><p class="muted">Drafts are saved safely. Publishing creates a revision history record.</p></section>
+<section class="panel vs-card">
+    <form class="wide-form" method="post" id="cmsEditor">
+        {% csrf_token %}
+        <label for="vs-field-title">Page Title</label><input name="title" value="{{ page_obj.title }}" required id="vs-field-title">
+        <label for="vs-field-slug">Slug</label><input name="slug" value="{{ page_obj.slug }}" placeholder="about" id="vs-field-slug">
+        <label for="vs-field-seo_title">SEO Title</label><input name="seo_title" value="{{ page_obj.seo_title }}" id="vs-field-seo_title">
+        <label for="vs-field-seo_description">SEO Description</label><textarea name="seo_description" id="vs-field-seo_description">{{ page_obj.seo_description }}</textarea>
+        <label for="vs-field-excerpt">Excerpt</label><textarea name="excerpt" id="vs-field-excerpt">{{ page_obj.excerpt }}</textarea>
+        <label for="vs-field-status">Status</label><select name="status" id="vs-field-status"><option value="DRAFT">DRAFT</option><option value="PUBLISHED" {% if page_obj.status == "PUBLISHED" %}selected{% endif %}>PUBLISHED</option><option value="SCHEDULED" {% if page_obj.status == "SCHEDULED" %}selected{% endif %}>SCHEDULED</option><option value="ARCHIVED" {% if page_obj.status == "ARCHIVED" %}selected{% endif %}>ARCHIVED</option></select>
+        <label for="vs-field-content">Content</label><textarea name="content" rows="14" id="vs-field-content">{{ page_obj.content }}</textarea>
+        <div class="actions vs-actions"><button type="submit">Save Draft / Publish</button><a class="btn vs-button" href="{% url 'cms_pages' %}">Back</a></div>
+    </form>
+</section>
+<script>
+let changed = false;
+document.getElementById("cmsEditor").addEventListener("input", () => { changed = true; });
+document.getElementById("cmsEditor").addEventListener("submit", () => { changed = false; });
+window.addEventListener("beforeunload", (event) => { if (changed) { event.preventDefault(); event.returnValue = ""; } });
+</script>
+{% endblock %}

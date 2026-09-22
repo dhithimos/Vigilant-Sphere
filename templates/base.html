@@ -1,0 +1,67 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>{% block title %}Vigilant Sphere{% endblock %}</title>
+
+  
+  <script src="{% static 'js/theme-init.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+  <link rel="stylesheet" href="{% static 'css/components.css' %}">
+</head>
+<body>
+  <a class="vs-skip-link" href="#main-content">Skip to content</a>
+  <div class="app-shell vs-app">
+    {% if user.is_authenticated %}
+    <button class="drawer-backdrop" id="drawerBackdrop" aria-label="Close navigation" tabindex="-1" hidden></button>
+    <aside class="sidebar no-print vs-sidebar" id="sidebar" aria-label="Primary navigation"><button type="button" class="drawer-close" id="sidebarClose" aria-label="Close navigation">Close ×</button>
+      <a class="brand" href="{% url 'dashboard' %}"><span class="brand-mark">VS</span><span>VIGILANT<br>SPHERE</span></a>
+      <p class="sidebar-label">Security operations</p>
+      <nav class="sidebar-nav">
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+        <a href="{% url 'combined_scan' %}">Scan Center</a>
+        <a href="{% url 'scan_jobs' %}">Scan Jobs</a>
+        <a href="{% url 'findings' %}">Findings</a>
+        <a href="{% url 'system_scan' %}">System Security</a>
+        <a href="{% url 'network_scan' %}">Network Security</a>
+        <a href="{% url 'security_intelligence' %}">Security Intelligence</a>
+        <a href="{% url 'threat_detection' %}">Threat Detection</a>
+        <a href="{% url 'phishing_scan' %}">Phishing Intelligence</a>
+        <a href="{% url 'file_scan' %}">File Analysis</a>
+        <a href="{% url 'wifi_security' %}">Wi-Fi Security</a>
+        <a href="{% url 'chatbot' %}">Security Assistant</a>
+        <a href="{% url 'mobile_security' %}">Password Checker</a>
+        <a href="{% url 'ioc_correlation' %}">IOC Analysis</a>
+        <a href="{% url 'threat_intelligence' %}">Threat Intelligence</a>
+        <a href="{% url 'mitre_mapping' %}">MITRE ATT&amp;CK</a>
+        <a href="{% url 'incidents' %}">Incidents</a>
+        <a href="{% url 'risk_assessment' %}">Risk Assessment</a>
+        <a href="{% url 'reports' %}">Reports</a>
+        <a href="{% url 'email_configuration' %}">Email Alerts</a>
+      </nav>
+      <div class="sidebar-footer"><a href="{% url 'profile' %}">{{ user.username }}</a><a href="{% url 'logout' %}">Sign out</a></div>
+    </aside>
+    {% endif %}
+    <div class="shell-content vs-shell">
+      <header class="topbar no-print vs-header">
+        {% if user.is_authenticated %}<button type="button" class="menu-button" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">Menu</button>{% endif %}
+        <a class="mobile-brand" href="{% url 'home' %}"><span class="brand-mark" aria-hidden="true">VS</span><span>Vigilant Sphere</span></a>
+        {% include "components/theme_control.html" %}
+        <nav class="topnav" aria-label="Account navigation">
+          {% if user.is_authenticated %}<a href="{% url 'combined_scan' %}">Run scan</a><a href="{% url 'profile' %}">Profile</a>{% else %}<a href="{% url 'login' %}">Sign in</a><a class="button-link" href="{% url 'register' %}">Create account</a>{% endif %}
+        </nav>
+      </header>
+      <main class="content vs-main" id="main-content" tabindex="-1">
+        {% if messages %}<div class="messages" aria-live="polite">{% for message in messages %}<div class="message {{ message.tags }}">{{ message }}</div>{% endfor %}</div>{% endif %}
+        {% block content %}{% endblock %}
+      </main>
+{% include "components/footer.html" %}
+    </div>
+  </div>
+  <script src="{% static 'js/app.js' %}" defer></script>
+{% if chatbot_launcher %}<a class="assistant-launcher no-print" href="{% url 'chatbot' %}" aria-label="Open Local Security Assistant"><img src="{% static 'images/assistant-bot.svg' %}" width="22" height="22" alt=""> Security Assistant</a>{% endif %}
+</body>
+</html>

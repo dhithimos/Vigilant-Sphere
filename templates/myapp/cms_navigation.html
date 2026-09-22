@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="panel vs-card"><h1 class="text-strong">CMS Navigation</h1><p class="muted">Navigation content is editable, but backend RBAC and feature flags still control access.</p></section>
+<section class="panel vs-card"><form class="wide-form" method="post">{% csrf_token %}<label for="vs-field-label">Label</label><input name="label" required id="vs-field-label"><label for="vs-field-url">URL</label><input name="url" placeholder="/about/" required id="vs-field-url"><label for="vs-field-location">Location</label><select name="location" id="vs-field-location"><option value="main">Main</option><option value="sidebar">Sidebar</option><option value="footer">Footer</option><option value="mobile">Mobile</option></select><label for="vs-field-sort_order">Sort Order</label><input type="number" name="sort_order" value="0" id="vs-field-sort_order"><label><input type="checkbox" name="visible" checked> Visible</label><button type="submit">Add Navigation Item</button></form></section>
+<section class="panel vs-card"><table><tr><th>Label</th><th>URL</th><th>Location</th><th>Visible</th><th>Order</th></tr>{% for item in items %}<tr><td>{{ item.label }}</td><td>{{ item.url }}</td><td>{{ item.location }}</td><td>{{ item.visible }}</td><td>{{ item.sort_order }}</td></tr>{% empty %}<tr><td colspan="5">No navigation items yet.</td></tr>{% endfor %}</table></section>
+{% endblock %}

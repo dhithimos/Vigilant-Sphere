@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="profile-edit-wrapper">
+    <h1 class="page-title">Edit Profile</h1>
+    
+    <form method="post" enctype="multipart/form-data" class="wide-form">
+        {% csrf_token %}
+        <div class="grid">
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" value="{{ user_obj.first_name }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" value="{{ user_obj.last_name }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" value="{{ user_obj.username }}" disabled>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="{{ user_obj.email }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" min="1" max="120" name="age" value="{{ user_obj.age|default:'' }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" value="{{ user_obj.phone|default:'' }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value="">Prefer not to say</option>
+                    <option value="Female" {% if user_obj.gender == "Female" %}selected{% endif %}>Female</option>
+                    <option value="Male" {% if user_obj.gender == "Male" %}selected{% endif %}>Male</option>
+                    <option value="Other" {% if user_obj.gender == "Other" %}selected{% endif %}>Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="profile_image">Profile Image</label>
+                <input type="file" id="profile_image" name="profile_image" accept="image/*">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="4">{{ user_obj.address }}</textarea>
+        </div>
+
+        <div class="actions vs-actions">
+            <button type="submit">Save Profile</button>
+            <a href="{% url 'profile' %}" class="btn vs-button">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

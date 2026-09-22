@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Account recovery</h1><p>Email recovery requires configured SMTP. Without it, the local administrator can run <code>python manage.py changepassword USERNAME</code>.</p><form method="post">{% csrf_token %}{{ form.as_p }}<button>Continue</button></form>
+{% endblock %}

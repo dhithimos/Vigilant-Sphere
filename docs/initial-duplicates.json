@@ -1,0 +1,15 @@
+[
+  [
+    "logs/django-server.out.log",
+    "myapp/__init__.py",
+    "myapp/migrations/__init__.py",
+    "scanner/__init__.py"
+  ],
+  [
+    "media/cms_media/images_1.jpg",
+    "media/cms_media/images_1_MvQgr43.jpg",
+    "media/cms_media/images_1_WuNJiz5.jpg",
+    "media/cms_media/images_1_yrh04Aq.jpg",
+    "media/developer/dhithimos-es.jpg"
+  ]
+]

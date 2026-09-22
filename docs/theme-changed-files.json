@@ -1,0 +1,258 @@
+[
+  {
+    "file": "docs/theme-audit-before.json",
+    "action": "CREATE"
+  },
+  {
+    "file": "docs/theme-changed-files.json",
+    "action": "CREATE"
+  },
+  {
+    "file": "docs/theme-reference-verification.json",
+    "action": "CREATE"
+  },
+  {
+    "file": "docs/theme-verification.json",
+    "action": "CREATE"
+  },
+  {
+    "file": "docs/THEME_UNIFICATION.md",
+    "action": "CREATE"
+  },
+  {
+    "file": "myapp/test_theme.py",
+    "action": "CREATE"
+  },
+  {
+    "file": "README.md",
+    "action": "MODIFY"
+  },
+  {
+    "file": "static/css/components.css",
+    "action": "CREATE"
+  },
+  {
+    "file": "static/css/theme.css",
+    "action": "MODIFY"
+  },
+  {
+    "file": "static/js/app.js",
+    "action": "MODIFY"
+  },
+  {
+    "file": "static/js/theme-init.js",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/400.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/401.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/403.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/403_csrf.html",
+    "action": "CREATE"
+  },
+  {
+    "file": "templates/404.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/429.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/500.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/503.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/admin/base_site.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/base.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/components/footer.html",
+    "action": "CREATE"
+  },
+  {
+    "file": "templates/components/theme_control.html",
+    "action": "CREATE"
+  },
+  {
+    "file": "templates/myapp/about.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/admin_dashboard.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/audit_logs.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/change_password.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/cms_developer_images.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/cms_media.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/cms_navigation.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/cms_page_edit.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/cms_pages.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/cms_settings.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/combined_scan.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/dashboard.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/developer.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/domain_result.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/domain_scanner.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/edit_profile.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/email_configuration.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/feature_flags.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/feedback.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/finding_detail.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/home.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/how_to_use.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/incident_detail.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/launcher.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/login.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/mitre_catalog.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/mobile_security.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/network.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/privacy.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/profile.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/public_blog.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/register.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/scan_job_detail.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/scan_jobs.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/scan_result.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/security_policies.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/system.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/target_scan_detail.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/wifi_security.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "templates/myapp/workspace_list.html",
+    "action": "MODIFY"
+  },
+  {
+    "file": "tests/theme_behavior.test.cjs",
+    "action": "CREATE"
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-20",
+  "python": "3.12.14",
+  "django": "5.2.17",
+  "regression_tests": 62,
+  "test_result": "PASS",
+  "provider_keys": "empty in provider-disabled regression tests",
+  "django_check": "PASS",
+  "migration_drift": "No changes detected",
+  "undefined_names_syntax_unused_imports": "PASS (Ruff F821,E9,F401)",
+  "routes_checked": 70,
+  "template_static_errors": 0,
+  "dependency_audit": "No known vulnerabilities found",
+  "browser_checks": [],
+  "javascript_checks": "Node syntax validation of rendered chatbot/password inline scripts and password-analyzer.js; interactive browser layouts not revalidated this revision",
+  "live_integrations": "Not tested: paid/optional provider credentials, SMTP, YARA/ClamAV installed engines, actual radio measurements",
+  "extracted_validation": [
+    {
+      "command": "python manage.py migrate --noinput",
+      "exit_code": 0,
+      "output": "Operations to perform:\n  Apply all migrations: admin, auth, contenttypes, myapp, sessions\nRunning migrations:\n  Applying contenttypes.0001_initial... OK\n  Applying contenttypes.0002_remove_content_type_name... OK\n  Applying auth.0001_initial... OK\n  Applying auth.0002_alter_permission_name_max_length... OK\n  Applying auth.0003_alter_user_email_max_length... OK\n  Applying auth.0004_alter_user_username_opts... OK\n  Applying auth.0005_alter_user_last_login_null... OK\n  Applying auth.0006_require_contenttypes_0002... OK\n  Applying auth.0007_alter_validators_add_error_messages... OK\n  Applying auth.0008_alter_user_username_max_length... OK\n  Applying auth.0009_alter_user_last_name_max_length... OK\n  Applying auth.0010_alter_group_name_max_length... OK\n  Applying auth.0011_update_proxy_permissions... OK\n  Applying auth.0012_alter_user_first_name_max_length... OK\n  Applying myapp.0001_initial... OK\n  Applying admin.0001_initial... OK\n  Applying admin.0002_logentry_remove_auto_add... OK\n  Applying admin.0003_logentry_add_action_flag_choices... OK\n  Applying myapp.0002_contactmessage_scanresult_useractivity... OK\n  Applying myapp.0003_vigilant_profile_activity_feedback... OK\n  Applying myapp.0004_attackpatterndetection_behavioralthreat_and_more... OK\n  Applying myapp.0005_endpointagent_usbdevice_usbscanjob_usbscanfinding_and_more... OK\n  Applying myapp.0006_applicationrelease_cmsannouncement_cmsblock_and_more... OK\n  Applying myapp.0007_developerimage... OK\n  Applying myapp.0008_unified_security_pipeline... OK\n  Applying myapp.0009_normalize_pipeline_index_names... OK\n  Applying myapp.0010_targetscan... OK\n  Applying myapp.0011_wifi_email_alerts... OK\n  Applying myapp.0012_rename_myapp_targe_user_id_4e7e46_idx_myapp_targe_user_id_a82fb5_idx_and_more... OK\n  Applying myapp.0013_finding_updated_at_incident_archived_and_more... OK\n  Applying myapp.0014_incident_scan_jobs... OK\n  Applying sessions.0001_initial... OK\n"
+    },
+    {
+      "command": "python manage.py check",
+      "exit_code": 0,
+      "output": "System check identified no issues (0 silenced).\n"
+    },
+    {
+      "command": "python manage.py makemigrations --check --dry-run",
+      "exit_code": 0,
+      "output": "No changes detected\n"
+    },
+    {
+      "command": "python manage.py test myapp --noinput",
+      "exit_code": 0,
+      "output": "Found 62 test(s).\nSystem check identified no issues (0 silenced).\nCreating test database for alias 'default'...\n\n..............................................................\n----------------------------------------------------------------------\nRan 62 tests in 15.766s\n\nOK\nDestroying test database for alias 'default'...\n\n"
+    }
+  ],
+  "extraction_success": true,
+  "source_files_match_tested_extraction": true
+}

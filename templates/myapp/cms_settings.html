@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="panel vs-card"><h1 class="text-strong">Site Settings</h1><p class="muted">Public-facing settings only. Secrets, tokens, and API keys stay environment-based.</p></section>
+<section class="panel vs-card"><form class="wide-form" method="post">{% csrf_token %}<label for="vs-field-site_name">Site Name</label><input name="site_name" value="{{ settings_obj.site_name }}" id="vs-field-site_name"><label for="vs-field-default_seo_title">Default SEO Title</label><input name="default_seo_title" value="{{ settings_obj.default_seo_title }}" id="vs-field-default_seo_title"><label for="vs-field-default_seo_description">Default SEO Description</label><textarea name="default_seo_description" id="vs-field-default_seo_description">{{ settings_obj.default_seo_description }}</textarea><label for="vs-field-contact_email">Contact Email</label><input name="contact_email" value="{{ settings_obj.contact_email }}" id="vs-field-contact_email"><label for="vs-field-support_email">Support Email</label><input name="support_email" value="{{ settings_obj.support_email }}" id="vs-field-support_email"><label for="vs-field-footer_text">Footer Text</label><input name="footer_text" value="{{ settings_obj.footer_text }}" id="vs-field-footer_text"><label for="vs-field-maintenance_notice">Maintenance Notice</label><input name="maintenance_notice" value="{{ settings_obj.maintenance_notice }}" id="vs-field-maintenance_notice"><button type="submit">Save Settings</button></form></section>
+{% endblock %}

@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ title }}</h1><p>Local static analysis for HTML/JavaScript; bounded public-network requests for DNS/TLS/HTTP. No script execution.</p><form method="post">{% csrf_token %}<label>Input<textarea name="input" rows="8" maxlength="1048576" required></textarea></label><button>Analyze</button></form>{% if result %}<pre>{{ result }}</pre>{% endif %}
+{% endblock %}
