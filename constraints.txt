@@ -1,5 +1,0 @@
-# Audited transitive dependency versions (2026-09-20).
-asgiref==3.12.1
-charset-normalizer==3.5.1
-sqlparse==0.6.0
-tzdata==2026.4
